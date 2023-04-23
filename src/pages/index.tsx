@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
+import Radio from '@/components/Radio'
 
 export default function Home() {
   return (
@@ -15,12 +16,25 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main}`}>
-        <Image
+        {/* <Image
           className={`${styles.backgroundImage}`}
           src={'/city-skyline.gif'}
-          alt="city skyline"
+          alt="City skyline"
+          fill
+        /> */}
+        <Image
+          className={`${styles.backgroundImage}`}
+          src={'/japanese-temple.gif'}
+          alt="Japanese temple"
           fill
         />
+        <Image
+          className={`${styles.tvLinesOverlay}`}
+          src={'/tv-lines.png'}
+          alt="Tv lines overlay"
+          fill
+        />
+        <Radio />
       </main>
     </>
   )
