@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '@/styles/Dashboard.module.css'
+import styles from '@/styles/Home.module.css'
 
-export default function Dashboard() {
+export default function Home() {
   return (
     <>
       <Head>
@@ -15,7 +15,12 @@ export default function Dashboard() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main}`}>
-        <Image src={'/city-skyline.gif'} alt="city skyline" fill />
+        <Image
+          className={`${styles.backgroundImage}`}
+          src={'/city-skyline.gif'}
+          alt="city skyline"
+          fill
+        />
       </main>
     </>
   )
