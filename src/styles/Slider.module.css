@@ -1,37 +1,34 @@
 .neonSliderContainer {
-  position: relative;
-  margin: 20px;
+  display: flex;
+  align-items: center;
+  width: 300px;
 }
 
-.neonSlider {
-  -webkit-appearance: none;
+.neonTickContainer {
   width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, #ff00ff, #00ff00, #00ffff, #ff00ff);
-  border-radius: 5px;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: 0.2s;
+  height: 15px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 3px;
+}
+
+.neonTick {
+  width: calc(100% / 50);
+  height: 100%;
+  background-color: #ff00ff;
+  opacity: 0.5;
   transition: opacity 0.2s;
-}
-
-.neonSlider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: #fff;
-  border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00ff00;
-  -webkit-transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s;
+  box-shadow: 0 0 5px rgba(255, 0, 255, 0.4), 0 0 10px rgba(255, 0, 255, 0.4),
+    0 0 15px rgba(255, 0, 255, 0.4), 0 0 20px rgba(255, 0, 255, 0.4),
+    0 0 25px rgba(255, 0, 255, 0.4), 0 0 30px rgba(255, 0, 255, 0.4);
 }
 
-.neonSlider:hover {
+.neonTick.active {
   opacity: 1;
 }
 
-.neonSlider::-webkit-slider-thumb:hover {
-  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00ff;
+.neonTick.invisible {
+  background-color: transparent;
+  box-shadow: none;
 }
