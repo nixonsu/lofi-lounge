@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
 import Radio from '@/components/Radio'
 import { StyledMain } from '@/styles/Main.styled'
+import { BgImageContainer } from '@/styles/BgImageContainer'
 
 export default function Home() {
   return (
@@ -17,23 +16,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StyledMain>
-        {/* <Image
-          className={`${styles.backgroundImage}`}
-          src={'/gifs/city-skyline.gif'}
-          alt="City skyline"
-          fill
-        /> */}
-        <Image
-          className={`${styles.backgroundImage}`}
+        <BgImageContainer
           src={'/gifs/japanese-temple.gif'}
           alt="Japanese temple"
           fill
+          zindex={-2}
         />
-        <Image
-          className={`${styles.tvLinesOverlay}`}
+
+        <BgImageContainer
           src={'/pngs/tv-lines.png'}
           alt="Tv lines overlay"
           fill
+          opacity={0.2}
+          zindex={-1}
         />
       </StyledMain>
 
