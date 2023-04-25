@@ -18,19 +18,19 @@ export default function Home() {
       <main className={`${styles.main}`}>
         {/* <Image
           className={`${styles.backgroundImage}`}
-          src={'/city-skyline.gif'}
+          src={'/gifs/city-skyline.gif'}
           alt="City skyline"
           fill
         /> */}
         <Image
           className={`${styles.backgroundImage}`}
-          src={'/japanese-temple.gif'}
+          src={'/gifs/japanese-temple.gif'}
           alt="Japanese temple"
           fill
         />
         <Image
           className={`${styles.tvLinesOverlay}`}
-          src={'/tv-lines.png'}
+          src={'/pngs/tv-lines.png'}
           alt="Tv lines overlay"
           fill
         />
