@@ -1,9 +1,9 @@
 import { useRadio } from '@/hooks/useRadio'
 import dynamic from 'next/dynamic'
 import React from 'react'
-import Button from './Button'
-import styles from '@/styles/Radio.module.css'
 import Slider from './Slider'
+import { StyledMediaControls, StyledRadio } from '@/styles/Radio.styled'
+import IconButton from './IconButton'
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
@@ -22,17 +22,19 @@ const Radio = () => {
   const { title, url } = getCurrentStream()
 
   return (
-    <div className={`${styles.radio}`}>
-      <div className={`${styles.mediaControls}`}>
-        <Button onClick={togglePlay}>{isPlaying ? 'Pause' : 'Play'}</Button>
-        <Button onClick={nextStream}>Next</Button>
-        <Button onClick={prevStream}>Prev</Button>
-        <Button onClick={shuffleStream}>Shuffle</Button>
+    <StyledRadio>
+      <StyledMediaControls>
+        <IconButton onClick={togglePlay}>
+          {isPlaying ? 'Pause' : 'Play'}
+        </IconButton>
+        <IconButton onClick={nextStream}>Next</IconButton>
+        <IconButton onClick={prevStream}>Prev</IconButton>
+        <IconButton onClick={shuffleStream}>Shuffle</IconButton>
         <Slider
           handleChange={(e) => setVolume(parseFloat(e.target.value))}
           value={volume}
         />
-      </div>
+      </StyledMediaControls>
 
       <p>{title}</p>
 
@@ -42,7 +44,7 @@ const Radio = () => {
         playing={isPlaying}
         volume={volume}
       />
-    </div>
+    </StyledRadio>
   )
 }
 
