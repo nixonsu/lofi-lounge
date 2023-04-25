@@ -1,14 +1,15 @@
 import { useRadio } from '@/hooks/useRadio'
 import dynamic from 'next/dynamic'
-import React from 'react'
+import React, { useContext } from 'react'
 import Slider from './Slider'
 import { StyledMediaControls, StyledRadio } from '@/styles/Radio.styled'
 import IconButton from './IconButton'
-import playIcon from '../../public/svgs/Play.svg'
-import pauseIcon from '../../public/svgs/Pause.svg'
-import nextIcon from '../../public/svgs/Next.svg'
-import shuffleIcon from '../../public/svgs/Shuffle.svg'
-import Image from 'next/image'
+import PlayIcon from '../../public/svgs/Play.svg'
+import PauseIcon from '../../public/svgs/Pause.svg'
+import NextIcon from '../../public/svgs/Next.svg'
+import ShuffleIcon from '../../public/svgs/Shuffle.svg'
+import { ThemeContext } from 'styled-components'
+import { Theme } from '@/styles/Themes'
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
@@ -26,32 +27,38 @@ const Radio = () => {
 
   const { title, url } = getCurrentStream()
 
+  const theme: Theme = useContext(ThemeContext)
+
   return (
     <StyledRadio>
       <StyledMediaControls>
         <IconButton onClick={togglePlay}>
           {isPlaying ? (
-            <Image src={pauseIcon} height={30} width={30} alt="Pause icon" />
+            <PauseIcon
+              style={{ filter: `${theme.greenDropShadow}` }}
+              height={30}
+              width={30}
+              fill={theme.text}
+            />
           ) : (
-            <Image src={playIcon} height={30} width={30} alt="Play icon" />
+            <PlayIcon height={30} width={30} fill={'white'} />
           )}
         </IconButton>
         <IconButton onClick={prevStream}>
-          <Image
+          <NextIcon
             style={{
               transform: 'rotate(180deg)',
             }}
-            src={nextIcon}
             height={30}
             width={30}
-            alt="Previous icon"
+            fill={'white'}
           />
         </IconButton>
         <IconButton onClick={nextStream}>
-          <Image src={nextIcon} height={30} width={30} alt="Next icon" />
+          <NextIcon height={30} width={30} fill={'white'} />
         </IconButton>
         <IconButton onClick={shuffleStream}>
-          <Image src={shuffleIcon} height={35} width={35} alt="Shuffle icon" />
+          <ShuffleIcon height={30} width={30} fill={'white'} />
         </IconButton>
         <Slider
           handleChange={(e) => setVolume(parseFloat(e.target.value))}

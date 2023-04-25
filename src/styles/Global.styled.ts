@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
     font-family: 'Unibody';
     text-transform: uppercase;
     color: ${({ theme }) => theme.text};
-    text-shadow: ${({ theme }) => theme.textShadow};
+    text-shadow: ${({ theme }) => theme.greenGlow};
   }
 `
 
