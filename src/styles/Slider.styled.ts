@@ -3,11 +3,11 @@ import styled from 'styled-components'
 export const StyledSlider = styled.div`
   display: flex;
   align-items: center;
-  width: 300px;
+  width: 100%;
 `
 
 export const TickContainer = styled.div`
-  width: 100%;
+  width: 300px;
   height: 15px;
   display: flex;
   flex-wrap: nowrap;
@@ -21,6 +21,7 @@ export const Tick = styled.div<{ active: boolean; invisible: boolean }>`
   cursor: pointer;
   background-color: ${(props) =>
     props.invisible ? 'transparent' : 'rgb(235, 235, 235)'};
-  box-shadow: ${({ theme }) => theme.greenGlow};
+  box-shadow: ${({ invisible, theme }) =>
+    invisible ? 'none' : theme.greenGlow};
   opacity: ${(props) => (props.active ? 1 : 0.5)};
 `
