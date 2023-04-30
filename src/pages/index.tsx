@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Radio from '@/components/Radio'
 import { StyledMain } from '@/styles/Main.styled'
 import { BgImageContainer } from '@/styles/BgImageContainer'
+import { Tint } from '@/styles/Tint.styled'
 
 export default function Home() {
   return (
@@ -16,22 +17,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StyledMain>
+        <Tint />
         <BgImageContainer
-          src={'/gifs/japanese-temple.gif'}
+          src={'/gifs/city-skyline.gif'}
           alt="Japanese temple"
           fill
-          zindex={-2}
+          zindex={-3}
         />
 
-        <BgImageContainer
+        {/* <BgImageContainer
           src={'/pngs/tv-lines.png'}
           alt="Tv lines overlay"
           fill
           opacity={0.2}
-          zindex={-1}
-        />
+          zindex={-2}
+        /> */}
       </StyledMain>
-
       <Radio />
     </>
   )
