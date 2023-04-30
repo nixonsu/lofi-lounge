@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react'
-import styles from '@/styles/Slider.module.css'
+import { StyledSlider, Tick, TickContainer } from '@/styles/Slider.styled'
 
 interface NeonSliderProps {
   value: number
@@ -17,19 +17,18 @@ const Slider = ({ value, handleChange }: NeonSliderProps) => {
   }
 
   const ticks = Array.from({ length: 11 }, (_, i) => (
-    <div
+    <Tick
       key={i}
-      className={`${styles.neonTick} 
-      ${i < value * 10 ? styles.active : ''} 
-      ${i === 10 ? styles.invisible : ''}`}
+      active={i < value * 10}
+      invisible={i === 10}
       onClick={() => handleTickClick(i)}
     />
   ))
 
   return (
-    <div className={`${styles.neonSliderContainer}`}>
-      <div className={styles.neonTickContainer}>{ticks}</div>
-    </div>
+    <StyledSlider>
+      <TickContainer>{ticks}</TickContainer>
+    </StyledSlider>
   )
 }
 
