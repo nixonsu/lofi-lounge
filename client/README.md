@@ -19,7 +19,7 @@ This project supports a git pre-commit hook which will perform:
 To install, run:
 
 ```bash
-yarn husky install
+yarn prepare
 ```
 
 ### Run development server
