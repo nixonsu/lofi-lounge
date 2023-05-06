@@ -3,6 +3,7 @@ import PauseIcon from '../../public/svgs/Pause.svg'
 import PlayIcon from '../../public/svgs/Play.svg'
 import NextIcon from '../../public/svgs/Next.svg'
 import ShuffleIcon from '../../public/svgs/Shuffle.svg'
+import PlaylistIcon from '../../public/svgs/Playlist.svg'
 import { ThemeContext } from 'styled-components'
 import { Theme } from '@/styles/Themes'
 
@@ -16,6 +17,7 @@ const icons: Icons = {
   play: PlayIcon,
   next: NextIcon,
   shuffle: ShuffleIcon,
+  playlist: PlaylistIcon,
 }
 
 interface IconProps {
@@ -32,8 +34,8 @@ const Icon = ({ name, height, width, style }: IconProps) => {
 
   return (
     <SpecificIcon
-      height={height ?? 30}
-      width={width ?? 30}
+      height={height ?? 25}
+      width={width ?? 25}
       style={{ filter: theme.greenDropShadow, ...style }}
       fill={theme.text}
     />

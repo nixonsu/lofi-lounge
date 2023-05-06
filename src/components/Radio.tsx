@@ -46,6 +46,9 @@ const Radio = () => {
           handleChange={(e) => setVolume(parseFloat(e.target.value))}
           value={volume}
         />
+        <IconButton>
+          <Icon name="playlist" />
+        </IconButton>
       </StyledMediaControls>
 
       <p>{title}</p>
