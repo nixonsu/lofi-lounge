@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepare": "cd .. && husky install client/.husky && cd client && husky add .husky/pre-commit \"npx lint-staged\""
+    "prepare": "cd .. && husky install client/.husky && cd client && husky add .husky/pre-commit \"cd client && yarn lint-staged --allow-empty\""
   },
   "dependencies": {
     "react": "^18.2.0",
