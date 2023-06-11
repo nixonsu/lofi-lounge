@@ -3,6 +3,7 @@ import { ReactComponent as Play } from './icons/Play.svg'
 import { ReactComponent as Next } from './icons/Next.svg'
 import { ReactComponent as Shuffle } from './icons/Shuffle.svg'
 import { ReactComponent as Playlist } from './icons/Playlist.svg'
+import Slider from './Slider'
 
 const Radio = () => {
   return (
@@ -14,7 +15,7 @@ const Radio = () => {
         <IconButton icon={<Next className="rotate-180" />} />
         <IconButton icon={<Next />} />
         <IconButton icon={<Shuffle />} />
-        <p>Slider</p>
+        <Slider value={5} />
         <IconButton icon={<Playlist />} />
       </div>
     </div>
