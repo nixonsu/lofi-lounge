@@ -1,9 +1,7 @@
-import './App.css'
-
 function App() {
   return (
-    <div>
-      <h1 className="bg-red-700">Hello world!</h1>
+    <div className="font-primary">
+      <h1 className="hover:bg-red-700">Hello world!</h1>
     </div>
   )
 }
