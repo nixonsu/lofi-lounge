@@ -7,6 +7,7 @@ import { ReactComponent as Playlist } from './icons/Playlist.svg'
 import Slider from './Slider'
 import { useRadio } from '../hooks/useRadio'
 import ReactPlayer from 'react-player'
+import OpaqueContainer from './OpaqueContainer'
 
 const Radio = () => {
   const {
@@ -23,35 +24,49 @@ const Radio = () => {
   const { title, url } = getCurrentStream()
 
   return (
-    <div className="flex flex-col items-start w-1/4 text-white">
-      <p>{title}</p>
+    <OpaqueContainer>
+      <div className="flex flex-col items-start w-1/4 text-white flex-1 gap-3">
+        <p>{title}</p>
 
-      <div className="flex items-center justify-center">
-        {isPlaying ? (
-          <IconButton onClick={togglePlay} icon={<Pause />} />
-        ) : (
-          <IconButton onClick={togglePlay} icon={<Play />} />
-        )}
-        <IconButton
-          onClick={prevStream}
-          icon={<Next className="rotate-180" />}
+        <div className="flex items-center justify-center gap-3">
+          {isPlaying ? (
+            <IconButton
+              onClick={togglePlay}
+              icon={<Pause className="fill-white" />}
+            />
+          ) : (
+            <IconButton
+              onClick={togglePlay}
+              icon={<Play className="fill-white" />}
+            />
+          )}
+          <IconButton
+            onClick={prevStream}
+            icon={<Next className="fill-white rotate-180" />}
+          />
+          <IconButton
+            onClick={nextStream}
+            icon={<Next className="fill-white" />}
+          />
+          <IconButton
+            onClick={shuffleStream}
+            icon={<Shuffle fill="white" className="fill-white" />}
+          />
+          <Slider
+            value={volume}
+            handleChange={(e) => setVolume(parseFloat(e.target.value))}
+          />
+          <IconButton icon={<Playlist className="fill-white" />} />
+        </div>
+
+        <ReactPlayer
+          className="hidden"
+          url={url}
+          playing={isPlaying}
+          volume={volume}
         />
-        <IconButton onClick={nextStream} icon={<Next />} />
-        <IconButton onClick={shuffleStream} icon={<Shuffle />} />
-        <Slider
-          value={volume}
-          handleChange={(e) => setVolume(parseFloat(e.target.value))}
-        />
-        <IconButton icon={<Playlist />} />
       </div>
-
-      <ReactPlayer
-        className="hidden"
-        url={url}
-        playing={isPlaying}
-        volume={volume}
-      />
-    </div>
+    </OpaqueContainer>
   )
 }
 

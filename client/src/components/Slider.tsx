@@ -24,7 +24,7 @@ const Slider = ({ value, handleChange }: Props) => {
         <div
           key={index}
           className={`h-4 w-2 mr-1 cursor-pointer ${
-            index < activeIndex ? 'bg-black' : 'bg-black opacity-30'
+            index < activeIndex ? 'bg-white' : 'bg-white opacity-30'
           } ${index === 10 && 'bg-transparent'}`}
           onClick={() => handleSlideClick(index)}
         ></div>
