@@ -19,7 +19,7 @@ const Modal = ({ title, isOpen, onClose }: ModalProps) => {
       </div>
 
       <div className="h-full w-full grid grid-rows-3  gap-x-4 gap-y-16 grid-cols-fluid">
-        <Card src="/gifs/japanese-temple.gif" text="Japanese temple" />
+        <Card src="/gifs/city-skyline.gif" text="City skyline" />
         <Card src="/gifs/japanese-temple.gif" text="Japanese temple" />
         <Card src="/gifs/japanese-temple.gif" text="Japanese temple" />
         <Card src="/gifs/japanese-temple.gif" text="Japanese temple" />
