@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         primary: 'Unibody',
       },
+      gridTemplateColumns: {
+        fluid: 'repeat(auto-fit, minmax(186px, 1fr))',
+      },
     },
   },
   plugins: [],
