@@ -1,23 +1,23 @@
 import { useState } from 'react'
 import Background from './components/Background'
 import Bar from './components/Bar'
-import Modal from './components/Modal'
 import Radio from './components/Radio'
 import UtilityBar from './components/UtilityBar'
 import { observer } from 'mobx-react'
 import { useSceneStore } from './store/sceneStore'
+import SceneSelector from './components/SceneSelector'
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(true)
+  const [isSceneSelectorOpen, setIsSceneSelectorOpen] = useState(true)
 
   const sceneStore = useSceneStore()
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
+  const handleCloseSceneSelector = () => {
+    setIsSceneSelectorOpen(false)
   }
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true)
+  const handleOpenSceneSelector = () => {
+    setIsSceneSelectorOpen(true)
   }
 
   return (
@@ -40,10 +40,9 @@ function App() {
         <div></div>
       </div>
 
-      <Modal
-        title={'Background Selection'}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
+      <SceneSelector
+        isOpen={isSceneSelectorOpen}
+        onClose={handleCloseSceneSelector}
       />
 
       <Background className="-z-20" src={sceneStore.selectedScene.src} />
