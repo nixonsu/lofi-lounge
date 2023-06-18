@@ -1,7 +1,5 @@
 export interface Scene {
-  id: SceneType
+  id: string
   name: string
   src: string
 }
-
-type SceneType = 'japanese-temple' | 'city-skyline'

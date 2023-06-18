@@ -10,12 +10,12 @@ class SceneStore {
 
   scenes: Scene[] = [
     {
-      id: 'japanese-temple',
+      id: crypto.randomUUID(),
       name: 'Japanese Temple',
       src: '/gifs/japanese-temple.gif',
     },
     {
-      id: 'city-skyline',
+      id: crypto.randomUUID(),
       name: 'City skyline',
       src: '/gifs/city-skyline.gif',
     },
