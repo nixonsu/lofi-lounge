@@ -1,14 +1,17 @@
 import { createContext, useContext } from 'react'
 import { SceneStore } from './sceneStore'
 import { TrackStore } from './trackStore'
+import { UIStore } from './uiStore'
 
 export class RootStore {
   sceneStore: SceneStore
   trackStore: TrackStore
+  uiStore: UIStore
 
   constructor() {
-    this.sceneStore = new SceneStore()
-    this.trackStore = new TrackStore()
+    this.sceneStore = new SceneStore(this)
+    this.trackStore = new TrackStore(this)
+    this.uiStore = new UIStore(this)
   }
 }
 

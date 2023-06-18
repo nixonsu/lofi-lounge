@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Background from './components/Background'
 import Bar from './components/Bar'
 import Radio from './components/Radio'
@@ -8,17 +7,11 @@ import SceneSelector from './components/SceneSelector'
 import { useRootStore } from './store/rootStore'
 
 function App() {
-  const [isSceneSelectorOpen, setIsSceneSelectorOpen] = useState(true)
+  const { uiStore, sceneStore } = useRootStore()
 
-  const { sceneStore } = useRootStore()
+  const { isSceneSelectorOpen, closeSceneSelector } = uiStore
 
-  const handleCloseSceneSelector = () => {
-    setIsSceneSelectorOpen(false)
-  }
-
-  const handleOpenSceneSelector = () => {
-    setIsSceneSelectorOpen(true)
-  }
+  const { selectedScene } = sceneStore
 
   return (
     <div className="font-primary p-4 h-screen w-screen text-white">
@@ -40,11 +33,9 @@ function App() {
         <div></div>
       </div>
 
-      {isSceneSelectorOpen && (
-        <SceneSelector onClose={handleCloseSceneSelector} />
-      )}
+      {isSceneSelectorOpen && <SceneSelector onClose={closeSceneSelector} />}
 
-      <Background className="-z-20" src={sceneStore.selectedScene.src} />
+      <Background className="-z-20" src={selectedScene.src} />
       {/* <Background className="-z-10 bg-black bg-opacity-50" /> */}
     </div>
   )

@@ -1,11 +1,10 @@
 import { makeAutoObservable } from 'mobx'
 import { Scene } from '../types/scene'
 import { chooseRandomElement } from '../utils/ArrayUtils'
+import { RootStore } from './rootStore'
 
 export class SceneStore {
-  constructor() {
-    makeAutoObservable(this)
-  }
+  rootStore: RootStore
 
   scenes: Scene[] = [
     {
@@ -22,9 +21,16 @@ export class SceneStore {
 
   selectedScene: Scene = chooseRandomElement(this.scenes)
 
+  constructor(rootStore: RootStore) {
+    this.rootStore = rootStore
+    makeAutoObservable(this)
+  }
+
   setSelectedScene = (sceneId: string) => {
     this.selectedScene = this.scenes.find(
       (scene) => scene.id === sceneId
     ) as Scene
+
+    this.rootStore.uiStore.closeSceneSelector()
   }
 }

@@ -1,11 +1,10 @@
 import { makeAutoObservable } from 'mobx'
 import { Track } from '../types/track'
 import { chooseRandomElement } from '../utils/ArrayUtils'
+import { RootStore } from './rootStore'
 
 export class TrackStore {
-  constructor() {
-    makeAutoObservable(this)
-  }
+  rootStore: RootStore
 
   tracks: Track[] = [
     {
@@ -23,6 +22,11 @@ export class TrackStore {
   ]
 
   currentTrack: Track = chooseRandomElement(this.tracks)
+
+  constructor(rootStore: RootStore) {
+    this.rootStore = rootStore
+    makeAutoObservable(this)
+  }
 
   setCurrentTrack = (trackId: string) => {
     this.currentTrack = this.tracks.find(
