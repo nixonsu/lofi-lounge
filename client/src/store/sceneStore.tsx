@@ -9,13 +9,38 @@ export class SceneStore {
   scenes: Scene[] = [
     {
       id: crypto.randomUUID(),
-      name: 'Japanese Temple',
-      src: '/gifs/japanese-temple.gif',
+      name: 'Temple',
+      src: '/gifs/temple.gif',
     },
     {
       id: crypto.randomUUID(),
-      name: 'City skyline',
-      src: '/gifs/city-skyline.gif',
+      name: 'Skyline',
+      src: '/gifs/skyline.gif',
+    },
+    {
+      id: crypto.randomUUID(),
+      name: 'Lake',
+      src: '/gifs/lake.gif',
+    },
+    {
+      id: crypto.randomUUID(),
+      name: 'Valley',
+      src: '/gifs/valley.gif',
+    },
+    {
+      id: crypto.randomUUID(),
+      name: 'City',
+      src: '/gifs/city.gif',
+    },
+    {
+      id: crypto.randomUUID(),
+      name: 'Ocean',
+      src: '/gifs/ocean.gif',
+    },
+    {
+      id: crypto.randomUUID(),
+      name: 'Cyberpunk',
+      src: '/gifs/cyberpunk.gif',
     },
   ]
 
