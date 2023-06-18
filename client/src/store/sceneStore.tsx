@@ -1,14 +1,13 @@
-import {
-  action,
-  makeAutoObservable,
-  makeObservable,
-  observable,
-  runInAction,
-} from 'mobx'
+import { makeAutoObservable } from 'mobx'
 import { Scene } from '../types/scene'
 import { createContext, useContext } from 'react'
+import { chooseRandomElement } from '../utils/ArrayUtils'
 
 class SceneStore {
+  constructor() {
+    makeAutoObservable(this)
+  }
+
   scenes: Scene[] = [
     {
       id: 'japanese-temple',
@@ -21,17 +20,8 @@ class SceneStore {
       src: '/gifs/city-skyline.gif',
     },
   ]
-  constructor() {
-    // makeObservable(this, {
-    //   scenes: observable,
-    //   selectedScene: observable,
-    //   setSelectedScene: action,
-    // })
 
-    makeAutoObservable(this)
-  }
-
-  selectedScene: Scene = this.scenes[0]
+  selectedScene: Scene = chooseRandomElement(this.scenes)
 
   setSelectedScene = (sceneId: string) => {
     this.selectedScene = this.scenes.find(
