@@ -40,10 +40,9 @@ function App() {
         <div></div>
       </div>
 
-      <SceneSelector
-        isOpen={isSceneSelectorOpen}
-        onClose={handleCloseSceneSelector}
-      />
+      {isSceneSelectorOpen && (
+        <SceneSelector onClose={handleCloseSceneSelector} />
+      )}
 
       <Background className="-z-20" src={sceneStore.selectedScene.src} />
       {/* <Background className="-z-10 bg-black bg-opacity-50" /> */}

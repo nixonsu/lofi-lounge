@@ -3,15 +3,14 @@ import Card from './Card'
 import Modal from './Modal'
 
 interface Props {
-  isOpen: boolean
   onClose: () => void
 }
 
-const SceneSelector = ({ isOpen, onClose }: Props) => {
+const SceneSelector = ({ onClose }: Props) => {
   const { sceneStore } = useRootStore()
 
   return (
-    <Modal title={'Scene selection'} isOpen={isOpen} onClose={onClose}>
+    <Modal title={'Scene selection'} onClose={onClose}>
       <div className="h-full w-full grid grid-rows-3  gap-x-4 gap-y-16 grid-cols-fluid">
         {sceneStore.scenes.map((scene) => (
           <Card
