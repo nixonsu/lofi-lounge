@@ -4,9 +4,13 @@ import Bar from './components/Bar'
 import Modal from './components/Modal'
 import Radio from './components/Radio'
 import UtilityBar from './components/UtilityBar'
+import { observer } from 'mobx-react'
+import { useSceneStore } from './store/sceneStore'
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(true)
+
+  const sceneStore = useSceneStore()
 
   const handleCloseModal = () => {
     setIsModalOpen(false)
@@ -42,10 +46,10 @@ function App() {
         onClose={handleCloseModal}
       />
 
-      <Background className="-z-20" src="/gifs/city-skyline.gif" />
+      <Background className="-z-20" src={sceneStore.selectedScene.src} />
       {/* <Background className="-z-10 bg-black bg-opacity-50" /> */}
     </div>
   )
 }
 
-export default App
+export default observer(App)

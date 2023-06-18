@@ -1,14 +1,28 @@
+import { useSceneStore } from '../store/sceneStore'
+import { Scene } from '../types/scene'
+
 interface Props {
+  id: string
   src: string
   text: string
-  onClick?: () => void
+  handleClick: (id: string) => void
 }
 
-const Card = ({ src, text, onClick }: Props) => {
+const isSelected = (id: string, selectedScene: Scene) => {
+  return id === selectedScene.id
+}
+
+const Card = ({ id, src, text, handleClick }: Props) => {
+  const { selectedScene } = useSceneStore()
+
   return (
     <div
-      className="flex flex-col h-full w-full gap-2 items-center cursor-pointer"
-      onClick={onClick}
+      className={`flex flex-col h-full w-full gap-2 items-center cursor-pointer ${
+        isSelected(id, selectedScene) && 'border'
+      }`}
+      onClick={() => {
+        handleClick(id)
+      }}
     >
       <img className="h-3/4 w-full object-cover" src={src} />
       <p>{text}</p>

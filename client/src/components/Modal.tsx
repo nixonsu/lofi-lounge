@@ -1,6 +1,9 @@
+import { toJS } from 'mobx'
+import { useSceneStore } from '../store/sceneStore'
 import Card from './Card'
 import IconButton from './IconButton'
 import { ReactComponent as Cross } from './icons/Cross.svg'
+import { observer } from 'mobx-react'
 
 interface ModalProps {
   title?: string
@@ -9,6 +12,8 @@ interface ModalProps {
 }
 
 const Modal = ({ title, isOpen, onClose }: ModalProps) => {
+  const sceneStore = useSceneStore()
+
   if (!isOpen) return null
 
   return (
@@ -19,14 +24,18 @@ const Modal = ({ title, isOpen, onClose }: ModalProps) => {
       </div>
 
       <div className="h-full w-full grid grid-rows-3  gap-x-4 gap-y-16 grid-cols-fluid">
-        <Card src="/gifs/city-skyline.gif" text="City skyline" />
-        <Card src="/gifs/japanese-temple.gif" text="Japanese temple" />
-        <Card src="/gifs/japanese-temple.gif" text="Japanese temple" />
-        <Card src="/gifs/japanese-temple.gif" text="Japanese temple" />
-        <Card src="/gifs/japanese-temple.gif" text="Japanese temple" />
+        {sceneStore.scenes.map((scene) => (
+          <Card
+            key={scene.id}
+            id={scene.id}
+            src={scene.src}
+            text={scene.name}
+            handleClick={sceneStore.setSelectedScene}
+          />
+        ))}
       </div>
     </div>
   )
 }
 
-export default Modal
+export default observer(Modal)
