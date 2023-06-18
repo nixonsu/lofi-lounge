@@ -4,13 +4,13 @@ import Bar from './components/Bar'
 import Radio from './components/Radio'
 import UtilityBar from './components/UtilityBar'
 import { observer } from 'mobx-react'
-import { useSceneStore } from './store/sceneStore'
 import SceneSelector from './components/SceneSelector'
+import { useRootStore } from './store/rootStore'
 
 function App() {
   const [isSceneSelectorOpen, setIsSceneSelectorOpen] = useState(true)
 
-  const sceneStore = useSceneStore()
+  const { sceneStore } = useRootStore()
 
   const handleCloseSceneSelector = () => {
     setIsSceneSelectorOpen(false)

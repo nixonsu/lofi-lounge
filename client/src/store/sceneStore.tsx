@@ -1,9 +1,8 @@
 import { makeAutoObservable } from 'mobx'
 import { Scene } from '../types/scene'
-import { createContext, useContext } from 'react'
 import { chooseRandomElement } from '../utils/ArrayUtils'
 
-class SceneStore {
+export class SceneStore {
   constructor() {
     makeAutoObservable(this)
   }
@@ -28,20 +27,4 @@ class SceneStore {
       (scene) => scene.id === sceneId
     ) as Scene
   }
-}
-
-const SceneContext = createContext<SceneStore>({} as SceneStore)
-
-export const useSceneStore = () => useContext(SceneContext)
-
-interface Props {
-  children: React.ReactNode
-}
-
-export const SceneStoreProvider = ({ children }: Props) => {
-  return (
-    <SceneContext.Provider value={new SceneStore()}>
-      {children}
-    </SceneContext.Provider>
-  )
 }

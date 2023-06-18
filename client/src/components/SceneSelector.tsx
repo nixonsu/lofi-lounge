@@ -1,4 +1,4 @@
-import { useSceneStore } from '../store/sceneStore'
+import { useRootStore } from '../store/rootStore'
 import Card from './Card'
 import Modal from './Modal'
 
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const SceneSelector = ({ isOpen, onClose }: Props) => {
-  const sceneStore = useSceneStore()
+  const { sceneStore } = useRootStore()
 
   return (
     <Modal title={'Scene selection'} isOpen={isOpen} onClose={onClose}>

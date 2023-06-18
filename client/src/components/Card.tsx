@@ -1,4 +1,4 @@
-import { useSceneStore } from '../store/sceneStore'
+import { useRootStore } from '../store/rootStore'
 import { Scene } from '../types/scene'
 
 interface Props {
@@ -13,12 +13,12 @@ const isSelected = (id: string, selectedScene: Scene) => {
 }
 
 const Card = ({ id, src, text, handleClick }: Props) => {
-  const { selectedScene } = useSceneStore()
+  const { sceneStore } = useRootStore()
 
   return (
     <div
       className={`flex flex-col h-full w-full gap-2 items-center cursor-pointer ${
-        isSelected(id, selectedScene) && 'border'
+        isSelected(id, sceneStore.selectedScene) && 'border'
       }`}
       onClick={() => {
         handleClick(id)

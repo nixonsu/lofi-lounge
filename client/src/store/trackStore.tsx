@@ -1,9 +1,8 @@
 import { makeAutoObservable } from 'mobx'
 import { Track } from '../types/track'
 import { chooseRandomElement } from '../utils/ArrayUtils'
-import { createContext, useContext } from 'react'
 
-class TrackStore {
+export class TrackStore {
   constructor() {
     makeAutoObservable(this)
   }
@@ -30,20 +29,4 @@ class TrackStore {
       (track) => track.id === trackId
     ) as Track
   }
-}
-
-const TrackContext = createContext<TrackStore>({} as TrackStore)
-
-export const useTrackStore = () => useContext(TrackContext)
-
-interface Props {
-  children: React.ReactNode
-}
-
-export const TrackStoreProvider = ({ children }: Props) => {
-  return (
-    <TrackContext.Provider value={new TrackStore()}>
-      {children}
-    </TrackContext.Provider>
-  )
 }
