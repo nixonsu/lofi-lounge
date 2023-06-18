@@ -15,13 +15,13 @@ const Radio = () => {
     isPlaying,
     togglePlay,
     setVolume,
-    nextStream,
-    prevStream,
-    getCurrentStream,
-    shuffleStream,
+    nextTrack,
+    prevTrack,
+    getCurrentTrack,
+    shuffleTrack,
   } = useRadio()
 
-  const { title, url } = getCurrentStream()
+  const { title, url } = getCurrentTrack()
 
   return (
     <OpaqueContainer>
@@ -41,15 +41,15 @@ const Radio = () => {
             />
           )}
           <IconButton
-            onClick={prevStream}
+            onClick={prevTrack}
             icon={<Next className="fill-white rotate-180" />}
           />
           <IconButton
-            onClick={nextStream}
+            onClick={nextTrack}
             icon={<Next className="fill-white" />}
           />
           <IconButton
-            onClick={shuffleStream}
+            onClick={shuffleTrack}
             icon={<Shuffle fill="white" className="fill-white" />}
           />
           <Slider

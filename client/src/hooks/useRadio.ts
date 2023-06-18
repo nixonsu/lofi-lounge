@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { Stream } from '../types/stream'
+import { Track } from '../types/track'
 
 const DEFAULT_VOLUME = 0.5
-const DEFAULT_STREAM_INDEX = 0
+const DEFAULT_TRACK_INDEX = 0
 const DEFAULT_PLAYING = false
 
-const initialStreams: Stream[] = [
+const initialTracks: Track[] = [
   {
     title: 'lofi hip hop radio 📚 - beats to relax/study to',
     host: 'LofiGirl',
@@ -21,41 +21,41 @@ const initialStreams: Stream[] = [
 export const useRadio = () => {
   const [volume, setVolume] = useState<number>(DEFAULT_VOLUME)
   const [isPlaying, setIsPlaying] = useState<boolean>(DEFAULT_PLAYING)
-  const [streamIndex, setStreamIndex] = useState<number>(DEFAULT_STREAM_INDEX)
+  const [trackIndex, setTrackIndex] = useState<number>(DEFAULT_TRACK_INDEX)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [streams, setStreams] = useState<Stream[]>(initialStreams)
+  const [tracks, setTracks] = useState<Track[]>(initialTracks)
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying)
   }
 
-  const nextStream = () => {
-    streamIndex === streams.length - 1
-      ? setStreamIndex(0)
-      : setStreamIndex(streamIndex + 1)
+  const nextTrack = () => {
+    trackIndex === tracks.length - 1
+      ? setTrackIndex(0)
+      : setTrackIndex(trackIndex + 1)
   }
 
-  const prevStream = () => {
-    streamIndex === 0
-      ? setStreamIndex(streams.length - 1)
-      : setStreamIndex(streamIndex - 1)
+  const prevTrack = () => {
+    trackIndex === 0
+      ? setTrackIndex(tracks.length - 1)
+      : setTrackIndex(trackIndex - 1)
   }
 
-  const getCurrentStream = () => streams[streamIndex]
+  const getCurrentTrack = () => tracks[trackIndex]
 
-  const shuffleStream = () => {
-    const newStreamIndex = Math.floor(Math.random() * streams.length)
-    setStreamIndex(newStreamIndex)
+  const shuffleTrack = () => {
+    const newTrackIndex = Math.floor(Math.random() * tracks.length)
+    setTrackIndex(newTrackIndex)
   }
 
   return {
     volume,
     isPlaying,
-    getCurrentStream,
+    getCurrentTrack,
     setVolume,
     togglePlay,
-    nextStream,
-    prevStream,
-    shuffleStream,
+    nextTrack,
+    prevTrack,
+    shuffleTrack,
   }
 }
