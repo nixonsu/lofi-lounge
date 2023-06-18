@@ -1,29 +1,18 @@
 import { useState } from 'react'
 import { Track } from '../types/track'
+import { useTrackStore } from '../store/trackStore'
 
 const DEFAULT_VOLUME = 0.5
 const DEFAULT_TRACK_INDEX = 0
 const DEFAULT_PLAYING = false
 
-const initialTracks: Track[] = [
-  {
-    title: 'lofi hip hop radio 📚 - beats to relax/study to',
-    host: 'LofiGirl',
-    url: 'https://www.youtube.com/watch?v=jfKfPfyJRdk&ab_channel=LofiGirl',
-  },
-  {
-    title: 'synthwave radio 🌌 - beats to chill/game to',
-    host: 'LofiGirl',
-    url: 'https://www.youtube.com/watch?v=MVPTGNGiI-4&ab_channel=LofiGirl',
-  },
-]
-
 export const useRadio = () => {
+  const trackStore = useTrackStore()
   const [volume, setVolume] = useState<number>(DEFAULT_VOLUME)
   const [isPlaying, setIsPlaying] = useState<boolean>(DEFAULT_PLAYING)
   const [trackIndex, setTrackIndex] = useState<number>(DEFAULT_TRACK_INDEX)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [tracks, setTracks] = useState<Track[]>(initialTracks)
+  const [tracks, setTracks] = useState<Track[]>(trackStore.tracks)
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying)
