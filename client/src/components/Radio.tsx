@@ -8,11 +8,14 @@ import Slider from './Slider'
 import { useRadio } from '../hooks/useRadio'
 import ReactPlayer from 'react-player'
 import OpaqueContainer from './OpaqueContainer'
+import LoadingIcon from './LoadingIcon'
 
 const Radio = () => {
   const {
     volume,
     isPlaying,
+    isLoading,
+    setIsLoading,
     togglePlay,
     setVolume,
     nextTrack,
@@ -57,6 +60,7 @@ const Radio = () => {
             handleChange={(e) => setVolume(parseFloat(e.target.value))}
           />
           <IconButton icon={<Playlist className="fill-white" />} />
+          {isLoading && <LoadingIcon />}
         </div>
 
         <ReactPlayer
@@ -64,6 +68,8 @@ const Radio = () => {
           url={url}
           playing={isPlaying}
           volume={volume}
+          onBuffer={() => setIsLoading(true)}
+          onBufferEnd={() => setIsLoading(false)}
         />
       </div>
     </OpaqueContainer>

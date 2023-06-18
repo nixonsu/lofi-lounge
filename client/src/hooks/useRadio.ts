@@ -5,11 +5,13 @@ import { useRootStore } from '../store/rootStore'
 const DEFAULT_VOLUME = 0.5
 const DEFAULT_TRACK_INDEX = 0
 const DEFAULT_PLAYING = false
+const DEFAULT_LOADING = false
 
 export const useRadio = () => {
   const { trackStore } = useRootStore()
   const [volume, setVolume] = useState<number>(DEFAULT_VOLUME)
   const [isPlaying, setIsPlaying] = useState<boolean>(DEFAULT_PLAYING)
+  const [isLoading, setIsLoading] = useState<boolean>(DEFAULT_LOADING)
   const [trackIndex, setTrackIndex] = useState<number>(DEFAULT_TRACK_INDEX)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [tracks, setTracks] = useState<Track[]>(trackStore.tracks)
@@ -40,6 +42,8 @@ export const useRadio = () => {
   return {
     volume,
     isPlaying,
+    isLoading,
+    setIsLoading,
     getCurrentTrack,
     setVolume,
     togglePlay,
