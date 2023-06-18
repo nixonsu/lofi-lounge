@@ -11,7 +11,7 @@ const SceneSelector = ({ onClose }: Props) => {
 
   return (
     <Modal title={'Choose a scene'} onClose={onClose}>
-      <div className="h-full w-full grid grid-rows-3  gap-x-4 gap-y-16 grid-cols-fluid">
+      <div className="h-full w-full grid grid-rows-3  gap-x-4 gap-y-16 grid-cols-fluid overflow-y-scroll">
         {sceneStore.scenes.map((scene) => (
           <Card
             key={scene.id}
