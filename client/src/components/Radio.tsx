@@ -5,26 +5,20 @@ import { ReactComponent as Next } from './icons/Next.svg'
 import { ReactComponent as Shuffle } from './icons/Shuffle.svg'
 import { ReactComponent as Playlist } from './icons/Playlist.svg'
 import Slider from './Slider'
-import { useRadio } from '../hooks/useRadio'
+import { usePlayer } from '../hooks/usePlayer'
 import ReactPlayer from 'react-player'
 import OpaqueContainer from './OpaqueContainer'
 import LoadingIcon from './LoadingIcon'
+import { useRootStore } from '../store/rootStore'
+import { observer } from 'mobx-react'
 
 const Radio = () => {
-  const {
-    volume,
-    isPlaying,
-    isLoading,
-    setIsLoading,
-    togglePlay,
-    setVolume,
-    nextTrack,
-    prevTrack,
-    getCurrentTrack,
-    shuffleTrack,
-  } = useRadio()
+  const { trackStore } = useRootStore()
 
-  const { title, url } = getCurrentTrack()
+  const { volume, isPlaying, isLoading, setIsLoading, togglePlay, setVolume } =
+    usePlayer()
+
+  const { title, url } = trackStore.currentTrack
 
   return (
     <OpaqueContainer>
@@ -44,15 +38,15 @@ const Radio = () => {
             />
           )}
           <IconButton
-            onClick={prevTrack}
+            onClick={trackStore.previousTrack}
             icon={<Next className="fill-white rotate-180" />}
           />
           <IconButton
-            onClick={nextTrack}
+            onClick={trackStore.nextTrack}
             icon={<Next className="fill-white" />}
           />
           <IconButton
-            onClick={shuffleTrack}
+            onClick={trackStore.shuffleTrack}
             icon={<Shuffle fill="white" className="fill-white" />}
           />
           <Slider
@@ -76,4 +70,4 @@ const Radio = () => {
   )
 }
 
-export default Radio
+export default observer(Radio)
