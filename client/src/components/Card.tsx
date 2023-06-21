@@ -18,7 +18,7 @@ const Card = ({ id, src, text, handleClick }: Props) => {
   return (
     <div
       className={`flex flex-col h-full w-full gap-2 items-center cursor-pointer ${
-        isSelected(id, sceneStore.selectedScene) && 'border'
+        isSelected(id, sceneStore.currentScene) && 'border'
       }`}
       onClick={() => {
         handleClick(id)

@@ -4,19 +4,18 @@ import { RootStore } from './rootStore'
 
 export class TrackStore {
   rootStore: RootStore
-
   tracks: Track[] = []
   trackIndex = 0
-
-  get currentTrack(): Track {
-    return this.tracks[this.trackIndex]
-  }
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore
     makeAutoObservable(this)
 
     this.loadTracks()
+  }
+
+  get currentTrack(): Track {
+    return this.tracks[this.trackIndex]
   }
 
   setCurrentTrack(trackId: string) {
