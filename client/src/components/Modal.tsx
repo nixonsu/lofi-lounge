@@ -1,6 +1,5 @@
 import IconButton from './IconButton'
 import { ReactComponent as Cross } from './icons/Cross.svg'
-import { observer } from 'mobx-react'
 
 interface ModalProps {
   title?: string
@@ -20,4 +19,4 @@ const Modal = ({ title, onClose, children }: ModalProps) => {
   )
 }
 
-export default observer(Modal)
+export default Modal

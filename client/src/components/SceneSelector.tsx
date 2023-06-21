@@ -20,6 +20,7 @@ const SceneSelector = ({ onClose }: Props) => {
             src={scene.src}
             text={scene.name}
             handleClick={sceneStore.setCurrentScene}
+            isSelected={scene.id === sceneStore.currentScene.id}
           />
         ))}
       </div>

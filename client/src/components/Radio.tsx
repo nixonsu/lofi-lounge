@@ -13,7 +13,7 @@ import { useRootStore } from '../store/rootStore'
 import { observer } from 'mobx-react'
 
 const Radio = () => {
-  const { trackStore } = useRootStore()
+  const { trackStore, uiStore } = useRootStore()
 
   const { currentTrack } = trackStore
 
@@ -53,7 +53,10 @@ const Radio = () => {
             value={volume}
             handleChange={(e) => setVolume(parseFloat(e.target.value))}
           />
-          <IconButton icon={<Playlist className="fill-white" />} />
+          <IconButton
+            onClick={uiStore.openTrackSelector}
+            icon={<Playlist className="fill-white" />}
+          />
           {isLoading && <LoadingIcon />}
         </div>
 

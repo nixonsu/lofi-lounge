@@ -10,7 +10,6 @@ export class TrackStore {
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore
     makeAutoObservable(this)
-
     this.loadTracks()
   }
 
@@ -18,9 +17,10 @@ export class TrackStore {
     return this.tracks[this.trackIndex]
   }
 
-  setCurrentTrack(trackId: string) {
+  setCurrentTrack = (trackId: string) => {
     const track = this.tracks.find((track) => track.id === trackId) as Track
     this.trackIndex = this.tracks.indexOf(track)
+    this.rootStore.uiStore.closeTrackSelector()
   }
 
   nextTrack = () => {

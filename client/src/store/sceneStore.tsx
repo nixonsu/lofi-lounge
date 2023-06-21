@@ -10,7 +10,6 @@ export class SceneStore {
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore
     makeAutoObservable(this)
-
     this.loadScenes()
   }
 
