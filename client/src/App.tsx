@@ -6,6 +6,7 @@ import { observer } from 'mobx-react'
 import SceneSelector from './components/SceneSelector'
 import { useRootStore } from './store/rootStore'
 import TrackSelector from './components/TrackSelector'
+import AmbientSoundPlayer from './components/AmbientSoundPlayer'
 
 function App() {
   const { uiStore, sceneStore } = useRootStore()
@@ -15,6 +16,8 @@ function App() {
     closeSceneSelector,
     isTrackSelectorOpen,
     closeTrackSelector,
+    isAmbientSoundPlayerOpen,
+    closeAmbientSoundPlayer,
   } = uiStore
 
   return sceneStore.scenes.length > 0 ? (
@@ -28,8 +31,13 @@ function App() {
           <Bar />
         </div>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
           <UtilityBar />
+
+          <AmbientSoundPlayer
+            className={`${isAmbientSoundPlayerOpen && 'hidden'}`}
+            onClose={closeAmbientSoundPlayer}
+          />
         </div>
 
         <div></div>

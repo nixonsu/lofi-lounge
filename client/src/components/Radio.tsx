@@ -21,11 +21,11 @@ const Radio = () => {
     usePlayer()
 
   return trackStore.tracks.length > 0 ? (
-    <OpaqueContainer>
-      <div className="flex flex-col items-start w-1/4 text-white flex-1 gap-3">
+    <OpaqueContainer className="w-5/6">
+      <div className="flex flex-col items-start text-white self-stretch gap-3">
         <p>{currentTrack.title}</p>
 
-        <div className="flex items-center justify-center gap-3">
+        <div className="flex items-center gap-3 w-full">
           {isPlaying ? (
             <IconButton
               onClick={togglePlay}
