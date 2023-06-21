@@ -34,3 +34,8 @@
     0px 0px 60px green;
   text-transform: uppercase;
 }
+
+.green-box-shadow {
+  box-shadow: 0px 0px 2px hsl(120, 100%, 80%), 0px 0px 15px green,
+    0px 0px 60px green;
+}

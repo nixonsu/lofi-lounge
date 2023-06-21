@@ -7,7 +7,7 @@ export default {
         primary: 'Unibody',
       },
       gridTemplateColumns: {
-        fluid: 'repeat(auto-fit, minmax(186px, 1fr))',
+        fluid: 'repeat(auto-fit, minmax(286px, 1fr))',
       },
     },
   },
