@@ -17,7 +17,7 @@ const TrackSelector = ({ onClose }: Props) => {
           <Card
             key={track.id}
             id={track.id}
-            src={'/gifs/lake.gif'}
+            src={track.thumbnailUrl}
             text={track.title}
             handleClick={trackStore.setCurrentTrack}
             isSelected={track.id === trackStore.currentTrack.id}
