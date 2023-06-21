@@ -7,7 +7,6 @@ import SceneSelector from './components/SceneSelector'
 import { useRootStore } from './store/rootStore'
 import TrackSelector from './components/TrackSelector'
 import SoundControlPanel from './components/SoundControlPanel'
-import Toggle from './components/Toggle'
 
 function App() {
   const { uiStore, sceneStore } = useRootStore()
@@ -43,9 +42,7 @@ function App() {
             onClose={closeSoundControlPanel}
           />
         </div>
-        <div>
-          <Toggle />
-        </div>
+        <div></div>
       </div>
 
       {isSceneSelectorOpen && <SceneSelector onClose={closeSceneSelector} />}
