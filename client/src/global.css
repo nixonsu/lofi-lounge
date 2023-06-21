@@ -13,6 +13,10 @@
   src: url('fonts/Unibody.otf') format('opentype');
 }
 
+body {
+  overscroll-behavior: none;
+}
+
 /* For webkit-based browsers (e.g., Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 12px;
@@ -38,4 +42,9 @@
 .green-box-shadow {
   box-shadow: 0px 0px 2px hsl(120, 100%, 80%), 0px 0px 15px green,
     0px 0px 60px green;
+}
+
+.green-drop-shadow {
+  filter: drop-shadow(0px 0px 2px hsl(120, 100%, 80%))
+    drop-shadow(0px 0px 8px green);
 }

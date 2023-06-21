@@ -29,25 +29,27 @@ const Radio = () => {
           {isPlaying ? (
             <IconButton
               onClick={togglePlay}
-              icon={<Pause className="fill-white" />}
+              icon={<Pause className="fill-white green-drop-shadow" />}
             />
           ) : (
             <IconButton
               onClick={togglePlay}
-              icon={<Play className="fill-white" />}
+              icon={<Play className="fill-white green-drop-shadow" />}
             />
           )}
           <IconButton
             onClick={trackStore.previousTrack}
-            icon={<Next className="fill-white rotate-180" />}
+            icon={<Next className="fill-white rotate-180 green-drop-shadow" />}
           />
           <IconButton
             onClick={trackStore.nextTrack}
-            icon={<Next className="fill-white" />}
+            icon={<Next className="fill-white green-drop-shadow" />}
           />
           <IconButton
             onClick={trackStore.shuffleTrack}
-            icon={<Shuffle fill="white" className="fill-white" />}
+            icon={
+              <Shuffle fill="white" className="fill-white green-drop-shadow" />
+            }
           />
           <Slider
             value={volume}
@@ -55,7 +57,7 @@ const Radio = () => {
           />
           <IconButton
             onClick={uiStore.openTrackSelector}
-            icon={<Playlist className="fill-white" />}
+            icon={<Playlist className="fill-white green-drop-shadow" />}
           />
           {isLoading && <LoadingIcon />}
         </div>

@@ -20,10 +20,6 @@ function App() {
     closeSoundControlPanel,
   } = uiStore
 
-  const handleOnChange = () => {
-    console.log('called')
-  }
-
   return sceneStore.scenes.length > 0 ? (
     <div className="font-primary p-4 h-screen w-screen text-white">
       <div className="h-full w-full grid grid-cols-2 grid-rows-2">

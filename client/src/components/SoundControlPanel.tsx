@@ -13,10 +13,22 @@ interface Props {
 }
 
 const sounds = [
-  { icon: <Rain className="fill-white" />, audioSrc: '/audio/rain.mp3' },
-  { icon: <Fire className="fill-white" />, audioSrc: '/audio/fireplace.mp3' },
-  { icon: <Wind className="fill-white" />, audioSrc: '/audio/storm.mp3' },
-  { icon: <Moon className="fill-white" />, audioSrc: '/audio/night.mp3' },
+  {
+    icon: <Rain className="fill-white green-drop-shadow" />,
+    audioSrc: '/audio/rain.mp3',
+  },
+  {
+    icon: <Fire className="fill-white green-drop-shadow" />,
+    audioSrc: '/audio/fireplace.mp3',
+  },
+  {
+    icon: <Wind className="fill-white green-drop-shadow" />,
+    audioSrc: '/audio/storm.mp3',
+  },
+  {
+    icon: <Moon className="fill-white green-drop-shadow" />,
+    audioSrc: '/audio/night.mp3',
+  },
   {
     icon: <Coffee className="fill-white" />,
     audioSrc: '/audio/restaurant.mp3',

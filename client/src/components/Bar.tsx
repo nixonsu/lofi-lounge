@@ -6,7 +6,9 @@ const Bar = () => {
   return (
     <OpaqueContainer>
       <div className="flex flex-1 gap-3">
-        <IconButton icon={<Fullscreen className="fill-white" />} />
+        <IconButton
+          icon={<Fullscreen className="fill-white green-drop-shadow" />}
+        />
       </div>
     </OpaqueContainer>
   )
