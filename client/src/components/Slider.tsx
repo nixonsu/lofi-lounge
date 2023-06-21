@@ -19,12 +19,12 @@ const Slider = ({ value, handleChange }: Props) => {
   }
 
   return (
-    <div className="flex">
+    <div className="flex items-center">
       {Array.from({ length: 11 }, (_, index) =>
         index < 10 ? (
           <div
             key={index}
-            className={`h-4 w-2 mr-1 cursor-pointer bg-white ${
+            className={`h-3 w-1.5 mr-1 cursor-pointer bg-white ${
               index >= activeIndex && 'opacity-30'
             }`}
             onClick={() => handleSlideClick(index)}

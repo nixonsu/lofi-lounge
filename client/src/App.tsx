@@ -7,6 +7,7 @@ import SceneSelector from './components/SceneSelector'
 import { useRootStore } from './store/rootStore'
 import TrackSelector from './components/TrackSelector'
 import SoundControlPanel from './components/SoundControlPanel'
+import Toggle from './components/Toggle'
 
 function App() {
   const { uiStore, sceneStore } = useRootStore()
@@ -16,13 +17,17 @@ function App() {
     closeSceneSelector,
     isTrackSelectorOpen,
     closeTrackSelector,
-    isAmbientSoundPlayerOpen,
-    closeAmbientSoundPlayer,
+    isSoundControlPanelOpen,
+    closeSoundControlPanel,
   } = uiStore
+
+  const handleOnChange = () => {
+    console.log('called')
+  }
 
   return sceneStore.scenes.length > 0 ? (
     <div className="font-primary p-4 h-screen w-screen text-white">
-      <div className="h-full w-full grid grid-cols-2 grid-rows-3">
+      <div className="h-full w-full grid grid-cols-2 grid-rows-2">
         <div>
           <Radio />
         </div>
@@ -31,18 +36,16 @@ function App() {
           <Bar />
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col-reverse items-start gap-4">
           <UtilityBar />
-
           <SoundControlPanel
-            className={`${isAmbientSoundPlayerOpen && 'hidden'}`}
-            onClose={closeAmbientSoundPlayer}
+            className={`${isSoundControlPanelOpen ? '' : 'hidden'}`}
+            onClose={closeSoundControlPanel}
           />
         </div>
-
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>
+          <Toggle />
+        </div>
       </div>
 
       {isSceneSelectorOpen && <SceneSelector onClose={closeSceneSelector} />}
@@ -50,7 +53,7 @@ function App() {
       {isTrackSelectorOpen && <TrackSelector onClose={closeTrackSelector} />}
 
       <Background className="-z-20" src={sceneStore.currentScene.src} />
-      {/* <Background className="-z-10 bg-black bg-opacity-50" /> */}
+      <Background className="-z-10 bg-black bg-opacity-50" />
     </div>
   ) : null
 }

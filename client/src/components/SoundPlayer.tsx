@@ -13,19 +13,21 @@ const SoundPlayer = ({ audioSrc, icon }: Props) => {
   const { isPlaying, togglePlay, volume, setVolume } = usePlayer()
 
   return (
-    <OpaqueContainer className="w-full">
+    <OpaqueContainer className="w-48">
       <div className="flex items-center justify-between">
         <IconButton icon={icon} onClick={togglePlay} />
         <Slider
           value={volume}
           handleChange={(e) => setVolume(parseFloat(e.target.value))}
         />
-        <ReactHowler
-          src={audioSrc}
-          playing={isPlaying}
-          volume={volume}
-          loop={true}
-        />
+        <div className="hidden">
+          <ReactHowler
+            src={audioSrc}
+            playing={isPlaying}
+            volume={volume}
+            loop={true}
+          />
+        </div>
       </div>
     </OpaqueContainer>
   )

@@ -7,18 +7,18 @@ import { ReactComponent as Playlist } from './icons/Playlist.svg'
 const UtilityBar = () => {
   const { uiStore } = useRootStore()
 
-  const { openSceneSelector, toggleAmbientSoundPlayer } = uiStore
+  const { openSceneSelector, toggleSoundControlPanel } = uiStore
 
   return (
     <OpaqueContainer>
-      <div className="flex flex-1 flex-col gap-3">
+      <div className="flex gap-3">
         <IconButton
           icon={<Playlist className="fill-white" />}
           onClick={openSceneSelector}
         />
         <IconButton
           icon={<Playlist className="fill-white" />}
-          onClick={toggleAmbientSoundPlayer}
+          onClick={toggleSoundControlPanel}
         />
         <IconButton icon={<Playlist className="fill-white" />} />
       </div>

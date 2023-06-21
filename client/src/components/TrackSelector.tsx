@@ -11,7 +11,7 @@ const TrackSelector = ({ onClose }: Props) => {
   const { trackStore } = useRootStore()
 
   return (
-    <Modal title={'Choose a track'} onClose={onClose}>
+    <Modal title={'track selection'} onClose={onClose}>
       <div className="h-full w-full grid grid-rows-3 gap-x-4 gap-y-16 grid-cols-fluid overflow-y-scroll">
         {trackStore.tracks.map((track) => (
           <Card

@@ -7,7 +7,7 @@ interface Props {
 
 const IconButton = ({ icon, onClick }: Props) => {
   return (
-    <button className="h-8 w-8" onClick={onClick}>
+    <button className="h-6 w-6" onClick={onClick}>
       {icon}
     </button>
   )
