@@ -12,3 +12,19 @@
   font-family: Unibody;
   src: url('fonts/Unibody.otf') format('opentype');
 }
+
+/* For webkit-based browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* For Firefox */
+/* Please note that Firefox only supports scrollbar color customization starting from Firefox 64+ */
+* {
+  scrollbar-color: rgba(0, 0, 0, 0.5);
+  scrollbar-width: thin;
+}

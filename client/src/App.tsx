@@ -6,7 +6,7 @@ import { observer } from 'mobx-react'
 import SceneSelector from './components/SceneSelector'
 import { useRootStore } from './store/rootStore'
 import TrackSelector from './components/TrackSelector'
-import AmbientSoundPlayer from './components/AmbientSoundPlayer'
+import SoundControlPanel from './components/SoundControlPanel'
 
 function App() {
   const { uiStore, sceneStore } = useRootStore()
@@ -34,7 +34,7 @@ function App() {
         <div className="flex items-center gap-4">
           <UtilityBar />
 
-          <AmbientSoundPlayer
+          <SoundControlPanel
             className={`${isAmbientSoundPlayerOpen && 'hidden'}`}
             onClose={closeAmbientSoundPlayer}
           />
