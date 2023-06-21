@@ -1,24 +1,11 @@
-import { makeAutoObservable, toJS } from 'mobx'
+import { makeAutoObservable } from 'mobx'
 import { Track } from '../types/track'
 import { RootStore } from './rootStore'
 
 export class TrackStore {
   rootStore: RootStore
 
-  tracks: Track[] = [
-    {
-      id: crypto.randomUUID(),
-      title: 'lofi hip hop radio 📚 - beats to relax/study to',
-      host: 'LofiGirl',
-      url: 'https://www.youtube.com/watch?v=jfKfPfyJRdk&ab_channel=LofiGirl',
-    },
-    {
-      id: crypto.randomUUID(),
-      title: 'synthwave radio 🌌 - beats to chill/game to',
-      host: 'LofiGirl',
-      url: 'https://www.youtube.com/watch?v=MVPTGNGiI-4&ab_channel=LofiGirl',
-    },
-  ]
+  tracks: Track[] = []
   trackIndex = 0
 
   get currentTrack(): Track {
@@ -28,6 +15,8 @@ export class TrackStore {
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore
     makeAutoObservable(this)
+
+    this.loadTracks()
   }
 
   setCurrentTrack(trackId: string) {
@@ -49,5 +38,11 @@ export class TrackStore {
 
   shuffleTrack = () => {
     this.trackIndex = Math.floor(Math.random() * this.tracks.length)
+  }
+
+  loadTracks = async () => {
+    const response = await fetch('/tracks.json')
+    const data = await response.json()
+    this.tracks = data
   }
 }

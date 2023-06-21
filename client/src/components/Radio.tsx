@@ -15,15 +15,15 @@ import { observer } from 'mobx-react'
 const Radio = () => {
   const { trackStore } = useRootStore()
 
+  const { currentTrack } = trackStore
+
   const { volume, isPlaying, isLoading, setIsLoading, togglePlay, setVolume } =
     usePlayer()
 
-  const { title, url } = trackStore.currentTrack
-
-  return (
+  return trackStore.tracks.length > 0 ? (
     <OpaqueContainer>
       <div className="flex flex-col items-start w-1/4 text-white flex-1 gap-3">
-        <p>{title}</p>
+        <p>{currentTrack.title}</p>
 
         <div className="flex items-center justify-center gap-3">
           {isPlaying ? (
@@ -59,7 +59,7 @@ const Radio = () => {
 
         <ReactPlayer
           className="hidden"
-          url={url}
+          url={currentTrack.url}
           playing={isPlaying}
           volume={volume}
           onBuffer={() => setIsLoading(true)}
@@ -67,7 +67,7 @@ const Radio = () => {
         />
       </div>
     </OpaqueContainer>
-  )
+  ) : null
 }
 
 export default observer(Radio)

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "4f9940c5-5b8a-47c3-95da-64b6c8772d62",
+    "name": "Temple",
+    "src": "/gifs/temple.gif"
+  },
+  {
+    "id": "c5e5c4e3-184f-4c17-82fd-9ebe9512a8e6",
+    "name": "Skyline",
+    "src": "/gifs/skyline.gif"
+  },
+  {
+    "id": "80925cda-5a5d-4db1-9e17-d07810de18d0",
+    "name": "Lake",
+    "src": "/gifs/lake.gif"
+  },
+  {
+    "id": "9dd1c76e-2c39-4f61-8d45-46e0b4c74f6d",
+    "name": "Valley",
+    "src": "/gifs/valley.gif"
+  },
+  {
+    "id": "ed6eb7c7-5edf-4e5e-835b-8b16e73dabeb",
+    "name": "City",
+    "src": "/gifs/city.gif"
+  },
+  {
+    "id": "e944e468-543f-4fcf-ba4b-c8f459cfd987",
+    "name": "Ocean",
+    "src": "/gifs/ocean.gif"
+  },
+  {
+    "id": "8c0f260f-20a4-42ad-8fe6-1a4da6d8d267",
+    "name": "Cyberpunk",
+    "src": "/gifs/cyberpunk.gif"
+  }
+]
