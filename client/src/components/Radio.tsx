@@ -11,6 +11,7 @@ import OpaqueContainer from './OpaqueContainer'
 import LoadingIcon from './LoadingIcon'
 import { useRootStore } from '../store/rootStore'
 import { observer } from 'mobx-react'
+import Marquee from './Marquee'
 
 const Radio = () => {
   const { trackStore, uiStore } = useRootStore()
@@ -23,7 +24,7 @@ const Radio = () => {
   return trackStore.tracks.length > 0 ? (
     <OpaqueContainer className="w-5/6">
       <div className="flex flex-col items-start text-white self-stretch gap-3">
-        <p>{currentTrack.title}</p>
+        <p className="animate-flicker">{currentTrack.title}</p>
 
         <div className="flex items-center gap-3 w-full">
           {isPlaying ? (
