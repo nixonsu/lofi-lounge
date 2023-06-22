@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react'
+import { ReactNode, createContext, useContext } from 'react'
 import { SceneStore } from './sceneStore'
 import { TrackStore } from './trackStore'
 import { UIStore } from './uiStore'
@@ -18,7 +18,7 @@ export class RootStore {
 const RootStoreContext = createContext<RootStore>({} as RootStore)
 
 interface Props {
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 export const RootStoreProvider = ({ children }: Props) => {

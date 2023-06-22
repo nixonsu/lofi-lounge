@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import IconButton from './IconButton'
 import OpaqueContainer from './OpaqueContainer'
 import { ReactComponent as Cross } from './icons/Cross.svg'
@@ -5,7 +6,7 @@ import { ReactComponent as Cross } from './icons/Cross.svg'
 interface Props {
   title?: string
   onClose?: () => void
-  children?: React.ReactNode
+  children?: ReactNode
   className?: string
 }
 

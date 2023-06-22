@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { usePlayer } from '../hooks/usePlayer'
 import IconButton from './IconButton'
 import OpaqueContainer from './OpaqueContainer'
@@ -6,7 +7,7 @@ import ReactHowler from 'react-howler'
 
 interface Props {
   audioSrc: string
-  icon: React.ReactNode
+  icon: ReactNode
 }
 
 const SoundPlayer = ({ audioSrc, icon }: Props) => {

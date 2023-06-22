@@ -2,7 +2,6 @@ import { observer } from 'mobx-react'
 import { useRootStore } from '../store/rootStore'
 import Card from './Card'
 import Modal from './Modal'
-
 interface Props {
   onClose: () => void
 }

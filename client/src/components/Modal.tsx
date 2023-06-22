@@ -1,10 +1,11 @@
+import { ReactNode } from 'react'
 import IconButton from './IconButton'
 import { ReactComponent as Cross } from './icons/Cross.svg'
 
 interface ModalProps {
   title?: string
   onClose?: () => void
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 const Modal = ({ title, onClose, children }: ModalProps) => {
