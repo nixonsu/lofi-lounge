@@ -25,9 +25,9 @@ const Slider = ({ value, handleChange }: Props) => {
         index < 10 ? (
           <motion.div
             key={index}
-            className={`h-3 w-1.5 mr-1 cursor-pointer bg-white green-drop-shadow ${
-              index >= activeIndex && 'opacity-30'
-            }`}
+            className={`h-3 w-1.5 mr-1 cursor-pointer bg-white ${
+              value === 0 ? 'red-drop-shadow' : 'green-drop-shadow'
+            } ${index >= activeIndex && 'opacity-30'}`}
             onClick={() => handleSlideClick(index)}
             whileHover={{ scale: 1.5 }}
           />

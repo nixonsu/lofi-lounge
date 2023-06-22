@@ -49,3 +49,9 @@ body {
   filter: drop-shadow(0px 0px 2px hsl(120, 100%, 80%))
     drop-shadow(0px 0px 8px green);
 }
+
+.red-drop-shadow {
+  filter: drop-shadow(0px 0px 1px hsl(0, 100%, 80%))
+    drop-shadow(0px 0px 2px hsl(0, 100%, 80%))
+    drop-shadow(0px 0px 15px hsl(0, 100%, 50%)) drop-shadow(0px 0px 60px red);
+}
