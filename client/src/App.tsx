@@ -7,6 +7,9 @@ import SceneSelector from './components/SceneSelector'
 import { useRootStore } from './store/rootStore'
 import TrackSelector from './components/TrackSelector'
 import SoundControlPanel from './components/SoundControlPanel'
+import { AnimatePresence } from 'framer-motion'
+import FadeAnimation from './components/animations/FadeAnimation'
+import { useEffect } from 'react'
 
 function App() {
   const { uiStore, sceneStore } = useRootStore()
@@ -19,6 +22,18 @@ function App() {
     isSoundControlPanelOpen,
     closeSoundControlPanel,
   } = uiStore
+
+  useEffect(() => {
+    function handleEscapeKey(event: KeyboardEvent) {
+      if (event.code === 'Escape') {
+        closeSceneSelector()
+        closeTrackSelector()
+      }
+    }
+
+    document.addEventListener('keydown', handleEscapeKey)
+    return () => document.removeEventListener('keydown', handleEscapeKey)
+  }, [closeSceneSelector, closeTrackSelector])
 
   return sceneStore.scenes.length > 0 ? (
     <div className="font-primary p-4 h-screen w-screen text-white">
@@ -40,10 +55,18 @@ function App() {
         </div>
         <div></div>
       </div>
-
-      {isSceneSelectorOpen && <SceneSelector onClose={closeSceneSelector} />}
-
-      {isTrackSelectorOpen && <TrackSelector onClose={closeTrackSelector} />}
+      <AnimatePresence>
+        {isSceneSelectorOpen && (
+          <FadeAnimation>
+            <SceneSelector onClose={closeSceneSelector} />
+          </FadeAnimation>
+        )}
+        {isTrackSelectorOpen && (
+          <FadeAnimation>
+            <TrackSelector onClose={closeTrackSelector} />
+          </FadeAnimation>
+        )}
+      </AnimatePresence>
 
       <Background className="-z-20" src={sceneStore.currentScene.src} />
       <Background className="-z-10 bg-black bg-opacity-50" />
