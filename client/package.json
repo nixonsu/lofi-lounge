@@ -11,6 +11,7 @@
     "prepare": "cd .. && husky install client/.husky && cd client && husky set .husky/pre-commit \"cd client && yarn lint-staged --allow-empty\""
   },
   "dependencies": {
+    "framer-motion": "^10.12.16",
     "mobx": "^6.9.0",
     "mobx-react": "^7.6.0",
     "react": "^18.2.0",
