@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { motion } from 'framer-motion'
 
 interface Props {
   icon: ReactNode
@@ -7,9 +8,13 @@ interface Props {
 
 const IconButton = ({ icon, onClick }: Props) => {
   return (
-    <button className="h-6 w-6" onClick={onClick}>
+    <motion.button
+      className="h-6 w-6"
+      onClick={onClick}
+      whileHover={{ scale: 1.1 }}
+    >
       {icon}
-    </button>
+    </motion.button>
   )
 }
 
