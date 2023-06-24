@@ -7,7 +7,6 @@ import SceneSelector from './components/SceneSelector'
 import { useRootStore } from './store/rootStore'
 import TrackSelector from './components/TrackSelector'
 import SoundControlPanel from './components/SoundControlPanel'
-import { AnimatePresence } from 'framer-motion'
 import FadeAnimation from './components/animations/FadeAnimation'
 import { useEffect } from 'react'
 
@@ -48,25 +47,24 @@ function App() {
 
         <div className="flex flex-col-reverse items-start gap-4">
           <UtilityBar />
-          <SoundControlPanel
-            className={`${isSoundControlPanelOpen ? '' : 'hidden'}`}
-            onClose={closeSoundControlPanel}
-          />
+
+          <FadeAnimation isVisible={isSoundControlPanelOpen} className="h-full">
+            <SoundControlPanel
+              className={`${isSoundControlPanelOpen ? '' : 'hidden'}`}
+              onClose={closeSoundControlPanel}
+            />
+          </FadeAnimation>
         </div>
         <div></div>
       </div>
-      <AnimatePresence>
-        {isSceneSelectorOpen && (
-          <FadeAnimation>
-            <SceneSelector onClose={closeSceneSelector} />
-          </FadeAnimation>
-        )}
-        {isTrackSelectorOpen && (
-          <FadeAnimation>
-            <TrackSelector onClose={closeTrackSelector} />
-          </FadeAnimation>
-        )}
-      </AnimatePresence>
+
+      <FadeAnimation isVisible={isSceneSelectorOpen}>
+        <SceneSelector onClose={closeSceneSelector} />
+      </FadeAnimation>
+
+      <FadeAnimation isVisible={isTrackSelectorOpen}>
+        <TrackSelector onClose={closeTrackSelector} />
+      </FadeAnimation>
 
       <Background className="-z-20" src={sceneStore.currentScene.src} />
       <Background className="-z-10 bg-black bg-opacity-50" />

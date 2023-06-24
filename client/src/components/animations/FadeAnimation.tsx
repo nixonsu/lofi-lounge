@@ -1,20 +1,27 @@
 import { ReactNode } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 interface Props {
+  isVisible: boolean
   children?: ReactNode
+  className?: string
 }
 
-const FadeAnimation = ({ children }: Props) => {
+const FadeAnimation = ({ isVisible, className, children }: Props) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ ease: 'easeInOut' }}
-    >
-      {children}
-    </motion.div>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ ease: 'easeInOut' }}
+          className={className}
+        >
+          {children}
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
 

@@ -11,7 +11,6 @@ import OpaqueContainer from './OpaqueContainer'
 import LoadingIcon from './LoadingIcon'
 import { useRootStore } from '../store/rootStore'
 import { observer } from 'mobx-react'
-import Marquee from './Marquee'
 
 const Radio = () => {
   const { trackStore, uiStore } = useRootStore()
