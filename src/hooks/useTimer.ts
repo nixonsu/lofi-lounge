@@ -37,7 +37,7 @@ const useTimer = (initialSeconds: number) => {
   }
 
   useEffect(() => {
-    let interval: number
+    let interval: NodeJS.Timer
 
     if (isRunning) {
       interval = setInterval(() => {
