@@ -7,7 +7,7 @@ import { ReactComponent as Playlist } from './icons/Playlist.svg'
 const UtilityBar = () => {
   const { uiStore } = useRootStore()
 
-  const { openSceneSelector, toggleSoundControlPanel } = uiStore
+  const { openSceneSelector, toggleSoundControlPanel, toggleTimer } = uiStore
 
   return (
     <OpaqueContainer>
@@ -22,6 +22,7 @@ const UtilityBar = () => {
         />
         <IconButton
           icon={<Playlist className="fill-white green-drop-shadow" />}
+          onClick={toggleTimer}
         />
       </div>
     </OpaqueContainer>

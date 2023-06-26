@@ -40,6 +40,10 @@ body {
   outline: none;
 }
 
+.red-text-glow {
+  text-shadow: 0px 0px 2px hsl(0, 100%, 80%), 0px 0px 15px red, 0px 0px 60px red;
+}
+
 .green-box-shadow {
   box-shadow: 0px 0px 2px hsl(120, 100%, 80%), 0px 0px 15px green,
     0px 0px 60px green;

@@ -6,6 +6,7 @@ export class UIStore {
   isSceneSelectorOpen = false
   isTrackSelectorOpen = false
   isSoundControlPanelOpen = false
+  isTimerOpen = false
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore
@@ -30,10 +31,17 @@ export class UIStore {
 
   closeSoundControlPanel = () => {
     this.isSoundControlPanelOpen = false
-    console.log(this.isSoundControlPanelOpen)
   }
 
   toggleSoundControlPanel = () => {
     this.isSoundControlPanelOpen = !this.isSoundControlPanelOpen
+  }
+
+  closeTimer = () => {
+    this.isTimerOpen = false
+  }
+
+  toggleTimer = () => {
+    this.isTimerOpen = !this.isTimerOpen
   }
 }

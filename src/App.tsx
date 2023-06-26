@@ -9,6 +9,7 @@ import TrackSelector from './components/TrackSelector'
 import SoundControlPanel from './components/SoundControlPanel'
 import FadeAnimation from './components/animations/FadeAnimation'
 import { useEffect } from 'react'
+import Timer from './components/Timer'
 
 function App() {
   const { uiStore, sceneStore } = useRootStore()
@@ -20,6 +21,8 @@ function App() {
     closeTrackSelector,
     isSoundControlPanelOpen,
     closeSoundControlPanel,
+    isTimerOpen,
+    closeTimer,
   } = uiStore
 
   useEffect(() => {
@@ -52,6 +55,13 @@ function App() {
             <SoundControlPanel
               className={`${isSoundControlPanelOpen ? '' : 'hidden'}`}
               onClose={closeSoundControlPanel}
+            />
+          </FadeAnimation>
+
+          <FadeAnimation isVisible={isTimerOpen} className="h-full">
+            <Timer
+              className={`${isTimerOpen ? '' : 'hidden'}`}
+              onClose={closeTimer}
             />
           </FadeAnimation>
         </div>
