@@ -14,9 +14,8 @@ const SceneSelector = ({ onClose }: Props) => {
     <Modal title={'scene selection'} onClose={onClose}>
       <div className="h-full w-full p-4 grid gap-x-4 gap-y-4 grid-cols-fluid overflow-y-scroll">
         {sceneStore.scenes.map((scene) => (
-          <ScaleAnimation scaleFactor={1.02}>
+          <ScaleAnimation key={scene.id} scaleFactor={1.02}>
             <Card
-              key={scene.id}
               id={scene.id}
               src={scene.src}
               text={scene.name}

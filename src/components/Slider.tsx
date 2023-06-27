@@ -23,9 +23,8 @@ const Slider = ({ value, handleChange }: Props) => {
     <div className="flex items-center">
       {Array.from({ length: 11 }, (_, index) =>
         index < 10 ? (
-          <ScaleAnimation scaleFactor={1.5}>
+          <ScaleAnimation key={index} scaleFactor={1.5}>
             <div
-              key={index}
               className={`h-3 w-1.5 mr-1 cursor-pointer bg-white ${
                 value === 0 ? 'red-drop-shadow' : 'green-drop-shadow'
               } ${index >= activeIndex && 'opacity-30'}`}
@@ -33,7 +32,7 @@ const Slider = ({ value, handleChange }: Props) => {
             />
           </ScaleAnimation>
         ) : (
-          <ScaleAnimation scaleFactor={1.5}>
+          <ScaleAnimation key={index} scaleFactor={1.5}>
             <div
               key={index}
               className="h-4 w-2 mr-1 cursor-pointer bg-transparent"

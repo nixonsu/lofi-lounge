@@ -15,9 +15,8 @@ const TrackSelector = ({ onClose }: Props) => {
     <Modal title={'track selection'} onClose={onClose}>
       <div className="h-full w-full p-4 grid gap-x-4 gap-y-4 grid-cols-fluid overflow-y-scroll">
         {trackStore.tracks.map((track) => (
-          <ScaleAnimation scaleFactor={1.02}>
+          <ScaleAnimation key={track.id} scaleFactor={1.02}>
             <Card
-              key={track.id}
               id={track.id}
               src={track.thumbnailUrl}
               text={track.title}

@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx'
+import { makeAutoObservable, runInAction } from 'mobx'
 import { Scene } from '../types/scene'
 import { RootStore } from './rootStore'
 
@@ -26,6 +26,8 @@ export class SceneStore {
   loadScenes = async () => {
     const response = await fetch('/scenes.json')
     const data = await response.json()
-    this.scenes = data
+    runInAction(() => {
+      this.scenes = data
+    })
   }
 }
