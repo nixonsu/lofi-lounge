@@ -14,7 +14,8 @@ const Popup = ({ title, onClose, children, className }: Props) => {
   return (
     <OpaqueContainer className={`flex flex-col gap-4 ${className} `}>
       <div className="flex justify-between">
-        <h1>{title}</h1>
+        <div />
+        <h1 className="animate-flicker">{title}</h1>
         <IconButton
           icon={<Cross className="fill-white green-drop-shadow" />}
           onClick={onClose}
