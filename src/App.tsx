@@ -10,6 +10,7 @@ import SoundControlPanel from './components/SoundControlPanel'
 import FadeAnimation from './components/animations/FadeAnimation'
 import { useEffect } from 'react'
 import Timer from './components/Timer'
+import FadeAnimationHidden from './components/animations/FadeAnimationHidden'
 
 function App() {
   const { uiStore, sceneStore } = useRootStore()
@@ -50,12 +51,12 @@ function App() {
         <div className="flex flex-col-reverse items-start gap-4">
           <UtilityBar />
 
-          <FadeAnimation isVisible={isSoundControlPanelOpen} className="h-full">
-            <SoundControlPanel
-              className={`${isSoundControlPanelOpen ? '' : 'hidden'}`}
-              onClose={closeSoundControlPanel}
-            />
-          </FadeAnimation>
+          <FadeAnimationHidden
+            isVisible={isSoundControlPanelOpen}
+            className="h-full"
+          >
+            <SoundControlPanel onClose={closeSoundControlPanel} />
+          </FadeAnimationHidden>
 
           <Timer />
         </div>

@@ -41,7 +41,11 @@ const SoundControlPanel = ({ onClose, className }: Props) => {
     <Popup className={`${className} h-full`} onClose={onClose} title={'sounds'}>
       <div className="flex flex-col gap-4 overflow-y-scroll pr-4">
         {sounds.map((sound) => (
-          <SoundPlayer icon={sound.icon} audioSrc={sound.audioSrc} />
+          <SoundPlayer
+            key={sound.audioSrc}
+            icon={sound.icon}
+            audioSrc={sound.audioSrc}
+          />
         ))}
       </div>
     </Popup>
