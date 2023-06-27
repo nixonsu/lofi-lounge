@@ -34,6 +34,7 @@ export class UIStore {
   }
 
   toggleSoundControlPanel = () => {
+    this.closeTimer()
     this.isSoundControlPanelOpen = !this.isSoundControlPanelOpen
   }
 
@@ -42,6 +43,7 @@ export class UIStore {
   }
 
   toggleTimer = () => {
+    this.closeSoundControlPanel()
     this.isTimerOpen = !this.isTimerOpen
   }
 }
