@@ -54,7 +54,7 @@ function App() {
 
           <FadeAnimationHidden
             isVisible={isSoundControlPanelOpen}
-            className="h-full"
+            className="h-1/2 absolute bottom-24"
           >
             <SoundControlPanel onClose={closeSoundControlPanel} />
           </FadeAnimationHidden>
