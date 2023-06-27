@@ -73,3 +73,7 @@ body {
 .animate-flicker {
   animation: flicker 0.5s alternate-reverse steps(3) infinite;
 }
+
+.opaque {
+  background-color: rgba(0, 0, 0, 0.8);
+}
