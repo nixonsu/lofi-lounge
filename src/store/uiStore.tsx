@@ -7,6 +7,7 @@ export class UIStore {
   isTrackSelectorOpen = false
   isSoundControlPanelOpen = false
   isTimerOpen = false
+  isBackgroundDim = false
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore
@@ -45,5 +46,9 @@ export class UIStore {
   toggleTimer = () => {
     this.closeSoundControlPanel()
     this.isTimerOpen = !this.isTimerOpen
+  }
+
+  toggleIsBackgroundDim = () => {
+    this.isBackgroundDim = !this.isBackgroundDim
   }
 }

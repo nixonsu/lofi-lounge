@@ -24,6 +24,8 @@ function App() {
     closeSoundControlPanel,
     isTimerOpen,
     closeTimer,
+    isBackgroundDim,
+    toggleIsBackgroundDim,
   } = uiStore
 
   useEffect(() => {
@@ -75,7 +77,9 @@ function App() {
       </FadeAnimation>
 
       <Background className="-z-20" src={sceneStore.currentScene.src} />
-      <Background className="-z-10 bg-black bg-opacity-50" />
+      <FadeAnimation isVisible={isBackgroundDim}>
+        <Background className="-z-10 bg-black bg-opacity-50" />
+      </FadeAnimation>
     </div>
   ) : null
 }
