@@ -22,7 +22,6 @@ function App() {
     isSoundControlPanelOpen,
     closeSoundControlPanel,
     isTimerOpen,
-    closeTimer,
   } = uiStore
 
   useEffect(() => {
@@ -58,12 +57,7 @@ function App() {
             />
           </FadeAnimation>
 
-          <FadeAnimation isVisible={isTimerOpen} className="h-full">
-            <Timer
-              className={`${isTimerOpen ? '' : 'hidden'}`}
-              onClose={closeTimer}
-            />
-          </FadeAnimation>
+          <Timer />
         </div>
         <div></div>
       </div>
