@@ -4,13 +4,20 @@ import ScaleAnimation from './animations/ScaleAnimation'
 interface Props {
   icon: ReactNode
   onClick?: () => void
+  isEnabled?: boolean
 }
 
-const IconButton = ({ icon, onClick }: Props) => {
+const IconButton = ({ icon, onClick, isEnabled = true }: Props) => {
   return (
     <ScaleAnimation scaleFactor={1.1}>
       <button className="h-6 w-6" onClick={onClick}>
-        {icon}
+        <span
+          className={`${
+            isEnabled ? 'fill-white' : 'fill-black'
+          } transition-fill duration-500 green-drop-shadow`}
+        >
+          {icon}
+        </span>
       </button>
     </ScaleAnimation>
   )

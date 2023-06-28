@@ -28,25 +28,12 @@ const Timer = ({ onClose, className }: Props) => {
 
       <div className="flex w-full justify-center items-center gap-2">
         {isRunning ? (
-          <IconButton
-            icon={<Pause className="fill-white green-drop-shadow" />}
-            onClick={pause}
-          />
+          <IconButton icon={<Pause />} onClick={pause} />
         ) : (
-          <IconButton
-            icon={
-              <Play className="fill-white green-drop-shadow" onClick={play} />
-            }
-          />
+          <IconButton icon={<Play />} onClick={play} />
         )}
-        <IconButton
-          icon={<Reset className="fill-white green-drop-shadow" />}
-          onClick={reset}
-        />
-        <IconButton
-          icon={<Plus className="fill-white green-drop-shadow" />}
-          onClick={() => incrementTimer(300)}
-        />
+        <IconButton icon={<Reset />} onClick={reset} />
+        <IconButton icon={<Plus />} onClick={() => incrementTimer(300)} />
       </div>
     </Popup>
   )

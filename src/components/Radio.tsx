@@ -27,38 +27,21 @@ const Radio = () => {
 
         <div className="flex items-center gap-3 w-full">
           {isPlaying ? (
-            <IconButton
-              onClick={togglePlay}
-              icon={<Pause className="fill-white green-drop-shadow" />}
-            />
+            <IconButton onClick={togglePlay} icon={<Pause />} />
           ) : (
-            <IconButton
-              onClick={togglePlay}
-              icon={<Play className="fill-white green-drop-shadow" />}
-            />
+            <IconButton onClick={togglePlay} icon={<Play />} />
           )}
           <IconButton
             onClick={trackStore.previousTrack}
-            icon={<Next className="fill-white rotate-180 green-drop-shadow" />}
+            icon={<Next className="rotate-180" />}
           />
-          <IconButton
-            onClick={trackStore.nextTrack}
-            icon={<Next className="fill-white green-drop-shadow" />}
-          />
-          <IconButton
-            onClick={trackStore.shuffleTrack}
-            icon={
-              <Shuffle fill="white" className="fill-white green-drop-shadow" />
-            }
-          />
+          <IconButton onClick={trackStore.nextTrack} icon={<Next />} />
+          <IconButton onClick={trackStore.shuffleTrack} icon={<Shuffle />} />
           <Slider
             value={volume}
             handleChange={(e) => setVolume(parseFloat(e.target.value))}
           />
-          <IconButton
-            onClick={uiStore.openTrackSelector}
-            icon={<Playlist className="fill-white green-drop-shadow" />}
-          />
+          <IconButton onClick={uiStore.openTrackSelector} icon={<Playlist />} />
           {isLoading && <LoadingIcon />}
         </div>
 

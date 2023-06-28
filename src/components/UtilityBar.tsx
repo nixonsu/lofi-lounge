@@ -12,18 +12,9 @@ const UtilityBar = () => {
   return (
     <OpaqueContainer>
       <div className="flex gap-3">
-        <IconButton
-          icon={<Playlist className="fill-white green-drop-shadow" />}
-          onClick={openSceneSelector}
-        />
-        <IconButton
-          icon={<Playlist className="fill-white green-drop-shadow" />}
-          onClick={toggleSoundControlPanel}
-        />
-        <IconButton
-          icon={<Playlist className="fill-white green-drop-shadow" />}
-          onClick={toggleTimer}
-        />
+        <IconButton icon={<Playlist />} onClick={openSceneSelector} />
+        <IconButton icon={<Playlist />} onClick={toggleSoundControlPanel} />
+        <IconButton icon={<Playlist />} onClick={toggleTimer} />
       </div>
     </OpaqueContainer>
   )

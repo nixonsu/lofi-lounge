@@ -14,26 +14,29 @@ interface Props {
 
 const sounds = [
   {
-    icon: <Rain className="fill-white green-drop-shadow" />,
+    icon: <Rain />,
     audioSrc: '/audio/rain.mp3',
   },
   {
-    icon: <Fire className="fill-white green-drop-shadow" />,
+    icon: <Fire />,
     audioSrc: '/audio/fireplace.mp3',
   },
   {
-    icon: <Wind className="fill-white green-drop-shadow" />,
+    icon: <Wind />,
     audioSrc: '/audio/storm.mp3',
   },
   {
-    icon: <Moon className="fill-white green-drop-shadow" />,
+    icon: <Moon />,
     audioSrc: '/audio/night.mp3',
   },
   {
-    icon: <Coffee className="fill-white" />,
+    icon: <Coffee />,
     audioSrc: '/audio/restaurant.mp3',
   },
-  { icon: <Bird className="fill-white" />, audioSrc: '/audio/bird.mp3' },
+  {
+    icon: <Bird />,
+    audioSrc: '/audio/bird.mp3',
+  },
 ]
 
 const SoundControlPanel = ({ onClose, className }: Props) => {

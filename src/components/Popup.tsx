@@ -16,10 +16,7 @@ const Popup = ({ title, onClose, children, className }: Props) => {
       <div className="flex justify-between">
         <div />
         <h1 className="animate-flicker">{title}</h1>
-        <IconButton
-          icon={<Cross className="fill-white green-drop-shadow" />}
-          onClick={onClose}
-        />
+        <IconButton icon={<Cross />} onClick={onClose} />
       </div>
       {children}
     </OpaqueContainer>

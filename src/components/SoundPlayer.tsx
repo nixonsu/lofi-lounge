@@ -16,7 +16,7 @@ const SoundPlayer = ({ audioSrc, icon }: Props) => {
   return (
     <OpaqueContainer className="w-48">
       <div className="flex items-center justify-between">
-        <IconButton icon={icon} onClick={togglePlay} />
+        <IconButton icon={icon} onClick={togglePlay} isEnabled={isPlaying} />
         <Slider
           value={volume}
           handleChange={(e) => setVolume(parseFloat(e.target.value))}
