@@ -22,7 +22,7 @@ const Timer = ({ onClose, className }: Props) => {
     getDisplayTime,
     incrementTimer,
     isDone,
-  } = useTimer(2)
+  } = useTimer(300)
   const { minutesDisplay, secondsDisplay } = getDisplayTime()
 
   const {
