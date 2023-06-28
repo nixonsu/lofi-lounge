@@ -5,6 +5,8 @@ import { ReactComponent as Play } from './icons/Play.svg'
 import { ReactComponent as Pause } from './icons/Pause.svg'
 import { ReactComponent as Reset } from './icons/Restart.svg'
 import { ReactComponent as Plus } from './icons/Plus.svg'
+import { useEffect } from 'react'
+import { useRootStore } from '../store/rootStore'
 
 interface Props {
   onClose: () => void
@@ -12,9 +14,28 @@ interface Props {
 }
 
 const Timer = ({ onClose, className }: Props) => {
-  const { play, pause, isRunning, reset, getDisplayTime, incrementTimer } =
-    useTimer(300)
+  const {
+    play,
+    pause,
+    isRunning,
+    reset,
+    getDisplayTime,
+    incrementTimer,
+    isDone,
+  } = useTimer(2)
   const { minutesDisplay, secondsDisplay } = getDisplayTime()
+
+  const {
+    uiStore: { setIsTimerDone },
+  } = useRootStore()
+
+  useEffect(() => {
+    if (isDone) {
+      setIsTimerDone(true)
+    } else {
+      setIsTimerDone(false)
+    }
+  }, [isDone, setIsTimerDone])
 
   return (
     <Popup className={`${className}`} onClose={onClose}>

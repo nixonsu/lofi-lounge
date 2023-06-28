@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 const useTimer = (initialSeconds: number) => {
   const [seconds, setSeconds] = useState(initialSeconds)
   const [isRunning, setIsRunning] = useState(false)
+  const [isDone, setIsDone] = useState(false)
 
   const play = () => {
     if (seconds > 0) {
@@ -55,6 +56,9 @@ const useTimer = (initialSeconds: number) => {
   useEffect(() => {
     if (seconds === 0) {
       setIsRunning(false)
+      setIsDone(true)
+    } else {
+      setIsDone(false)
     }
   }, [seconds])
 
@@ -66,6 +70,7 @@ const useTimer = (initialSeconds: number) => {
     reset,
     getDisplayTime,
     incrementTimer,
+    isDone,
   }
 }
 
