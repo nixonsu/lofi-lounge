@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: Unibody;
-  src: url('fonts/Unibody.otf') format('opentype');
+  src: url('/fonts/Unibody.otf') format('opentype');
 }
 
 body {
