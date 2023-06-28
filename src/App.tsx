@@ -25,7 +25,6 @@ function App() {
     isTimerOpen,
     closeTimer,
     isBackgroundDim,
-    toggleIsBackgroundDim,
   } = uiStore
 
   useEffect(() => {
