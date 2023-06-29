@@ -44,6 +44,11 @@ body {
   text-shadow: 0px 0px 2px hsl(0, 100%, 80%), 0px 0px 15px red, 0px 0px 60px red;
 }
 
+.green-text-shadow {
+  text-shadow: 0px 0px 2px hsl(120, 100%, 80%), 0px 0px 15px green,
+    0px 0px 60px green;
+}
+
 .green-box-shadow {
   box-shadow: 0px 0px 2px hsl(120, 100%, 80%), 0px 0px 15px green,
     0px 0px 60px green;
@@ -54,10 +59,89 @@ body {
     drop-shadow(0px 0px 8px green);
 }
 
+.purple-text-shadow {
+  text-shadow: 0px 0px 2px hsl(280, 100%, 80%), 0px 0px 15px purple,
+    0px 0px 60px purple;
+}
+
+.purple-box-shadow {
+  box-shadow: 0px 0px 2px hsl(280, 100%, 80%), 0px 0px 15px purple,
+    0px 0px 60px purple;
+}
+
+.purple-drop-shadow {
+  filter: drop-shadow(0px 0px 2px hsl(280, 100%, 80%))
+    drop-shadow(0px 0px 8px purple);
+}
+
+.blue-text-shadow {
+  text-shadow: 0px 0px 2px hsl(240, 100%, 80%), 0px 0px 15px blue,
+    0px 0px 60px blue;
+}
+
+.blue-box-shadow {
+  box-shadow: 0px 0px 2px hsl(240, 100%, 80%), 0px 0px 15px blue,
+    0px 0px 60px blue;
+}
+
+.blue-drop-shadow {
+  filter: drop-shadow(0px 0px 2px hsl(240, 100%, 80%))
+    drop-shadow(0px 0px 8px blue);
+}
+
+.yellow-text-shadow {
+  text-shadow: 0px 0px 2px hsl(60, 100%, 80%), 0px 0px 15px yellow,
+    0px 0px 60px yellow;
+}
+
+.yellow-box-shadow {
+  box-shadow: 0px 0px 2px hsl(60, 100%, 80%), 0px 0px 15px yellow,
+    0px 0px 60px yellow;
+}
+
+.yellow-drop-shadow {
+  filter: drop-shadow(0px 0px 2px hsl(60, 100%, 80%))
+    drop-shadow(0px 0px 8px yellow);
+}
+
+.pink-text-shadow {
+  text-shadow: 0px 0px 2px hsl(320, 100%, 80%), 0px 0px 15px pink,
+    0px 0px 60px pink;
+}
+
+.pink-box-shadow {
+  box-shadow: 0px 0px 2px hsl(320, 100%, 80%), 0px 0px 15px pink,
+    0px 0px 60px pink;
+}
+
+.pink-drop-shadow {
+  filter: drop-shadow(0px 0px 2px hsl(320, 100%, 80%))
+    drop-shadow(0px 0px 8px pink);
+}
+
+.grey-text-shadow {
+  text-shadow: 0px 0px 2px hsl(0, 0%, 80%), 0px 0px 15px grey, 0px 0px 60px grey;
+}
+
+.grey-box-shadow {
+  box-shadow: 0px 0px 2px hsl(0, 0%, 80%), 0px 0px 15px grey, 0px 0px 60px grey;
+}
+
+.grey-drop-shadow {
+  filter: drop-shadow(0px 0px 2px hsl(0, 0%, 80%)) drop-shadow(0px 0px 8px grey);
+}
+
+.red-text-shadow {
+  text-shadow: 0px 0px 2px hsl(0, 100%, 80%), 0px 0px 15px red, 0px 0px 60px red;
+}
+
+.red-box-shadow {
+  box-shadow: 0px 0px 2px hsl(0, 100%, 80%), 0px 0px 15px red, 0px 0px 60px red;
+}
+
 .red-drop-shadow {
-  filter: drop-shadow(0px 0px 1px hsl(0, 100%, 80%))
-    drop-shadow(0px 0px 2px hsl(0, 100%, 80%))
-    drop-shadow(0px 0px 15px hsl(0, 100%, 50%)) drop-shadow(0px 0px 60px red);
+  filter: drop-shadow(0px 0px 2px hsl(0, 100%, 80%))
+    drop-shadow(0px 0px 8px red);
 }
 
 @keyframes flicker {
