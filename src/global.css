@@ -79,7 +79,7 @@ body {
   --drop-shadow-two: 0px 0px 8px pink;
 }
 
-.theme-grey {
+.theme-gray {
   --glow: 0px 0px 2px hsl(0, 0%, 80%), 0px 0px 15px grey, 0px 0px 60px grey;
   --drop-shadow-one: 0px 0px 2px hsl(0, 0%, 80%);
   --drop-shadow-two: 0px 0px 8px grey;

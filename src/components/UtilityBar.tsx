@@ -9,6 +9,7 @@ const UtilityBar = () => {
 
   const {
     openSceneSelector,
+    toggleThemeSelector,
     toggleSoundControlPanel,
     toggleTimer,
     isTimerDone,
@@ -24,6 +25,7 @@ const UtilityBar = () => {
           onClick={toggleTimer}
           isRedGlow={isTimerDone}
         />
+        <IconButton icon={<Playlist />} onClick={toggleThemeSelector} />
       </div>
     </OpaqueContainer>
   )

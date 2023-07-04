@@ -3,20 +3,20 @@ import { RootStore } from './rootStore'
 import { Color } from '../types/color'
 
 export class UIStore {
-  rootStore: RootStore
   isSceneSelectorOpen = false
   isTrackSelectorOpen = false
+  isThemeSelectorOpen = false
   isSoundControlPanelOpen = false
   isTimerOpen = false
   isTimerDone = false
   isBackgroundDim = false
   theme: Color = 'green'
 
-  constructor(rootStore: RootStore) {
-    this.rootStore = rootStore
+  constructor() {
     makeAutoObservable(this)
   }
 
+  // Scene Selector
   openSceneSelector = () => {
     this.isSceneSelectorOpen = true
   }
@@ -25,6 +25,7 @@ export class UIStore {
     this.isSceneSelectorOpen = false
   }
 
+  // Track Selector
   openTrackSelector = () => {
     this.isTrackSelectorOpen = true
   }
@@ -33,33 +34,49 @@ export class UIStore {
     this.isTrackSelectorOpen = false
   }
 
+  // Theme Selector
+  closeThemeSelector = () => {
+    this.isThemeSelectorOpen = false
+  }
+
+  toggleThemeSelector = () => {
+    this.closeTimer()
+    this.closeSoundControlPanel()
+    this.isThemeSelectorOpen = !this.isThemeSelectorOpen
+  }
+
+  setTheme = (color: Color) => {
+    this.theme = color
+  }
+
+  // Sound Control Panel
   closeSoundControlPanel = () => {
     this.isSoundControlPanelOpen = false
   }
 
   toggleSoundControlPanel = () => {
     this.closeTimer()
+    this.closeThemeSelector()
     this.isSoundControlPanelOpen = !this.isSoundControlPanelOpen
   }
 
+  // Timer
   closeTimer = () => {
     this.isTimerOpen = false
   }
 
   toggleTimer = () => {
+    this.closeThemeSelector()
     this.closeSoundControlPanel()
     this.isTimerOpen = !this.isTimerOpen
-  }
-
-  toggleIsBackgroundDim = () => {
-    this.isBackgroundDim = !this.isBackgroundDim
   }
 
   setIsTimerDone = (value: boolean) => {
     this.isTimerDone = value
   }
 
-  setTheme = (color: Color) => {
-    this.theme = color
+  // Background Dimming
+  toggleIsBackgroundDim = () => {
+    this.isBackgroundDim = !this.isBackgroundDim
   }
 }

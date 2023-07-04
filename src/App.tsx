@@ -11,6 +11,7 @@ import FadeAnimation from './components/animations/FadeAnimation'
 import { useEffect } from 'react'
 import Timer from './components/Timer'
 import FadeAnimationHidden from './components/animations/FadeAnimationHidden'
+import ThemeSelector from './components/ThemeSelector'
 
 function App() {
   const { uiStore, sceneStore } = useRootStore()
@@ -20,12 +21,15 @@ function App() {
     closeSceneSelector,
     isTrackSelectorOpen,
     closeTrackSelector,
+    isThemeSelectorOpen,
+    closeThemeSelector,
     isSoundControlPanelOpen,
     closeSoundControlPanel,
     isTimerOpen,
     closeTimer,
     isBackgroundDim,
     theme,
+    setTheme,
   } = uiStore
 
   useEffect(() => {
@@ -63,6 +67,17 @@ function App() {
             className="h-1/2 absolute bottom-24"
           >
             <SoundControlPanel onClose={closeSoundControlPanel} />
+          </FadeAnimationHidden>
+
+          <FadeAnimationHidden
+            isVisible={isThemeSelectorOpen}
+            className="absolute bottom-24"
+          >
+            <ThemeSelector
+              handleSelect={setTheme}
+              currentTheme={theme}
+              onClose={closeThemeSelector}
+            />
           </FadeAnimationHidden>
 
           <FadeAnimationHidden isVisible={isTimerOpen}>

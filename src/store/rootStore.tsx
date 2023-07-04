@@ -11,7 +11,7 @@ export class RootStore {
   constructor() {
     this.sceneStore = new SceneStore(this)
     this.trackStore = new TrackStore(this)
-    this.uiStore = new UIStore(this)
+    this.uiStore = new UIStore()
   }
 }
 

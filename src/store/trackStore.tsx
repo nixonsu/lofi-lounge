@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx'
+import { makeAutoObservable, runInAction } from 'mobx'
 import { Track } from '../types/track'
 import { RootStore } from './rootStore'
 
@@ -42,6 +42,9 @@ export class TrackStore {
   loadTracks = async () => {
     const response = await fetch('/tracks.json')
     const data = await response.json()
-    this.tracks = data
+
+    runInAction(() => {
+      this.tracks = data
+    })
   }
 }

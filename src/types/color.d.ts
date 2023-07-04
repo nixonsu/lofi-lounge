@@ -1,7 +1,7 @@
 export type Color =
   | 'green'
   | 'red'
-  | 'grey'
+  | 'gray'
   | 'yellow'
   | 'blue'
   | 'purple'
