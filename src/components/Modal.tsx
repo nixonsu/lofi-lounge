@@ -11,7 +11,7 @@ interface ModalProps {
 const Modal = ({ title, onClose, children }: ModalProps) => {
   return (
     <div className="fixed inset-0 flex flex-col p-4 bg-black opaque gap-5">
-      <div className="flex justify-between">
+      <div className="flex justify-between pt-4">
         <div />
         <h1 className="animate-flicker">{title}</h1>
         <IconButton icon={<Cross />} onClick={onClose} />
