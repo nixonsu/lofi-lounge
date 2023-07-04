@@ -1,6 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx'
 import { Scene } from '../types/scene'
 import { RootStore } from './rootStore'
+import { randomIntFromInterval } from '../utils/Utils'
 
 export class SceneStore {
   rootStore: RootStore
@@ -28,6 +29,7 @@ export class SceneStore {
     const data = await response.json()
     runInAction(() => {
       this.scenes = data
+      this.sceneIndex = randomIntFromInterval(0, this.scenes.length - 1)
     })
   }
 }

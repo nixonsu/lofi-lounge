@@ -1,17 +1,5 @@
 [
   {
-    "id": "847944dd-0fde-45a7-896a-c028bff77230",
-    "name": "shop",
-    "src": "/gifs/shop.gif",
-    "thumbnailUrl": "/jpgs/shop.jpg"
-  },
-  {
-    "id": "847944dd-0fde-45a7-896a-c021bff77239",
-    "name": "bar",
-    "src": "/gifs/bar.gif",
-    "thumbnailUrl": "/jpgs/bar.jpg"
-  },
-  {
     "id": "4f9940c5-5b8a-47c3-95da-64b6c8772d62",
     "name": "temple",
     "src": "/gifs/temple.gif",
@@ -22,12 +10,6 @@
     "name": "skyline",
     "src": "/gifs/skyline.gif",
     "thumbnailUrl": "/jpgs/skyline.jpg"
-  },
-  {
-    "id": "80925cda-5a5d-4db1-9e17-d07810de18d0",
-    "name": "lofi lounge",
-    "src": "/gifs/lofi-lounge.gif",
-    "thumbnailUrl": "/jpgs/lofi-lounge.jpg"
   },
   {
     "id": "9dd1c76e-2c39-4f61-8d45-46e0b4c74f6d",
@@ -52,5 +34,71 @@
     "name": "cyberpunk",
     "src": "/gifs/cyberpunk.gif",
     "thumbnailUrl": "/jpgs/cyberpunk.jpg"
+  },
+  {
+    "id": "6d6eb7c2-5jdf-4e5e-885b-8b16e73dabeg",
+    "name": "bar",
+    "src": "/gifs/bar.gif",
+    "thumbnailUrl": "/jpgs/bar.jpg"
+  },
+  {
+    "id": "5d6eb7c2-5idf-4e5e-881b-8b16e73dabba",
+    "name": "study",
+    "src": "/gifs/study.gif",
+    "thumbnailUrl": "/jpgs/study.jpg"
+  },
+  {
+    "id": "74fcb8e3-6b25-4cfd-8819-ec61b8c888c6",
+    "name": "day room",
+    "src": "/gifs/day-room.gif",
+    "thumbnailUrl": "/jpgs/day-room.jpg"
+  },
+  {
+    "id": "14fcb8e3-6c25-4cfd-8819-ec61b8c888c2",
+    "name": "mountains",
+    "src": "/gifs/mountains.gif",
+    "thumbnailUrl": "/jpgs/mountains.jpg"
+  },
+  {
+    "id": "13fe9b41-8d9b-4082-ae1a-204ad84cb571",
+    "name": "boreal valley",
+    "src": "/gifs/boreal-valley.gif",
+    "thumbnailUrl": "/jpgs/boreal-valley.jpg"
+  },
+  {
+    "id": "e6fd10e1-918b-4c78-9c5c-86992497b4de",
+    "name": "alley",
+    "src": "/gifs/alley.gif",
+    "thumbnailUrl": "/jpgs/alley.jpg"
+  },
+  {
+    "id": "bd6c0b1b-24b0-4a4f-b7fd-46f17c4af285",
+    "name": "night room",
+    "src": "/gifs/night-room.gif",
+    "thumbnailUrl": "/jpgs/night-room.jpg"
+  },
+  {
+    "id": "06713d6a-b057-42d7-8fdd-2ff65e25e7b9",
+    "name": "station",
+    "src": "/gifs/station.gif",
+    "thumbnailUrl": "/jpgs/station.jpg"
+  },
+  {
+    "id": "83c0eb99-7e61-4c80-8e1d-369d07e46f61",
+    "name": "creek",
+    "src": "/gifs/creek.gif",
+    "thumbnailUrl": "/jpgs/creek.jpg"
+  },
+  {
+    "id": "bf179b48-7f9a-4a61-885d-56c27fb0ef24",
+    "name": "race",
+    "src": "/gifs/race.gif",
+    "thumbnailUrl": "/jpgs/race.jpg"
+  },
+  {
+    "id": "9a37d826-2d94-4e33-920c-4e6fbb07e299",
+    "name": "cottage",
+    "src": "/gifs/cottage.gif",
+    "thumbnailUrl": "/jpgs/cottage.jpg"
   }
 ]
