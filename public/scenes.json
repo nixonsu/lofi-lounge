@@ -1,37 +1,56 @@
 [
   {
+    "id": "847944dd-0fde-45a7-896a-c028bff77230",
+    "name": "shop",
+    "src": "/gifs/shop.gif",
+    "thumbnailUrl": "/jpgs/shop.jpg"
+  },
+  {
+    "id": "847944dd-0fde-45a7-896a-c021bff77239",
+    "name": "bar",
+    "src": "/gifs/bar.gif",
+    "thumbnailUrl": "/jpgs/bar.jpg"
+  },
+  {
     "id": "4f9940c5-5b8a-47c3-95da-64b6c8772d62",
     "name": "temple",
-    "src": "/gifs/temple.gif"
+    "src": "/gifs/temple.gif",
+    "thumbnailUrl": "/jpgs/temple.jpg"
   },
   {
     "id": "c5e5c4e3-184f-4c17-82fd-9ebe9512a8e6",
     "name": "skyline",
-    "src": "/gifs/skyline.gif"
+    "src": "/gifs/skyline.gif",
+    "thumbnailUrl": "/jpgs/skyline.jpg"
   },
   {
     "id": "80925cda-5a5d-4db1-9e17-d07810de18d0",
-    "name": "lake",
-    "src": "/gifs/lake.gif"
+    "name": "lofi lounge",
+    "src": "/gifs/lofi-lounge.gif",
+    "thumbnailUrl": "/jpgs/lofi-lounge.jpg"
   },
   {
     "id": "9dd1c76e-2c39-4f61-8d45-46e0b4c74f6d",
     "name": "valley",
-    "src": "/gifs/valley.gif"
+    "src": "/gifs/valley.gif",
+    "thumbnailUrl": "/jpgs/valley.jpg"
   },
   {
     "id": "ed6eb7c7-5edf-4e5e-835b-8b16e73dabeb",
     "name": "city",
-    "src": "/gifs/city.gif"
+    "src": "/gifs/city.gif",
+    "thumbnailUrl": "/jpgs/city.jpg"
   },
   {
     "id": "e944e468-543f-4fcf-ba4b-c8f459cfd987",
     "name": "ocean",
-    "src": "/gifs/ocean.gif"
+    "src": "/gifs/ocean.gif",
+    "thumbnailUrl": "/jpgs/ocean.jpg"
   },
   {
     "id": "8c0f260f-20a4-42ad-8fe6-1a4da6d8d267",
     "name": "cyberpunk",
-    "src": "/gifs/cyberpunk.gif"
+    "src": "/gifs/cyberpunk.gif",
+    "thumbnailUrl": "/jpgs/cyberpunk.jpg"
   }
 ]

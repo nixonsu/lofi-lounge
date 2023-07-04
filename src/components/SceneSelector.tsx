@@ -17,7 +17,7 @@ const SceneSelector = ({ onClose }: Props) => {
           <ScaleAnimation key={scene.id} scaleFactor={1.02}>
             <Card
               id={scene.id}
-              src={scene.src}
+              src={scene.thumbnailUrl}
               text={scene.name}
               handleClick={sceneStore.setCurrentScene}
               isSelected={scene.id === sceneStore.currentScene.id}
