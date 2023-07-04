@@ -25,6 +25,7 @@ function App() {
     isTimerOpen,
     closeTimer,
     isBackgroundDim,
+    theme,
   } = uiStore
 
   useEffect(() => {
@@ -38,6 +39,10 @@ function App() {
     document.addEventListener('keydown', handleEscapeKey)
     return () => document.removeEventListener('keydown', handleEscapeKey)
   }, [closeSceneSelector, closeTrackSelector])
+
+  useEffect(() => {
+    document.body.className = `theme-${theme}`
+  }, [theme])
 
   return sceneStore.scenes.length > 0 ? (
     <div className="font-primary p-4 h-screen w-screen text-white">

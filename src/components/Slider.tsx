@@ -26,7 +26,7 @@ const Slider = ({ value, handleChange }: Props) => {
           <ScaleAnimation key={index} scaleFactor={1.5}>
             <div
               className={`h-3 w-1.5 mr-1 cursor-pointer bg-white ${
-                value === 0 ? 'red-drop-shadow' : 'green-drop-shadow'
+                value === 0 ? 'red-drop-shadow' : 'shadow-theme'
               } ${index >= activeIndex && 'opacity-30'}`}
               onClick={() => handleSlideClick(index)}
             />

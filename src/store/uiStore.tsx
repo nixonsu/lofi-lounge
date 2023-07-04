@@ -1,5 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 import { RootStore } from './rootStore'
+import { Color } from '../types/color'
 
 export class UIStore {
   rootStore: RootStore
@@ -9,6 +10,7 @@ export class UIStore {
   isTimerOpen = false
   isTimerDone = false
   isBackgroundDim = false
+  theme: Color = 'green'
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore
@@ -55,5 +57,9 @@ export class UIStore {
 
   setIsTimerDone = (value: boolean) => {
     this.isTimerDone = value
+  }
+
+  setTheme = (color: Color) => {
+    this.theme = color
   }
 }

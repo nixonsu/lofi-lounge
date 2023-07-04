@@ -3,6 +3,12 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      boxShadow: {
+        theme: 'var(--glow)',
+      },
+      dropShadow: {
+        theme: ['var(--drop-shadow-one)', 'var(--drop-shadow-two)'],
+      },
       fontFamily: {
         primary: 'Unibody',
       },

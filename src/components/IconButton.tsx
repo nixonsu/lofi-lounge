@@ -21,7 +21,7 @@ const IconButton = ({
           className={`${
             isEnabled ? 'fill-white' : 'fill-black'
           } transition-fill duration-500 ${
-            isRedGlow ? 'red-drop-shadow' : 'green-drop-shadow'
+            isRedGlow ? 'red-drop-shadow' : 'drop-shadow-theme'
           }`}
         >
           {icon}
