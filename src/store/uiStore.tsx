@@ -1,5 +1,4 @@
 import { makeAutoObservable } from 'mobx'
-import { RootStore } from './rootStore'
 import { Color } from '../types/color'
 
 export class UIStore {
