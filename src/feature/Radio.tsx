@@ -17,15 +17,22 @@ const Radio = () => {
 
   const { currentTrack } = trackStore
 
+  const { openTrackSelector } = uiStore
+
   const { volume, isPlaying, isLoading, setIsLoading, togglePlay, setVolume } =
     usePlayer()
 
   return trackStore.tracks.length > 0 ? (
-    <OpaqueContainer className="w-5/6">
+    <OpaqueContainer className="w-3/4 min-w-fit">
       <div className="flex flex-col items-start text-white self-stretch gap-3">
-        <p className="animate-flicker">{currentTrack.title}</p>
+        <p
+          className="animate-flicker cursor-pointer"
+          onClick={openTrackSelector}
+        >
+          {currentTrack.title}
+        </p>
 
-        <div className="flex items-center gap-3 w-full">
+        <div className="flex items-center gap-4 w-full">
           {isPlaying ? (
             <IconButton onClick={togglePlay} icon={<PauseIcon />} />
           ) : (
@@ -44,11 +51,8 @@ const Radio = () => {
             value={volume}
             handleChange={(e) => setVolume(parseFloat(e.target.value))}
           />
-          <IconButton
-            onClick={uiStore.openTrackSelector}
-            icon={<RadioIcon />}
-          />
-          {isLoading && <LoadingIcon />}
+          <IconButton onClick={openTrackSelector} icon={<RadioIcon />} />
+          <div className="w-8">{isLoading && <LoadingIcon />}</div>
         </div>
 
         <ReactPlayer

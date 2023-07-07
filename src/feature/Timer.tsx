@@ -47,7 +47,7 @@ const Timer = ({ onClose, className }: Props) => {
         {minutesDisplay} : {secondsDisplay}
       </div>
 
-      <div className="flex w-full justify-center items-center gap-2">
+      <div className="flex w-full justify-center items-center gap-4">
         {isRunning ? (
           <IconButton icon={<PauseIcon />} onClick={pause} />
         ) : (

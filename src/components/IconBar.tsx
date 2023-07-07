@@ -8,7 +8,7 @@ interface Props {
 const IconBar = ({ children }: Props) => {
   return (
     <OpaqueContainer>
-      <div className="flex gap-3">{children}</div>
+      <div className="flex gap-4">{children}</div>
     </OpaqueContainer>
   )
 }
