@@ -8,10 +8,6 @@
   padding: 0;
 }
 
-html {
-  min-height: 100vh;
-}
-
 @font-face {
   font-family: Unibody;
   src: url('/fonts/Unibody.otf') format('opentype');
