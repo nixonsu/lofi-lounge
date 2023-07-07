@@ -50,8 +50,8 @@ function App() {
           <Radio />
         </div>
 
-        <div className="flex justify-end items-start">
-          <TopIconBar className="tablet:hidden" />
+        <div className="flex justify-end items-start tablet:hidden">
+          <TopIconBar />
         </div>
 
         <div className="flex flex-col-reverse items-start tablet:items-center gap-4">
