@@ -7,7 +7,8 @@
 
 </div>
 
-[app_showcase](https://raw.githubusercontent.com/ni-xon/lofi-lounge/main/docs/images/main.gif)
+![main](https://github.com/ni-xon/lofi-lounge/assets/57848315/d569f9ed-d4a5-4362-9663-65f172e00d45)
+
 
 Step into a mesmerizing digital environment where you can chill out to live lofi music and get blown away by awesome pixel art animations. It's an epic minimalist space where anyone can kick back, groove to the tunes, and soak in the beauty of this incredible mix.
 
