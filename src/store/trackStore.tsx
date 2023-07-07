@@ -1,6 +1,6 @@
+import { Track } from '@root/types/track'
+import { RootStore } from '@store/rootStore'
 import { makeAutoObservable, runInAction } from 'mobx'
-import { Track } from '../types/track'
-import { RootStore } from './rootStore'
 
 export class TrackStore {
   rootStore: RootStore

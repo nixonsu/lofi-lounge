@@ -1,12 +1,12 @@
-import Popup from './Popup'
-import useTimer from '../hooks/useTimer'
-import IconButton from './IconButton'
-import { ReactComponent as PlayIcon } from './icons/Play.svg'
+import Popup from '@components/Popup'
+import useTimer from '@hooks/useTimer'
+import IconButton from '@components/IconButton'
+import { ReactComponent as PlayIcon } from '@components/icons/Play.svg'
 import { ReactComponent as PauseIcon } from 'pixelarticons/svg/pause.svg'
 import { ReactComponent as ResetIcon } from 'pixelarticons/svg/reload.svg'
 import { ReactComponent as PlusIcon } from 'pixelarticons/svg/plus.svg'
 import { useEffect } from 'react'
-import { useRootStore } from '../store/rootStore'
+import { useRootStore } from '@store/rootStore'
 
 interface Props {
   onClose: () => void

@@ -1,11 +1,11 @@
+import { Color } from '@root/types/color'
 import { makeAutoObservable } from 'mobx'
-import { Color } from '../types/color'
 
 export class UIStore {
   isSceneSelectorOpen = false
   isTrackSelectorOpen = false
   isThemeSelectorOpen = false
-  isSoundControlPanelOpen = false
+  isSoundPlayerCollectionOpen = false
   isTimerOpen = false
   isTimerDone = false
   isBackgroundDim = false
@@ -41,7 +41,7 @@ export class UIStore {
 
   toggleThemeSelector = () => {
     this.closeTimer()
-    this.closeSoundControlPanel()
+    this.closeSoundPlayerCollection()
     this.isThemeSelectorOpen = !this.isThemeSelectorOpen
   }
 
@@ -49,15 +49,15 @@ export class UIStore {
     this.theme = color
   }
 
-  // Sound Control Panel
-  closeSoundControlPanel = () => {
-    this.isSoundControlPanelOpen = false
+  // Sound Player Collection
+  closeSoundPlayerCollection = () => {
+    this.isSoundPlayerCollectionOpen = false
   }
 
-  toggleSoundControlPanel = () => {
+  toggleSoundPlayerCollection = () => {
     this.closeTimer()
     this.closeThemeSelector()
-    this.isSoundControlPanelOpen = !this.isSoundControlPanelOpen
+    this.isSoundPlayerCollectionOpen = !this.isSoundPlayerCollectionOpen
   }
 
   // Timer
@@ -67,7 +67,7 @@ export class UIStore {
 
   toggleTimer = () => {
     this.closeThemeSelector()
-    this.closeSoundControlPanel()
+    this.closeSoundPlayerCollection()
     this.isTimerOpen = !this.isTimerOpen
   }
 

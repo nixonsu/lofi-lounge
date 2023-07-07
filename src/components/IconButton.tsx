@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import ScaleAnimation from './animations/ScaleAnimation'
+import ScaleAnimation from '@components/animations/ScaleAnimation'
 
 interface Props {
   icon: ReactNode

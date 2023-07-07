@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
-import { usePlayer } from '../hooks/usePlayer'
-import IconButton from './IconButton'
-import OpaqueContainer from './OpaqueContainer'
-import Slider from './Slider'
+import { usePlayer } from '@hooks/usePlayer'
+import IconButton from '@components/IconButton'
+import OpaqueContainer from '@components/OpaqueContainer'
+import Slider from '@components/Slider'
 import ReactHowler from 'react-howler'
 
 interface Props {

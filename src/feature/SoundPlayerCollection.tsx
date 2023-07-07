@@ -1,11 +1,11 @@
-import SoundPlayer from './SoundPlayer'
-import Popup from './Popup'
-import { ReactComponent as RainIcon } from './icons/Rain.svg'
-import { ReactComponent as FireIcon } from './icons/Fire.svg'
-import { ReactComponent as Coffee } from './icons/Coffee.svg'
-import { ReactComponent as MoonIcon } from './icons/Moon.svg'
-import { ReactComponent as BirdIcon } from './icons/Bird.svg'
-import { ReactComponent as WindIcon } from './icons/Wind.svg'
+import SoundPlayer from '@components/SoundPlayer'
+import Popup from '@components/Popup'
+import { ReactComponent as RainIcon } from '@components/icons/Rain.svg'
+import { ReactComponent as FireIcon } from '@components/icons/Fire.svg'
+import { ReactComponent as Coffee } from '@components/icons/Coffee.svg'
+import { ReactComponent as MoonIcon } from '@components/icons/Moon.svg'
+import { ReactComponent as BirdIcon } from '@components/icons/Bird.svg'
+import { ReactComponent as WindIcon } from '@components/icons/Wind.svg'
 
 interface Props {
   onClose?: () => void
@@ -39,7 +39,7 @@ const sounds = [
   },
 ]
 
-const SoundControlPanel = ({ onClose, className }: Props) => {
+const SoundPlayerCollection = ({ onClose, className }: Props) => {
   return (
     <Popup className={`${className} h-full`} onClose={onClose} title={'sounds'}>
       <div className="flex flex-col gap-4 overflow-y-scroll pr-4">
@@ -55,4 +55,4 @@ const SoundControlPanel = ({ onClose, className }: Props) => {
   )
 }
 
-export default SoundControlPanel
+export default SoundPlayerCollection

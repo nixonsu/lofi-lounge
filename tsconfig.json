@@ -6,6 +6,17 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    /* Paths */
+    "baseUrl": ".",
+    "paths": {
+      "@root/*": ["src/*"],
+      "@feature/*": ["src/feature/*"],
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@store/*": ["./src/store/*"],
+      "@utils/*": ["./src/utils/*"]
+    },
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,

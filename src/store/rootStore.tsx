@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useContext } from 'react'
-import { SceneStore } from './sceneStore'
-import { TrackStore } from './trackStore'
-import { UIStore } from './uiStore'
+import { SceneStore } from '@store/sceneStore'
+import { TrackStore } from '@store/trackStore'
+import { UIStore } from '@store/uiStore'
 
 export class RootStore {
   sceneStore: SceneStore

@@ -1,17 +1,17 @@
-import Background from './components/Background'
-import Bar from './components/Bar'
-import Radio from './components/Radio'
-import UtilityBar from './components/UtilityBar'
+import Background from '@components/Background'
+import Bar from '@feature/Bar'
+import Radio from '@feature/Radio'
+import UtilityBar from '@feature/UtilityBar'
 import { observer } from 'mobx-react'
-import SceneSelector from './components/SceneSelector'
-import { useRootStore } from './store/rootStore'
-import TrackSelector from './components/TrackSelector'
-import SoundControlPanel from './components/SoundControlPanel'
-import FadeAnimation from './components/animations/FadeAnimation'
+import SceneSelector from '@feature/SceneSelector'
+import { useRootStore } from '@store/rootStore'
+import TrackSelector from '@feature/TrackSelector'
+import SoundPlayerCollection from '@feature/SoundPlayerCollection'
+import FadeAnimation from '@components/animations/FadeAnimation'
 import { useEffect } from 'react'
-import Timer from './components/Timer'
-import FadeAnimationHidden from './components/animations/FadeAnimationHidden'
-import ThemeSelector from './components/ThemeSelector'
+import Timer from '@feature/Timer'
+import FadeAnimationHidden from '@components/animations/FadeAnimationHidden'
+import ThemeSelector from '@feature/ThemeSelector'
 
 function App() {
   const { uiStore, sceneStore } = useRootStore()
@@ -23,8 +23,8 @@ function App() {
     closeTrackSelector,
     isThemeSelectorOpen,
     closeThemeSelector,
-    isSoundControlPanelOpen,
-    closeSoundControlPanel,
+    isSoundPlayerCollectionOpen,
+    closeSoundPlayerCollection,
     isTimerOpen,
     closeTimer,
     isBackgroundDim,
@@ -58,10 +58,10 @@ function App() {
           <UtilityBar />
 
           <FadeAnimationHidden
-            isVisible={isSoundControlPanelOpen}
+            isVisible={isSoundPlayerCollectionOpen}
             className="h-1/2 absolute bottom-24"
           >
-            <SoundControlPanel onClose={closeSoundControlPanel} />
+            <SoundPlayerCollection onClose={closeSoundPlayerCollection} />
           </FadeAnimationHidden>
 
           <FadeAnimationHidden

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
-import IconButton from './IconButton'
-import OpaqueContainer from './OpaqueContainer'
+import IconButton from '@components/IconButton'
+import OpaqueContainer from '@components/OpaqueContainer'
 import { ReactComponent as CloseIcon } from 'pixelarticons/svg/close.svg'
 
 interface Props {

@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react'
-import { useRootStore } from '../store/rootStore'
-import IconButton from './IconButton'
-import OpaqueContainer from './OpaqueContainer'
+import { useRootStore } from '@store/rootStore'
+import IconButton from '@components/IconButton'
+import OpaqueContainer from '@components/OpaqueContainer'
 import { ReactComponent as GalleryIcon } from 'pixelarticons/svg/image.svg'
 import { ReactComponent as MusicIcon } from 'pixelarticons/svg/music.svg'
 import { ReactComponent as ClockIcon } from 'pixelarticons/svg/clock.svg'
@@ -13,7 +13,7 @@ const UtilityBar = () => {
   const {
     openSceneSelector,
     toggleThemeSelector,
-    toggleSoundControlPanel,
+    toggleSoundPlayerCollection,
     toggleTimer,
     isTimerDone,
   } = uiStore
@@ -22,7 +22,10 @@ const UtilityBar = () => {
     <OpaqueContainer>
       <div className="flex gap-3">
         <IconButton icon={<GalleryIcon />} onClick={openSceneSelector} />
-        <IconButton icon={<MusicIcon />} onClick={toggleSoundControlPanel} />
+        <IconButton
+          icon={<MusicIcon />}
+          onClick={toggleSoundPlayerCollection}
+        />
         <IconButton
           icon={<ClockIcon />}
           onClick={toggleTimer}
