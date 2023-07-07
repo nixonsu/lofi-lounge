@@ -55,7 +55,7 @@ function App() {
         </div>
 
         <div className="flex flex-col-reverse items-start tablet:items-center gap-4">
-          <BottomIconBar />
+          {/* <BottomIconBar /> */}
 
           <FadeAnimationHidden
             isVisible={isSoundPlayerCollectionOpen}
