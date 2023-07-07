@@ -37,3 +37,4 @@ jobs:
           NETLIFY_DEPLOY_TO_PROD: true
           NETLIFY_DEPLOY_MESSAGE: 'Prod deploy: ${{ github.ref }}'
           build_command: yarn build
+          build_directory: dist
