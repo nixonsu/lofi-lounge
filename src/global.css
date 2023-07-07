@@ -17,6 +17,11 @@ body {
   overscroll-behavior: none;
 }
 
+html,
+body {
+  height: 100vh;
+}
+
 /* For webkit-based browsers (e.g., Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 12px;
