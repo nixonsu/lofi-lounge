@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import IconButton from './IconButton'
 import OpaqueContainer from './OpaqueContainer'
-import { ReactComponent as Cross } from './icons/Cross.svg'
+import { ReactComponent as CloseIcon } from 'pixelarticons/svg/close.svg'
 
 interface Props {
   title?: string
@@ -16,7 +16,7 @@ const Popup = ({ title, onClose, children, className }: Props) => {
       <div className="flex justify-between">
         <div />
         <h1 className="animate-flicker">{title}</h1>
-        <IconButton icon={<Cross />} onClick={onClose} />
+        <IconButton icon={<CloseIcon />} onClick={onClose} />
       </div>
       {children}
     </OpaqueContainer>

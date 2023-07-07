@@ -30,23 +30,20 @@ function App() {
     isBackgroundDim,
     theme,
     setTheme,
+    isFullscreen,
   } = uiStore
-
-  useEffect(() => {
-    function handleEscapeKey(event: KeyboardEvent) {
-      if (event.code === 'Escape') {
-        closeSceneSelector()
-        closeTrackSelector()
-      }
-    }
-
-    document.addEventListener('keydown', handleEscapeKey)
-    return () => document.removeEventListener('keydown', handleEscapeKey)
-  }, [closeSceneSelector, closeTrackSelector])
 
   useEffect(() => {
     document.body.className = `theme-${theme}`
   }, [theme])
+
+  useEffect(() => {
+    if (!isFullscreen) {
+      document.exitFullscreen()
+    } else {
+      document.body.requestFullscreen()
+    }
+  }, [isFullscreen])
 
   return sceneStore.scenes.length > 0 ? (
     <div className="font-primary p-4 h-screen w-screen text-white">

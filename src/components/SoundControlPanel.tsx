@@ -1,11 +1,11 @@
 import SoundPlayer from './SoundPlayer'
 import Popup from './Popup'
-import { ReactComponent as Rain } from './icons/Rain.svg'
-import { ReactComponent as Fire } from './icons/Fire.svg'
+import { ReactComponent as RainIcon } from './icons/Rain.svg'
+import { ReactComponent as FireIcon } from './icons/Fire.svg'
 import { ReactComponent as Coffee } from './icons/Coffee.svg'
-import { ReactComponent as Moon } from './icons/Moon.svg'
-import { ReactComponent as Bird } from './icons/Bird.svg'
-import { ReactComponent as Wind } from './icons/Wind.svg'
+import { ReactComponent as MoonIcon } from './icons/Moon.svg'
+import { ReactComponent as BirdIcon } from './icons/Bird.svg'
+import { ReactComponent as WindIcon } from './icons/Wind.svg'
 
 interface Props {
   onClose?: () => void
@@ -14,19 +14,19 @@ interface Props {
 
 const sounds = [
   {
-    icon: <Rain />,
+    icon: <RainIcon />,
     audioSrc: '/audio/rain.mp3',
   },
   {
-    icon: <Fire />,
+    icon: <FireIcon />,
     audioSrc: '/audio/fireplace.mp3',
   },
   {
-    icon: <Wind />,
+    icon: <WindIcon />,
     audioSrc: '/audio/storm.mp3',
   },
   {
-    icon: <Moon />,
+    icon: <MoonIcon />,
     audioSrc: '/audio/night.mp3',
   },
   {
@@ -34,7 +34,7 @@ const sounds = [
     audioSrc: '/audio/restaurant.mp3',
   },
   {
-    icon: <Bird />,
+    icon: <BirdIcon />,
     audioSrc: '/audio/bird.mp3',
   },
 ]

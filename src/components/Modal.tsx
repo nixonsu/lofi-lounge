@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import IconButton from './IconButton'
-import { ReactComponent as Cross } from './icons/Cross.svg'
+import { ReactComponent as CloseIcon } from 'pixelarticons/svg/close.svg'
 
 interface ModalProps {
   title?: string
@@ -14,7 +14,7 @@ const Modal = ({ title, onClose, children }: ModalProps) => {
       <div className="flex justify-between pt-4">
         <div />
         <h1 className="animate-flicker">{title}</h1>
-        <IconButton icon={<Cross />} onClick={onClose} />
+        <IconButton icon={<CloseIcon />} onClick={onClose} />
       </div>
       {children}
     </div>

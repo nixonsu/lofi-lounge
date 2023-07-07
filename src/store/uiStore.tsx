@@ -9,6 +9,7 @@ export class UIStore {
   isTimerOpen = false
   isTimerDone = false
   isBackgroundDim = false
+  isFullscreen = false
   theme: Color = 'green'
 
   constructor() {
@@ -77,5 +78,18 @@ export class UIStore {
   // Background Dimming
   toggleIsBackgroundDim = () => {
     this.isBackgroundDim = !this.isBackgroundDim
+  }
+
+  // Fullscreen
+  enterFullscreen = () => {
+    this.isFullscreen = true
+  }
+
+  exitFullscreen = () => {
+    this.isFullscreen = false
+  }
+
+  toggleFullscreen = () => {
+    this.isFullscreen = !this.isFullscreen
   }
 }

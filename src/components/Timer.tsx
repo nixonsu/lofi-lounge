@@ -1,10 +1,10 @@
 import Popup from './Popup'
 import useTimer from '../hooks/useTimer'
 import IconButton from './IconButton'
-import { ReactComponent as Play } from './icons/Play.svg'
-import { ReactComponent as Pause } from './icons/Pause.svg'
-import { ReactComponent as Reset } from './icons/Restart.svg'
-import { ReactComponent as Plus } from './icons/Plus.svg'
+import { ReactComponent as PlayIcon } from './icons/Play.svg'
+import { ReactComponent as PauseIcon } from 'pixelarticons/svg/pause.svg'
+import { ReactComponent as ResetIcon } from 'pixelarticons/svg/reload.svg'
+import { ReactComponent as PlusIcon } from 'pixelarticons/svg/plus.svg'
 import { useEffect } from 'react'
 import { useRootStore } from '../store/rootStore'
 
@@ -49,12 +49,12 @@ const Timer = ({ onClose, className }: Props) => {
 
       <div className="flex w-full justify-center items-center gap-2">
         {isRunning ? (
-          <IconButton icon={<Pause />} onClick={pause} />
+          <IconButton icon={<PauseIcon />} onClick={pause} />
         ) : (
-          <IconButton icon={<Play />} onClick={play} />
+          <IconButton icon={<PlayIcon />} onClick={play} />
         )}
-        <IconButton icon={<Reset />} onClick={reset} />
-        <IconButton icon={<Plus />} onClick={() => incrementTimer(300)} />
+        <IconButton icon={<ResetIcon />} onClick={reset} />
+        <IconButton icon={<PlusIcon />} onClick={() => incrementTimer(300)} />
       </div>
     </Popup>
   )
