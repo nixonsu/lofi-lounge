@@ -1,7 +1,7 @@
 import Background from '@components/Background'
-import Bar from '@feature/Bar'
+import TopIconBar from '@root/feature/TopIconBar'
 import Radio from '@feature/Radio'
-import UtilityBar from '@feature/UtilityBar'
+import BottomIconBar from '@root/feature/BottomIconBar'
 import { observer } from 'mobx-react'
 import SceneSelector from '@feature/SceneSelector'
 import { useRootStore } from '@store/rootStore'
@@ -51,11 +51,11 @@ function App() {
         </div>
 
         <div className="flex justify-end items-start">
-          <Bar />
+          <TopIconBar />
         </div>
 
         <div className="flex flex-col-reverse items-start gap-4">
-          <UtilityBar />
+          <BottomIconBar />
 
           <FadeAnimationHidden
             isVisible={isSoundPlayerCollectionOpen}
