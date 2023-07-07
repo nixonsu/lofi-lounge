@@ -5,13 +5,17 @@ import { ReactComponent as FullscreenIcon } from 'pixelarticons/svg/scale.svg'
 import IconBar from '@root/components/IconBar'
 import { observer } from 'mobx-react'
 
-const TopIconBar = () => {
+interface Props {
+  className?: string
+}
+
+const TopIconBar = ({ className }: Props) => {
   const { uiStore } = useRootStore()
 
   const { toggleIsBackgroundDim, isBackgroundDim, toggleFullscreen } = uiStore
 
   return (
-    <IconBar>
+    <IconBar className={className}>
       <IconButton
         icon={<MoonIcon />}
         onClick={toggleIsBackgroundDim}

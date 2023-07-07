@@ -3,11 +3,12 @@ import { ReactNode } from 'react'
 
 interface Props {
   children?: ReactNode
+  className?: string
 }
 
-const IconBar = ({ children }: Props) => {
+const IconBar = ({ children, className }: Props) => {
   return (
-    <OpaqueContainer>
+    <OpaqueContainer className={className}>
       <div className="flex gap-4">{children}</div>
     </OpaqueContainer>
   )

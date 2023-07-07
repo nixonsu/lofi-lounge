@@ -45,16 +45,16 @@ function App() {
 
   return sceneStore.scenes.length > 0 ? (
     <div className="font-primary p-4 h-screen w-screen text-white">
-      <div className="h-full w-full grid grid-cols-2 grid-rows-2">
+      <div className="h-full w-full grid grid-cols-2 grid-rows-2 tablet:grid-cols-1">
         <div>
           <Radio />
         </div>
 
         <div className="flex justify-end items-start">
-          <TopIconBar />
+          <TopIconBar className="tablet:hidden" />
         </div>
 
-        <div className="flex flex-col-reverse items-start gap-4">
+        <div className="flex flex-col-reverse items-start tablet:items-center gap-4">
           <BottomIconBar />
 
           <FadeAnimationHidden
@@ -79,7 +79,6 @@ function App() {
             <Timer onClose={closeTimer} />
           </FadeAnimationHidden>
         </div>
-        <div></div>
       </div>
 
       <FadeAnimation isVisible={isSceneSelectorOpen}>

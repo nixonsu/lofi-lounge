@@ -12,6 +12,16 @@ export default {
     'bg-blue-500',
   ],
   theme: {
+    screens: {
+      tablet: { max: '640px' },
+      // => @media (min-width: 640px) { ... }
+
+      laptop: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      desktop: '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
     extend: {
       boxShadow: {
         theme: 'var(--glow)',

@@ -7,7 +7,11 @@ import { ReactComponent as ClockIcon } from 'pixelarticons/svg/clock.svg'
 import { ReactComponent as PaintIcon } from 'pixelarticons/svg/paint-bucket.svg'
 import IconBar from '@root/components/IconBar'
 
-const BottomIconBar = () => {
+interface Props {
+  className?: string
+}
+
+const BottomIconBar = ({ className }: Props) => {
   const { uiStore } = useRootStore()
 
   const {
@@ -19,7 +23,7 @@ const BottomIconBar = () => {
   } = uiStore
 
   return (
-    <IconBar>
+    <IconBar className={className}>
       <IconButton icon={<GalleryIcon />} onClick={openSceneSelector} />
       <IconButton icon={<MusicIcon />} onClick={toggleSoundPlayerCollection} />
       <IconButton
