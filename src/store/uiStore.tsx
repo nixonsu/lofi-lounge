@@ -81,14 +81,6 @@ export class UIStore {
   }
 
   // Fullscreen
-  enterFullscreen = () => {
-    this.isFullscreen = true
-  }
-
-  exitFullscreen = () => {
-    this.isFullscreen = false
-  }
-
   toggleFullscreen = () => {
     this.isFullscreen = !this.isFullscreen
   }

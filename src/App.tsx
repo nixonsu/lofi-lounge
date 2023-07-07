@@ -38,11 +38,9 @@ function App() {
   }, [theme])
 
   useEffect(() => {
-    if (!isFullscreen) {
-      document.exitFullscreen()
-    } else {
-      document.body.requestFullscreen()
-    }
+    !isFullscreen
+      ? document.exitFullscreen()
+      : document.body.requestFullscreen()
   }, [isFullscreen])
 
   return sceneStore.scenes.length > 0 ? (
