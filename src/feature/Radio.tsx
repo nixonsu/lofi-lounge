@@ -32,7 +32,7 @@ const Radio = () => {
           {currentTrack.title}
         </p>
 
-        <div className="flex items-center gap-4 w-full">
+        <div className="flex items-center gap-4 w-full flex-wrap">
           {isPlaying ? (
             <IconButton onClick={togglePlay} icon={<PauseIcon />} />
           ) : (
