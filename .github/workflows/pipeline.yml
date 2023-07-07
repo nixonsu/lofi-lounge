@@ -1,0 +1,34 @@
+name: Lofi Lounge CI/CD Pipeline
+
+on:
+  push:
+    branches: ['main']
+    paths-ignore:
+      - 'README.md'
+  pull_request:
+    branches: ['main']
+
+jobs:
+  test:
+    name: 🧪 Run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - name: Run unit & integration tests
+        run: yarn test
+
+  # deploy:
+  #   name: 🚀 Deploy to production
+  #   runs-on: ubuntu-latest
+  #   needs: test
+
+  #   steps:
+  #     - uses: jsmrcaga/action-netlify-deploy@v2.0.0
+  #       with:
+  #         NETLIFY_AUTH_TOKEN: ${{ secrets.MY_TOKEN_SECRET }}
+  #         NETLIFY_DEPLOY_TO_PROD: true
+  #         NETLIFY_DEPLOY_MESSAGE: 'Prod deploy v${{ github.ref }}'
