@@ -20,7 +20,7 @@ const Radio = () => {
   const { openTrackSelector } = uiStore
 
   const { volume, isPlaying, isLoading, setIsLoading, togglePlay, setVolume } =
-    usePlayer(true)
+    usePlayer()
 
   return trackStore.tracks.length > 0 ? (
     <OpaqueContainer className="w-3/4 min-w-fit">
