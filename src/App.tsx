@@ -1,4 +1,4 @@
-import Background from '@components/Background'
+import BackgroundImage from '@root/components/BackgroundImage'
 import TopIconBar from '@root/feature/TopIconBar'
 import Radio from '@feature/Radio'
 import BottomIconBar from '@root/feature/BottomIconBar'
@@ -12,6 +12,7 @@ import { useEffect } from 'react'
 import Timer from '@feature/Timer'
 import FadeAnimationHidden from '@components/animations/FadeAnimationHidden'
 import ThemeSelector from '@feature/ThemeSelector'
+import ScreenContainer from '@root/components/ScreenContainer'
 
 function App() {
   const { uiStore, sceneStore } = useRootStore()
@@ -46,7 +47,7 @@ function App() {
 
   return sceneStore.scenes.length > 0 ? (
     <>
-      <Background
+      <ScreenContainer
         className={`${isBackgroundImageLoaded ? 'hidden' : 'visible'} bg-black`}
       />
       <div
@@ -98,9 +99,9 @@ function App() {
           <TrackSelector onClose={closeTrackSelector} />
         </FadeAnimation>
 
-        <Background className="-z-20" src={sceneStore.currentScene.src} />
+        <BackgroundImage src={sceneStore.currentScene.src} />
         <FadeAnimation isVisible={isBackgroundDim}>
-          <Background className="-z-10 bg-black bg-opacity-50" />
+          <ScreenContainer className="-z-10 bg-black bg-opacity-50" />
         </FadeAnimation>
       </div>
     </>
