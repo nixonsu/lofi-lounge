@@ -4,11 +4,11 @@ import { ReactComponent as NextIcon } from '@components/icons/Next.svg'
 import { ReactComponent as PauseIcon } from 'pixelarticons/svg/pause.svg'
 import { ReactComponent as ShuffleIcon } from 'pixelarticons/svg/shuffle.svg'
 import { ReactComponent as RadioIcon } from 'pixelarticons/svg/radio-signal.svg'
+import { ReactComponent as LoaderIcon } from 'pixelarticons/svg/loader.svg'
 import Slider from '@components/Slider'
 import { usePlayer } from '@hooks/usePlayer'
 import ReactPlayer from 'react-player'
 import OpaqueContainer from '@components/OpaqueContainer'
-import LoadingIcon from '@components/LoadingIcon'
 import { useRootStore } from '@store/rootStore'
 import { observer } from 'mobx-react'
 
@@ -25,14 +25,29 @@ const Radio = () => {
   return trackStore.tracks.length > 0 ? (
     <OpaqueContainer className="w-3/4 min-w-fit">
       <div className="flex flex-col items-start text-white self-stretch gap-3">
-        <p
-          className="animate-flicker cursor-pointer"
-          onClick={openTrackSelector}
-        >
-          {currentTrack.title}
-        </p>
+        <div className="animate-flicker flex gap-4 items-center">
+          <div className="h-full min-w-fit">
+            {isLoading ? (
+              <IconButton
+                className="animate-rotate"
+                onClick={openTrackSelector}
+                icon={<LoaderIcon />}
+              />
+            ) : (
+              <IconButton
+                onClick={openTrackSelector}
+                icon={<RadioIcon />}
+                isRedGlow={!isPlaying}
+              />
+            )}
+          </div>
 
-        <div className="flex items-center gap-4 w-full flex-wrap">
+          <p className="cursor-pointer mb-1" onClick={openTrackSelector}>
+            {currentTrack.title}
+          </p>
+        </div>
+
+        <div className="flex items-center gap-4 flex-wrap">
           {isPlaying ? (
             <IconButton onClick={togglePlay} icon={<PauseIcon />} />
           ) : (
@@ -48,11 +63,10 @@ const Radio = () => {
             icon={<ShuffleIcon />}
           />
           <Slider
+            className="mb-1"
             value={volume}
             handleChange={(e) => setVolume(parseFloat(e.target.value))}
           />
-          <IconButton onClick={openTrackSelector} icon={<RadioIcon />} />
-          <div className="w-8">{isLoading && <LoadingIcon />}</div>
         </div>
 
         <ReactPlayer

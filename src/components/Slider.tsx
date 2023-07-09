@@ -2,11 +2,12 @@ import { ChangeEvent, useState } from 'react'
 import ScaleAnimation from '@components/animations/ScaleAnimation'
 
 interface Props {
+  className?: string
   value: number
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-const Slider = ({ value, handleChange }: Props) => {
+const Slider = ({ value, handleChange, className }: Props) => {
   const [activeIndex, setActiveIndex] = useState(value * 10)
 
   const handleSlideClick = (index: number) => {
@@ -20,7 +21,7 @@ const Slider = ({ value, handleChange }: Props) => {
   }
 
   return (
-    <div className="flex items-center">
+    <div className={`${className} flex items-center`}>
       {Array.from({ length: 11 }, (_, index) =>
         index < 10 ? (
           <ScaleAnimation key={index} scaleFactor={1.5}>
