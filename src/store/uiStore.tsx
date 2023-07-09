@@ -10,6 +10,7 @@ export class UIStore {
   isTimerDone = false
   isBackgroundDim = false
   isFullscreen = false
+  isBackgroundImageLoaded = false
   theme: Color = 'green'
 
   constructor() {
@@ -83,5 +84,10 @@ export class UIStore {
   // Fullscreen
   toggleFullscreen = () => {
     this.isFullscreen = !this.isFullscreen
+  }
+
+  // Background image
+  setIsBackgroundImageLoaded = (value: boolean) => {
+    this.isBackgroundImageLoaded = value
   }
 }

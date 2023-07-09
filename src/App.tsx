@@ -31,6 +31,7 @@ function App() {
     theme,
     setTheme,
     isFullscreen,
+    isBackgroundImageLoaded,
   } = uiStore
 
   useEffect(() => {
@@ -44,56 +45,60 @@ function App() {
   }, [isFullscreen])
 
   return sceneStore.scenes.length > 0 ? (
-    <div className="font-primary p-4 h-full w-full text-white">
-      <div className="h-full w-full grid grid-cols-2 grid-rows-2 tablet:grid-cols-1">
-        <div>
-          <Radio />
+    isBackgroundImageLoaded ? (
+      <div className="font-primary p-4 h-full w-full text-white">
+        <div className="h-full w-full grid grid-cols-2 grid-rows-2 tablet:grid-cols-1">
+          <div>
+            <Radio />
+          </div>
+
+          <div className="flex justify-end items-start tablet:hidden">
+            <TopIconBar />
+          </div>
+
+          <div className="flex flex-col-reverse items-start tablet:items-center gap-4">
+            <BottomIconBar />
+
+            <FadeAnimationHidden
+              isVisible={isSoundPlayerCollectionOpen}
+              className="h-1/2 absolute bottom-24"
+            >
+              <SoundPlayerCollection onClose={closeSoundPlayerCollection} />
+            </FadeAnimationHidden>
+
+            <FadeAnimationHidden
+              isVisible={isThemeSelectorOpen}
+              className="absolute bottom-24"
+            >
+              <ThemeSelector
+                handleSelect={setTheme}
+                currentTheme={theme}
+                onClose={closeThemeSelector}
+              />
+            </FadeAnimationHidden>
+
+            <FadeAnimationHidden isVisible={isTimerOpen}>
+              <Timer onClose={closeTimer} />
+            </FadeAnimationHidden>
+          </div>
         </div>
 
-        <div className="flex justify-end items-start tablet:hidden">
-          <TopIconBar />
-        </div>
+        <FadeAnimation isVisible={isSceneSelectorOpen}>
+          <SceneSelector onClose={closeSceneSelector} />
+        </FadeAnimation>
 
-        <div className="flex flex-col-reverse items-start tablet:items-center gap-4">
-          <BottomIconBar />
+        <FadeAnimation isVisible={isTrackSelectorOpen}>
+          <TrackSelector onClose={closeTrackSelector} />
+        </FadeAnimation>
 
-          <FadeAnimationHidden
-            isVisible={isSoundPlayerCollectionOpen}
-            className="h-1/2 absolute bottom-24"
-          >
-            <SoundPlayerCollection onClose={closeSoundPlayerCollection} />
-          </FadeAnimationHidden>
-
-          <FadeAnimationHidden
-            isVisible={isThemeSelectorOpen}
-            className="absolute bottom-24"
-          >
-            <ThemeSelector
-              handleSelect={setTheme}
-              currentTheme={theme}
-              onClose={closeThemeSelector}
-            />
-          </FadeAnimationHidden>
-
-          <FadeAnimationHidden isVisible={isTimerOpen}>
-            <Timer onClose={closeTimer} />
-          </FadeAnimationHidden>
-        </div>
+        <Background className="-z-20" src={sceneStore.currentScene.src} />
+        <FadeAnimation isVisible={isBackgroundDim}>
+          <Background className="-z-10 bg-black bg-opacity-50" />
+        </FadeAnimation>
       </div>
-
-      <FadeAnimation isVisible={isSceneSelectorOpen}>
-        <SceneSelector onClose={closeSceneSelector} />
-      </FadeAnimation>
-
-      <FadeAnimation isVisible={isTrackSelectorOpen}>
-        <TrackSelector onClose={closeTrackSelector} />
-      </FadeAnimation>
-
-      <Background className="-z-20" src={sceneStore.currentScene.src} />
-      <FadeAnimation isVisible={isBackgroundDim}>
-        <Background className="-z-10 bg-black bg-opacity-50" />
-      </FadeAnimation>
-    </div>
+    ) : (
+      <Background className="bg-black" />
+    )
   ) : null
 }
 
