@@ -11,7 +11,7 @@ const Background = ({ src, className }: Props) => {
   const { setIsBackgroundImageLoaded } = uiStore
   return (
     <div
-      onLoad={() => setIsBackgroundImageLoaded}
+      onLoad={() => setIsBackgroundImageLoaded(true)}
       className={`${className} h-full w-full absolute top-0 left-0`}
     >
       {src && (
