@@ -18,8 +18,8 @@ const ThemeSelector = ({ handleSelect, onClose, currentTheme }: Props) => {
           <ScaleAnimation key={theme} scaleFactor={1.1}>
             <div
               onClick={() => handleSelect(theme)}
-              className={`bg-${theme}-500 w-10 h-10 rounded-md cursor-pointer ${
-                currentTheme === theme ? 'drop-shadow-theme' : ''
+              className={`bg-${theme}-500 w-10 h-10 rounded-lg cursor-pointer ${
+                currentTheme === theme ? 'opacity-100' : 'opacity-50'
               }`}
             />
           </ScaleAnimation>
