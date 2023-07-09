@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 interface Props {
   id: string
   src: string
@@ -9,7 +7,6 @@ interface Props {
 }
 
 const Card = ({ id, src, text, handleClick, isSelected }: Props) => {
-  const [isLoaded, setIsLoaded] = useState(false)
   return (
     <div
       className={`flex flex-col h-full w-full gap-4 items-center cursor-pointer rounded ${
@@ -19,16 +16,7 @@ const Card = ({ id, src, text, handleClick, isSelected }: Props) => {
         handleClick(id)
       }}
     >
-      {isLoaded ? null : (
-        <div className="h-5/6 w-full rounded bg-black opacity-90" />
-      )}
-      <img
-        onLoad={() => setIsLoaded(true)}
-        className={`h-5/6 w-full object-cover rounded ${
-          isLoaded ? 'visible' : 'invisible'
-        }`}
-        src={src}
-      />
+      <img className="h-5/6 w-full object-cover rounded" src={src} />
       <p className="text-center pl-4 pr-4 pb-4">{text}</p>
     </div>
   )
