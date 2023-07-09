@@ -44,7 +44,7 @@ function App() {
   }, [isFullscreen])
 
   return sceneStore.scenes.length > 0 ? (
-    <div className="font-primary p-4 h-screen w-screen text-white">
+    <div className="font-primary p-4 h-full w-full text-white">
       <div className="h-full w-full grid grid-cols-2 grid-rows-2 tablet:grid-cols-1">
         <div>
           <Radio />
