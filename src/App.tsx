@@ -45,8 +45,15 @@ function App() {
   }, [isFullscreen])
 
   return sceneStore.scenes.length > 0 ? (
-    isBackgroundImageLoaded ? (
-      <div className="font-primary p-4 h-full w-full text-white">
+    <>
+      <Background
+        className={`${isBackgroundImageLoaded ? 'hidden' : 'visible'} bg-black`}
+      />
+      <div
+        className={`${
+          isBackgroundImageLoaded ? 'visible' : 'hidden'
+        } font-primary p-4 h-full w-full text-white`}
+      >
         <div className="h-full w-full grid grid-cols-2 grid-rows-2 tablet:grid-cols-1">
           <div>
             <Radio />
@@ -96,9 +103,7 @@ function App() {
           <Background className="-z-10 bg-black bg-opacity-50" />
         </FadeAnimation>
       </div>
-    ) : (
-      <Background className="bg-black" />
-    )
+    </>
   ) : null
 }
 

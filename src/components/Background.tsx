@@ -1,4 +1,5 @@
 import { useRootStore } from '@root/store/rootStore'
+import { observer } from 'mobx-react'
 
 interface Props {
   src?: string
@@ -25,4 +26,4 @@ const Background = ({ src, className }: Props) => {
   )
 }
 
-export default Background
+export default observer(Background)
