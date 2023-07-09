@@ -13,6 +13,7 @@ import Timer from '@feature/Timer'
 import FadeAnimationHidden from '@components/animations/FadeAnimationHidden'
 import ThemeSelector from '@feature/ThemeSelector'
 import ScreenContainer from '@root/components/ScreenContainer'
+import { Typewriter } from 'react-simple-typewriter'
 
 function App() {
   const { uiStore, sceneStore } = useRootStore()
@@ -47,9 +48,20 @@ function App() {
 
   return sceneStore.scenes.length > 0 ? (
     <>
-      <ScreenContainer
-        className={`${isBackgroundImageLoaded ? 'hidden' : 'visible'} bg-black`}
-      />
+      <FadeAnimationHidden isVisible={!isBackgroundImageLoaded}>
+        <ScreenContainer className={`z-10 bg-black`}>
+          <div className="absolute inset-0 flex justify-center items-center text-white">
+            <Typewriter
+              words={['welcome to lofi lounge']}
+              typeSpeed={50}
+              cursorBlinking={true}
+              cursor={true}
+              cursorStyle={'▌'}
+            />
+          </div>
+        </ScreenContainer>
+      </FadeAnimationHidden>
+
       <div
         className={`${
           isBackgroundImageLoaded ? 'visible' : 'hidden'

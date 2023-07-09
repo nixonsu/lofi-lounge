@@ -19,7 +19,7 @@ const BackgroundImage = ({ src }: Props) => {
           className="h-full w-full object-cover"
           draggable={false}
           onLoad={() => {
-            setTimeout(() => {
+            setInterval(() => {
               setIsBackgroundImageLoaded(true)
             }, 2000)
           }}

@@ -2,17 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 @font-face {
   font-family: Unibody;
   src: url('/fonts/Unibody.otf') format('opentype');
 }
 
+* {
+  font-family: Unibody;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  outline: none;
+  text-shadow: var(--glow);
+}
+
+/* Fixes whitespace overflow on mobile */
 body,
 html {
   height: 100%;
@@ -25,28 +30,7 @@ html {
   width: 100%;
 }
 
-/* For webkit-based browsers (e.g., Chrome, Safari) */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* For Firefox */
-/* Please note that Firefox only supports scrollbar color customization starting from Firefox 64+ */
-* {
-  scrollbar-color: rgba(0, 0, 0, 0.5);
-  scrollbar-width: thin;
-}
-
-* {
-  text-transform: uppercase;
-  outline: none;
-  text-shadow: var(--glow);
-}
-
+/* Themes */
 :root {
   --glow: 0px 0px 2px hsl(120, 100%, 80%), 0px 0px 15px green,
     0px 0px 60px green;
@@ -102,6 +86,11 @@ html {
   text-shadow: 0px 0px 2px hsl(0, 100%, 80%), 0px 0px 15px red, 0px 0px 60px red;
 }
 
+.opaque {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Animations */
 @keyframes flicker {
   0% {
     opacity: 1;
@@ -116,10 +105,6 @@ html {
   animation: flicker 0.5s alternate-reverse steps(3) infinite;
 }
 
-.opaque {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -131,4 +116,21 @@ html {
 
 .animate-rotate {
   animation: rotate 2s linear infinite;
+}
+
+/* Scroll bars */
+/* For webkit-based browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* For Firefox */
+/* Please note that Firefox only supports scrollbar color customization starting from Firefox 64+ */
+* {
+  scrollbar-color: rgba(0, 0, 0, 0.5);
+  scrollbar-width: thin;
 }
