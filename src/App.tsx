@@ -46,9 +46,10 @@ function App() {
 
   return sceneStore.scenes.length > 0 ? (
     <>
-      <Background
-        className={`${isBackgroundImageLoaded ? 'hidden' : 'visible'} bg-black`}
-      />
+      <FadeAnimationHidden isVisible={!isBackgroundImageLoaded}>
+        <Background className="bg-black" />
+      </FadeAnimationHidden>
+
       <div
         className={`${
           isBackgroundImageLoaded ? 'visible' : 'hidden'
