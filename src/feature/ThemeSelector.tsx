@@ -1,4 +1,4 @@
-import { Color } from '@root/types/color'
+import { Color } from '@root/models/color'
 import Popup from '@components/Popup'
 import ScaleAnimation from '@components/animations/ScaleAnimation'
 

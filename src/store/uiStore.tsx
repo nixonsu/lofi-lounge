@@ -1,4 +1,4 @@
-import { Color } from '@root/types/color'
+import { Color } from '@root/models/color'
 import { makeAutoObservable } from 'mobx'
 
 export class UIStore {

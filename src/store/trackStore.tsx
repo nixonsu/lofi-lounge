@@ -1,4 +1,4 @@
-import { Track } from '@root/types/track'
+import { Track } from '@root/models/track'
 import { RootStore } from '@store/rootStore'
 import { makeAutoObservable, runInAction } from 'mobx'
 
