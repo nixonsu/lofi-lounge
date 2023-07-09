@@ -4,6 +4,8 @@ import IconButton from '@components/IconButton'
 import OpaqueContainer from '@components/OpaqueContainer'
 import Slider from '@components/Slider'
 import ReactHowler from 'react-howler'
+import { ReactComponent as PlayIcon } from '@components/icons/Play.svg'
+import { ReactComponent as PauseIcon } from 'pixelarticons/svg/pause.svg'
 
 interface Props {
   audioSrc: string
@@ -14,13 +16,22 @@ const SoundPlayer = ({ audioSrc, icon }: Props) => {
   const { isPlaying, togglePlay, volume, setVolume } = usePlayer()
 
   return (
-    <OpaqueContainer className="w-48">
-      <div className="flex items-center justify-between">
-        <IconButton icon={icon} onClick={togglePlay} isEnabled={isPlaying} />
-        <Slider
-          value={volume}
-          handleChange={(e) => setVolume(parseFloat(e.target.value))}
+    <OpaqueContainer className="w-52">
+      <div className="flex items-center gap-3">
+        <IconButton
+          icon={isPlaying ? <PauseIcon /> : <PlayIcon />}
+          onClick={togglePlay}
         />
+
+        <div className="flex items-center">
+          <Slider
+            value={volume}
+            handleChange={(e) => setVolume(parseFloat(e.target.value))}
+            className="mb-1 justify-center"
+          />
+          <IconButton icon={icon} onClick={togglePlay} isEnabled={isPlaying} />
+        </div>
+
         <div className="hidden">
           <ReactHowler
             src={audioSrc}
