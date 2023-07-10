@@ -1,5 +1,5 @@
+import { LOCAL_STORAGE_KEYS } from '@root/constants/localStorage'
 import { Track } from '@root/models/track'
-import { LOCAL_STORAGE_KEYS } from '@root/store/constants'
 import { resolveInvalidNumber } from '@root/utils/defaultResolvers'
 import { RootStore } from '@store/rootStore'
 import { makeAutoObservable, reaction, runInAction } from 'mobx'

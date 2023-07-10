@@ -1,5 +1,5 @@
+import { LOCAL_STORAGE_KEYS } from '@root/constants/localStorage'
 import { Color } from '@root/models/color'
-import { LOCAL_STORAGE_KEYS } from '@root/store/constants'
 import {
   resolveInvalidBoolean,
   resolveInvalidColor,
