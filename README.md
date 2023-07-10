@@ -1,4 +1,4 @@
-# Lofi Lounge 🎧 🎶
+# Lofi Lounge 🎆 🎧 🎶
 
 <div align="center">
 
@@ -9,18 +9,34 @@
 
 ![main](https://github.com/ni-xon/lofi-lounge/assets/57848315/d569f9ed-d4a5-4362-9663-65f172e00d45)
 
+Kickback to live lofi music and immerse yourself in beautiful pixel art animations. Enhance your productivity, find relaxation, and everything in between with lofi lounge.
 
-Step into a mesmerizing digital environment where you can chill out to live lofi music and get blown away by awesome pixel art animations. It's an epic minimalist space where anyone can kick back, groove to the tunes, and soak in the beauty of this incredible mix.
+<div align="center">
+
+🔴 <em><strong>Live at: [www.lofi-lounge.com](www.lofi-lounge.com)</strong></em>
+
+</div>
+
+## Features 🎁
+
+- Lo-Fi radio 📻
+- Beautiful animated scenes 🌃
+- Ambient sounds 🎶
+- Theme selector 🎨
+- Timer ⏰
+- Dim mode 🌙
+- Full screen mode 📺
 
 ## Technology 🧪
 
-This is purley a frontend project that was bootstrapped with Vite.
+This is a pure frontend project bootstrapped with Vite.
 
-- Typescript
 - React
-- MobX
-- Framer motion
-- TailwindCSS
+- Typescript
+- MobX (global state management)
+- Framer motion (animations)
+- TailwindCSS (styling)
+- Vitest (testing)
 
 ## Testing & Deployment 🚀
 
