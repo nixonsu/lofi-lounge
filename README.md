@@ -13,7 +13,11 @@ Kickback to live lofi music and immerse yourself in beautiful pixel art animatio
 
 <div align="center">
 
-🔴 <em><strong>Live at: [www.lofi-lounge.com](www.lofi-lounge.com)</strong></em>
+🔴 <em>
+<strong>Live at:
+<a href="https://www.lofi-lounge.com" target="_blank"> www.lofi-lounge.com </a>
+</strong>
+</em>
 
 </div>
 
