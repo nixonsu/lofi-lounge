@@ -1,5 +1,7 @@
 import { Color } from '@root/models/color'
-import { makeAutoObservable } from 'mobx'
+import { LOCAL_STORAGE_KEYS } from '@root/store/constants'
+import { resolveInvalidColor } from '@root/utils/defaultResolvers'
+import { makeAutoObservable, reaction } from 'mobx'
 
 export class UIStore {
   isSceneSelectorOpen = false
@@ -11,10 +13,14 @@ export class UIStore {
   isBackgroundDim = false
   isFullscreen = false
   isBackgroundImageLoaded = false
-  theme: Color = 'green'
+  theme: Color = resolveInvalidColor(
+    localStorage.getItem(LOCAL_STORAGE_KEYS.theme),
+    'green'
+  )
 
   constructor() {
     makeAutoObservable(this)
+    this.setupSavingThemeToLocalStorageReaction()
   }
 
   // Scene Selector
@@ -89,5 +95,12 @@ export class UIStore {
   // Background image
   setIsBackgroundImageLoaded = (value: boolean) => {
     this.isBackgroundImageLoaded = value
+  }
+
+  private setupSavingThemeToLocalStorageReaction() {
+    reaction(
+      () => this.theme,
+      (theme: Color) => localStorage.setItem(LOCAL_STORAGE_KEYS.theme, theme)
+    )
   }
 }
