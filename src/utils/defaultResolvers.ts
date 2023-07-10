@@ -22,3 +22,18 @@ export const resolveInvalidColor = (
 
   return value ? (value as Color) : fallback
 }
+
+export const resolveInvalidBoolean = (
+  value: string | null | undefined,
+  fallback: boolean
+): boolean => {
+  if (value === 'true') {
+    return true
+  }
+
+  if (value === 'false') {
+    return false
+  }
+
+  return fallback
+}
