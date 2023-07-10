@@ -5,7 +5,7 @@ interface Props {
   children?: ReactNode
 }
 
-const ScreenContainer = ({ className, children }: Props) => {
+const FullScreenContainer = ({ className, children }: Props) => {
   return (
     <div className={`${className} absolute left-0 top-0 h-full w-full`}>
       {children}
@@ -13,4 +13,4 @@ const ScreenContainer = ({ className, children }: Props) => {
   )
 }
 
-export default ScreenContainer
+export default FullScreenContainer

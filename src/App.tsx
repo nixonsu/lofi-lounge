@@ -1,4 +1,3 @@
-import BackgroundImage from '@root/components/BackgroundImage'
 import TopIconBar from '@root/feature/TopIconBar'
 import Radio from '@feature/Radio'
 import BottomIconBar from '@root/feature/BottomIconBar'
@@ -12,7 +11,7 @@ import { useEffect } from 'react'
 import Timer from '@feature/Timer'
 import FadeAnimationHidden from '@components/animations/FadeAnimationHidden'
 import ThemeSelector from '@feature/ThemeSelector'
-import ScreenContainer from '@root/components/ScreenContainer'
+import FullScreenContainer from '@root/components/FullScreenContainer'
 import { Typewriter } from 'react-simple-typewriter'
 
 function App() {
@@ -34,6 +33,7 @@ function App() {
     setTheme,
     isFullscreen,
     isBackgroundImageLoaded,
+    setIsBackgroundImageLoaded,
   } = uiStore
 
   useEffect(() => {
@@ -49,7 +49,7 @@ function App() {
   return sceneStore.scenes.length > 0 ? (
     <>
       <FadeAnimationHidden isVisible={!isBackgroundImageLoaded}>
-        <ScreenContainer className={`z-10 bg-black`}>
+        <FullScreenContainer className={`z-10 bg-black`}>
           <div className="absolute inset-0 flex items-center justify-center text-white">
             <Typewriter
               words={['welcome to lofi lounge']}
@@ -59,7 +59,7 @@ function App() {
               cursorStyle={'▌'}
             />
           </div>
-        </ScreenContainer>
+        </FullScreenContainer>
       </FadeAnimationHidden>
 
       <div
@@ -111,9 +111,21 @@ function App() {
           <TrackSelector onClose={closeTrackSelector} />
         </FadeAnimation>
 
-        <BackgroundImage src={sceneStore.currentScene.src} />
+        <FullScreenContainer className="-z-20">
+          <img
+            src={sceneStore.currentScene.src}
+            className="h-full w-full object-cover"
+            draggable={false}
+            onLoad={() => {
+              setInterval(() => {
+                setIsBackgroundImageLoaded(true)
+              }, 2000)
+            }}
+          />
+        </FullScreenContainer>
+
         <FadeAnimation isVisible={isBackgroundDim}>
-          <ScreenContainer className="-z-10 bg-black bg-opacity-50" />
+          <FullScreenContainer className="-z-10 bg-black bg-opacity-50" />
         </FadeAnimation>
       </div>
     </>
