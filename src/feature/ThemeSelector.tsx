@@ -13,12 +13,12 @@ const themes: Color[] = ['green', 'purple', 'yellow', 'blue', 'pink', 'gray']
 const ThemeSelector = ({ handleSelect, onClose, currentTheme }: Props) => {
   return (
     <Popup title="THEME" onClose={onClose}>
-      <div className="grid gap-x-4 gap-y-4 p-4 grid-cols-3 grid-rows-2 overflow-y-scroll rounded-md">
+      <div className="grid grid-cols-3 grid-rows-2 gap-x-4 gap-y-4 overflow-y-scroll rounded-md p-4">
         {themes.map((theme) => (
           <ScaleAnimation key={theme} scaleFactor={1.1}>
             <div
               onClick={() => handleSelect(theme)}
-              className={`bg-${theme}-500 w-10 h-10 rounded-lg cursor-pointer ${
+              className={`bg-${theme}-500 h-10 w-10 cursor-pointer rounded-lg ${
                 currentTheme === theme ? 'opacity-100' : 'opacity-50'
               }`}
             />

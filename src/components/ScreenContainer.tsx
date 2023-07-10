@@ -7,7 +7,7 @@ interface Props {
 
 const ScreenContainer = ({ className, children }: Props) => {
   return (
-    <div className={`${className} h-full w-full absolute top-0 left-0`}>
+    <div className={`${className} absolute left-0 top-0 h-full w-full`}>
       {children}
     </div>
   )

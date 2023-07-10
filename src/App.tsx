@@ -50,7 +50,7 @@ function App() {
     <>
       <FadeAnimationHidden isVisible={!isBackgroundImageLoaded}>
         <ScreenContainer className={`z-10 bg-black`}>
-          <div className="absolute inset-0 flex justify-center items-center text-white">
+          <div className="absolute inset-0 flex items-center justify-center text-white">
             <Typewriter
               words={['welcome to lofi lounge']}
               typeSpeed={50}
@@ -65,23 +65,23 @@ function App() {
       <div
         className={`${
           isBackgroundImageLoaded ? 'visible' : 'hidden'
-        } font-primary p-4 h-full w-full text-white`}
+        } h-full w-full p-4 font-primary text-white`}
       >
-        <div className="h-full w-full grid grid-cols-2 grid-rows-2 tablet:grid-cols-1">
+        <div className="grid h-full w-full grid-cols-2 grid-rows-2 tablet:grid-cols-1">
           <div>
             <Radio />
           </div>
 
-          <div className="flex justify-end items-start tablet:hidden">
+          <div className="flex items-start justify-end tablet:hidden">
             <TopIconBar />
           </div>
 
-          <div className="flex flex-col-reverse items-start tablet:items-center gap-4">
+          <div className="flex flex-col-reverse items-start gap-4 tablet:items-center">
             <BottomIconBar />
 
             <FadeAnimationHidden
               isVisible={isSoundPlayerCollectionOpen}
-              className="h-1/2 absolute bottom-24"
+              className="absolute bottom-24 h-1/2"
             >
               <SoundPlayerCollection onClose={closeSoundPlayerCollection} />
             </FadeAnimationHidden>

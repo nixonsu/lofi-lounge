@@ -40,14 +40,14 @@ const Timer = ({ onClose, className }: Props) => {
   return (
     <Popup className={`${className}`} onClose={onClose}>
       <div
-        className={`flex w-full justify-center items-center ${
+        className={`flex w-full items-center justify-center ${
           minutesDisplay == '00' && secondsDisplay == '00' && 'red-text-glow'
         }`}
       >
         {minutesDisplay} : {secondsDisplay}
       </div>
 
-      <div className="flex w-full justify-center items-center gap-4">
+      <div className="flex w-full items-center justify-center gap-4">
         {isRunning ? (
           <IconButton icon={<PauseIcon />} onClick={pause} />
         ) : (

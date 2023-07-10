@@ -13,7 +13,7 @@ const TrackSelector = ({ onClose }: Props) => {
 
   return (
     <Modal title={'track selection'} onClose={onClose}>
-      <div className="h-full w-full p-4 grid gap-x-4 gap-y-4 grid-cols-fluid overflow-y-scroll">
+      <div className="grid h-full w-full grid-cols-fluid gap-x-4 gap-y-4 overflow-y-scroll p-4">
         {trackStore.tracks.map((track) => (
           <ScaleAnimation key={track.id} scaleFactor={1.02}>
             <Card

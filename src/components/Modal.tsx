@@ -10,7 +10,7 @@ interface ModalProps {
 
 const Modal = ({ title, onClose, children }: ModalProps) => {
   return (
-    <div className="fixed inset-0 flex flex-col p-4 bg-black opaque gap-5">
+    <div className="opaque fixed inset-0 flex flex-col gap-5 bg-black p-4">
       <div className="flex justify-between pt-4">
         <div />
         <h1 className="animate-flicker">{title}</h1>

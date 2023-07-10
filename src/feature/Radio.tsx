@@ -24,8 +24,8 @@ const Radio = () => {
 
   return trackStore.tracks.length > 0 ? (
     <OpaqueContainer className="w-3/4 min-w-fit">
-      <div className="flex flex-col items-start text-white self-stretch gap-3">
-        <div className="animate-flicker flex gap-4 items-center">
+      <div className="flex flex-col items-start gap-3 self-stretch text-white">
+        <div className="animate-flicker flex items-center gap-4">
           <div className="h-full min-w-fit">
             {isLoading ? (
               <IconButton
@@ -42,12 +42,12 @@ const Radio = () => {
             )}
           </div>
 
-          <p className="cursor-pointer mb-1" onClick={openTrackSelector}>
+          <p className="mb-1 cursor-pointer" onClick={openTrackSelector}>
             {currentTrack.title}
           </p>
         </div>
 
-        <div className="flex items-center gap-4 flex-wrap">
+        <div className="flex flex-wrap items-center gap-4">
           {isPlaying ? (
             <IconButton onClick={togglePlay} icon={<PauseIcon />} />
           ) : (
