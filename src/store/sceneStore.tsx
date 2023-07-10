@@ -1,6 +1,6 @@
 import { Scene } from '@root/models/scene'
+import { randomIntFromInterval } from '@root/utils/randomHelpers'
 import { RootStore } from '@store/rootStore'
-import { randomIntFromInterval } from '@utils/Utils'
 import { makeAutoObservable, runInAction } from 'mobx'
 
 export class SceneStore {

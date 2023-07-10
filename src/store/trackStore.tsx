@@ -1,6 +1,8 @@
 import { Track } from '@root/models/track'
+import { LOCAL_STORAGE_KEYS } from '@root/store/constants'
+import { resolveInvalidNumber } from '@root/utils/defaultResolvers'
 import { RootStore } from '@store/rootStore'
-import { makeAutoObservable, runInAction } from 'mobx'
+import { makeAutoObservable, reaction, runInAction } from 'mobx'
 
 export class TrackStore {
   rootStore: RootStore
@@ -11,6 +13,8 @@ export class TrackStore {
     this.rootStore = rootStore
     makeAutoObservable(this)
     this.loadTracks()
+    this.setupReadingFromLocalStorageReaction()
+    this.setupSavingToLocalStorageReaction()
   }
 
   get currentTrack(): Track {
@@ -46,5 +50,32 @@ export class TrackStore {
     runInAction(() => {
       this.tracks = data
     })
+  }
+
+  private setupReadingFromLocalStorageReaction() {
+    reaction(
+      () => this.tracks,
+      () => (this.trackIndex = this.readTrackIndexFromLocalStorage())
+    )
+  }
+
+  private setupSavingToLocalStorageReaction() {
+    reaction(
+      () => this.trackIndex,
+      (trackIndex) => this.saveTrackIndexToLocalStorage(trackIndex)
+    )
+  }
+
+  private saveTrackIndexToLocalStorage(trackIndex: number) {
+    localStorage.setItem(LOCAL_STORAGE_KEYS.trackIndex, trackIndex.toString())
+  }
+
+  private readTrackIndexFromLocalStorage(): number {
+    return resolveInvalidNumber(
+      localStorage.getItem(LOCAL_STORAGE_KEYS.trackIndex),
+      0,
+      0,
+      this.tracks.length
+    )
   }
 }
