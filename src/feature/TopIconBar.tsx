@@ -1,9 +1,9 @@
-import { useRootStore } from '@store/rootStore'
 import IconButton from '@components/IconButton'
 import { ReactComponent as MoonIcon } from '@components/icons/Moon.svg'
-import { ReactComponent as FullscreenIcon } from 'pixelarticons/svg/scale.svg'
 import IconBar from '@root/components/IconBar'
+import { useRootStore } from '@store/rootStore'
 import { observer } from 'mobx-react'
+import { ReactComponent as FullscreenIcon } from 'pixelarticons/svg/scale.svg'
 
 interface Props {
   className?: string

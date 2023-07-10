@@ -1,6 +1,6 @@
 import { usePlayer } from '../usePlayer'
-import { describe, expect, it } from 'vitest'
 import { renderHook } from '@testing-library/react-hooks'
+import { describe, expect, it } from 'vitest'
 
 describe('usePlayer', () => {
   it('should initialize with default values', () => {

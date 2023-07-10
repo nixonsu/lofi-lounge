@@ -1,6 +1,6 @@
-import { ReactNode } from 'react'
 import IconButton from '@components/IconButton'
 import { ReactComponent as CloseIcon } from 'pixelarticons/svg/close.svg'
+import { ReactNode } from 'react'
 
 interface ModalProps {
   title?: string

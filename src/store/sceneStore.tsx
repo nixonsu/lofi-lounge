@@ -1,7 +1,7 @@
-import { makeAutoObservable, runInAction } from 'mobx'
 import { Scene } from '@root/models/scene'
 import { RootStore } from '@store/rootStore'
 import { randomIntFromInterval } from '@utils/Utils'
+import { makeAutoObservable, runInAction } from 'mobx'
 
 export class SceneStore {
   rootStore: RootStore

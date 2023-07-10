@@ -1,10 +1,10 @@
-import SoundPlayer from '@components/SoundPlayer'
 import Popup from '@components/Popup'
-import { ReactComponent as RainIcon } from '@components/icons/Rain.svg'
-import { ReactComponent as FireIcon } from '@components/icons/Fire.svg'
-import { ReactComponent as Coffee } from '@components/icons/Coffee.svg'
-import { ReactComponent as MoonIcon } from '@components/icons/Moon.svg'
+import SoundPlayer from '@components/SoundPlayer'
 import { ReactComponent as BirdIcon } from '@components/icons/Bird.svg'
+import { ReactComponent as Coffee } from '@components/icons/Coffee.svg'
+import { ReactComponent as FireIcon } from '@components/icons/Fire.svg'
+import { ReactComponent as MoonIcon } from '@components/icons/Moon.svg'
+import { ReactComponent as RainIcon } from '@components/icons/Rain.svg'
 import { ReactComponent as WindIcon } from '@components/icons/Wind.svg'
 
 interface Props {

@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
 import IconButton from '@components/IconButton'
 import OpaqueContainer from '@components/OpaqueContainer'
 import { ReactComponent as CloseIcon } from 'pixelarticons/svg/close.svg'
+import { ReactNode } from 'react'
 
 interface Props {
   title?: string

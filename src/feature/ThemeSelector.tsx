@@ -1,6 +1,6 @@
-import { Color } from '@root/models/color'
 import Popup from '@components/Popup'
 import ScaleAnimation from '@components/animations/ScaleAnimation'
+import { Color } from '@root/models/color'
 
 interface Props {
   handleSelect: (theme: Color) => void

@@ -1,11 +1,11 @@
-import { ReactNode } from 'react'
-import { usePlayer } from '@hooks/usePlayer'
 import IconButton from '@components/IconButton'
 import OpaqueContainer from '@components/OpaqueContainer'
 import Slider from '@components/Slider'
-import ReactHowler from 'react-howler'
 import { ReactComponent as PlayIcon } from '@components/icons/Play.svg'
+import { usePlayer } from '@hooks/usePlayer'
 import { ReactComponent as PauseIcon } from 'pixelarticons/svg/pause.svg'
+import { ReactNode } from 'react'
+import ReactHowler from 'react-howler'
 
 interface Props {
   audioSrc: string

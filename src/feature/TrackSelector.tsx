@@ -1,8 +1,8 @@
-import Modal from '@components/Modal'
-import { useRootStore } from '@store/rootStore'
 import Card from '@components/Card'
-import { observer } from 'mobx-react'
+import Modal from '@components/Modal'
 import ScaleAnimation from '@components/animations/ScaleAnimation'
+import { useRootStore } from '@store/rootStore'
+import { observer } from 'mobx-react'
 
 interface Props {
   onClose?: () => void

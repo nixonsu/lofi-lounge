@@ -1,5 +1,5 @@
-import { ChangeEvent, useState } from 'react'
 import ScaleAnimation from '@components/animations/ScaleAnimation'
+import { ChangeEvent, useState } from 'react'
 
 interface Props {
   className?: string

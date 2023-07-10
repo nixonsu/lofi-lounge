@@ -1,5 +1,5 @@
-import { ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ReactNode } from 'react'
 
 interface Props {
   isVisible: boolean
