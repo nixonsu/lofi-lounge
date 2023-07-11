@@ -7,10 +7,15 @@ import ThemeSelector from '@feature/ThemeSelector'
 import Timer from '@feature/Timer'
 import TrackSelector from '@feature/TrackSelector'
 import FullScreenContainer from '@root/components/FullScreenContainer'
+import IconButton from '@root/components/IconButton'
+import OpaqueContainer from '@root/components/OpaqueContainer'
+import ScaleAnimation from '@root/components/animations/ScaleAnimation'
+import { DONATION_URL } from '@root/constants/links'
 import BottomIconBar from '@root/feature/BottomIconBar'
 import TopIconBar from '@root/feature/TopIconBar'
 import { useRootStore } from '@store/rootStore'
 import { observer } from 'mobx-react'
+import { ReactComponent as CoffeeIcon } from 'pixelarticons/svg/coffee.svg'
 import { useEffect } from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 
@@ -72,7 +77,7 @@ function App() {
             <Radio />
           </div>
 
-          <div className="flex items-start justify-end tablet:hidden">
+          <div className="flex items-start justify-end tablet:hidden gap-4">
             <TopIconBar />
           </div>
 
@@ -100,6 +105,20 @@ function App() {
             <FadeAnimationHidden isVisible={isTimerOpen}>
               <Timer onClose={closeTimer} />
             </FadeAnimationHidden>
+          </div>
+
+          <div className="flex justify-end items-end tablet:hidden">
+            <ScaleAnimation scaleFactor={1.05}>
+              <OpaqueContainer
+                className="animate-flicker cursor-pointer "
+                onClick={() => window.open(DONATION_URL, '_blank')}
+              >
+                <div className="flex gap-4">
+                  <IconButton icon={<CoffeeIcon />} />
+                  <p>Buy me a coffee</p>
+                </div>
+              </OpaqueContainer>
+            </ScaleAnimation>
           </div>
         </div>
 

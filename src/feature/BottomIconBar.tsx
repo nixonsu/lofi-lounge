@@ -1,6 +1,6 @@
 import IconButton from '@components/IconButton'
 import { ReactComponent as MoonIcon } from '@components/icons/Moon.svg'
-import IconBar from '@root/components/IconBar'
+import OpaqueContainer from '@root/components/OpaqueContainer'
 import { useRootStore } from '@store/rootStore'
 import { observer } from 'mobx-react'
 import { ReactComponent as ClockIcon } from 'pixelarticons/svg/clock.svg'
@@ -28,24 +28,29 @@ const BottomIconBar = ({ className }: Props) => {
   } = uiStore
 
   return (
-    <IconBar className={className}>
-      <IconButton icon={<GalleryIcon />} onClick={openSceneSelector} />
-      <IconButton icon={<MusicIcon />} onClick={toggleSoundPlayerCollection} />
-      <IconButton
-        icon={<ClockIcon />}
-        onClick={toggleTimer}
-        isRedGlow={isTimerDone}
-      />
-      <IconButton icon={<PaintIcon />} onClick={toggleThemeSelector} />
-      <div className="hidden tablet:visible tablet:flex tablet:gap-4">
+    <OpaqueContainer className={className}>
+      <div className="flex gap-4">
+        <IconButton icon={<GalleryIcon />} onClick={openSceneSelector} />
         <IconButton
-          icon={<MoonIcon />}
-          onClick={toggleIsBackgroundDim}
-          isEnabled={!isBackgroundDim}
+          icon={<MusicIcon />}
+          onClick={toggleSoundPlayerCollection}
         />
-        <IconButton icon={<FullscreenIcon />} onClick={toggleFullscreen} />
+        <IconButton
+          icon={<ClockIcon />}
+          onClick={toggleTimer}
+          isRedGlow={isTimerDone}
+        />
+        <IconButton icon={<PaintIcon />} onClick={toggleThemeSelector} />
+        <div className="hidden tablet:visible tablet:flex tablet:gap-4">
+          <IconButton
+            icon={<MoonIcon />}
+            onClick={toggleIsBackgroundDim}
+            isEnabled={!isBackgroundDim}
+          />
+          <IconButton icon={<FullscreenIcon />} onClick={toggleFullscreen} />
+        </div>
       </div>
-    </IconBar>
+    </OpaqueContainer>
   )
 }
 

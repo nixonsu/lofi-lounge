@@ -3,11 +3,15 @@ import { ReactNode } from 'react'
 interface Props {
   children: ReactNode
   className?: string
+  onClick?: () => void
 }
 
-const OpaqueContainer = ({ children, className }: Props) => {
+const OpaqueContainer = ({ children, className, onClick }: Props) => {
   return (
-    <div className={`rounded-lg bg-black bg-opacity-50 p-4 ${className}`}>
+    <div
+      className={`rounded-lg bg-black bg-opacity-50 p-4 ${className}`}
+      onClick={onClick}
+    >
       {children}
     </div>
   )
