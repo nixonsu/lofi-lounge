@@ -7,8 +7,6 @@
 
 </div>
 
-![main](https://github.com/ni-xon/lofi-lounge/assets/57848315/d569f9ed-d4a5-4362-9663-65f172e00d45)
-
 Kickback to live lofi music and immerse yourself in beautiful pixel art animations. Enhance your productivity, find relaxation, and everything in between with lofi lounge.
 
 <div align="center">
