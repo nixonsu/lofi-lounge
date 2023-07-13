@@ -78,11 +78,11 @@ function App() {
           </div>
 
           <div className="flex items-start justify-end tablet:hidden gap-4">
-            <TopIconBar />
+            <TopIconBar className="pt-3 pb-3" />
           </div>
 
           <div className="flex flex-col-reverse items-start gap-4 tablet:items-center">
-            <BottomIconBar />
+            <BottomIconBar className="pt-3 pb-3" />
 
             <FadeAnimationHidden
               isVisible={isSoundPlayerCollectionOpen}
