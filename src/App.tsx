@@ -110,12 +110,12 @@ function App() {
           <div className="flex justify-end items-end tablet:hidden">
             <ScaleAnimation scaleFactor={1.05}>
               <OpaqueContainer
-                className="animate-flicker cursor-pointer "
+                className="cursor-pointer pb-2 pt-2"
                 onClick={() => window.open(DONATION_URL, '_blank')}
               >
-                <div className="flex gap-4">
-                  <IconButton icon={<CoffeeIcon />} />
-                  <p>Buy me a coffee</p>
+                <div className="animate-flicker flex gap-4 items-center">
+                  <IconButton className={'pt-1'} icon={<CoffeeIcon />} />
+                  <p className="text-xs">Buy me a coffee</p>
                 </div>
               </OpaqueContainer>
             </ScaleAnimation>
