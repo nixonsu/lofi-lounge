@@ -9,7 +9,7 @@ interface Props {
 const OpaqueContainer = ({ children, className, onClick }: Props) => {
   return (
     <div
-      className={`rounded-lg bg-black bg-opacity-50 p-4 ${className}`}
+      className={`rounded-lg bg-black bg-opacity-70 p-4 ${className}`}
       onClick={onClick}
     >
       {children}

@@ -1,5 +1,4 @@
 import IconButton from '@components/IconButton'
-import OpaqueContainer from '@components/OpaqueContainer'
 import Slider from '@components/Slider'
 import { ReactComponent as PlayIcon } from '@components/icons/Play.svg'
 import { usePlayer } from '@hooks/usePlayer'
@@ -16,7 +15,7 @@ const SoundPlayer = ({ audioSrc, icon }: Props) => {
   const { isPlaying, togglePlay, volume, setVolume } = usePlayer()
 
   return (
-    <OpaqueContainer className="w-52">
+    <div className="w-52 p-4">
       <div className="flex items-center gap-3">
         <IconButton
           icon={isPlaying ? <PauseIcon /> : <PlayIcon />}
@@ -41,7 +40,7 @@ const SoundPlayer = ({ audioSrc, icon }: Props) => {
           />
         </div>
       </div>
-    </OpaqueContainer>
+    </div>
   )
 }
 
