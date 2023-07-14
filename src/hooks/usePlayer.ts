@@ -19,5 +19,6 @@ export const usePlayer = (autoPlay = false) => {
     setIsLoading,
     setVolume,
     togglePlay,
+    setIsPlaying,
   }
 }

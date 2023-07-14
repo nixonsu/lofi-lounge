@@ -15,12 +15,19 @@ import ReactPlayer from 'react-player'
 const Radio = () => {
   const { trackStore, uiStore } = useRootStore()
 
-  const { currentTrack } = trackStore
+  const { currentTrack, nextTrack, previousTrack, shuffleTrack } = trackStore
 
   const { openTrackSelector } = uiStore
 
-  const { volume, isPlaying, isLoading, setIsLoading, togglePlay, setVolume } =
-    usePlayer()
+  const {
+    volume,
+    isPlaying,
+    isLoading,
+    setIsLoading,
+    togglePlay,
+    setVolume,
+    setIsPlaying,
+  } = usePlayer()
 
   return trackStore.tracks.length > 0 ? (
     <OpaqueContainer className="w-3/4 min-w-fit">
@@ -54,14 +61,11 @@ const Radio = () => {
             <IconButton onClick={togglePlay} icon={<PlayIcon />} />
           )}
           <IconButton
-            onClick={trackStore.previousTrack}
+            onClick={previousTrack}
             icon={<NextIcon className="rotate-180" />}
           />
-          <IconButton onClick={trackStore.nextTrack} icon={<NextIcon />} />
-          <IconButton
-            onClick={trackStore.shuffleTrack}
-            icon={<ShuffleIcon />}
-          />
+          <IconButton onClick={nextTrack} icon={<NextIcon />} />
+          <IconButton onClick={shuffleTrack} icon={<ShuffleIcon />} />
           <Slider
             className="mb-1"
             value={volume}
@@ -70,6 +74,14 @@ const Radio = () => {
         </div>
 
         <ReactPlayer
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+          onError={() => {
+            console.log(
+              'Something went wrong with playing this track, skipping to next track...'
+            )
+            nextTrack()
+          }}
           className="hidden"
           url={currentTrack.url}
           playing={isPlaying}
