@@ -1,13 +1,14 @@
 import IconButton from '@components/IconButton'
 import { ReactComponent as MoonIcon } from '@components/icons/Moon.svg'
 import OpaqueContainer from '@root/components/OpaqueContainer'
+import { DONATION_URL } from '@root/constants/links'
 import { useRootStore } from '@store/rootStore'
 import { observer } from 'mobx-react'
 import { ReactComponent as ClockIcon } from 'pixelarticons/svg/clock.svg'
+import { ReactComponent as CoffeeIcon } from 'pixelarticons/svg/coffee.svg'
 import { ReactComponent as GalleryIcon } from 'pixelarticons/svg/image.svg'
 import { ReactComponent as MusicIcon } from 'pixelarticons/svg/music.svg'
 import { ReactComponent as PaintIcon } from 'pixelarticons/svg/paint-bucket.svg'
-import { ReactComponent as FullscreenIcon } from 'pixelarticons/svg/scale.svg'
 
 interface Props {
   className?: string
@@ -24,7 +25,6 @@ const BottomIconBar = ({ className }: Props) => {
     isTimerDone,
     toggleIsBackgroundDim,
     isBackgroundDim,
-    toggleFullscreen,
   } = uiStore
 
   return (
@@ -47,7 +47,10 @@ const BottomIconBar = ({ className }: Props) => {
             onClick={toggleIsBackgroundDim}
             isEnabled={!isBackgroundDim}
           />
-          <IconButton icon={<FullscreenIcon />} onClick={toggleFullscreen} />
+          <IconButton
+            icon={<CoffeeIcon />}
+            onClick={() => window.open(DONATION_URL, '_blank')}
+          />
         </div>
       </div>
     </OpaqueContainer>
