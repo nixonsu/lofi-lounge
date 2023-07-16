@@ -129,7 +129,7 @@ function App() {
             className="h-full w-full object-cover"
             draggable={false}
             onLoad={() => {
-              setInterval(() => {
+              setTimeout(() => {
                 setIsBackgroundImageLoaded(true)
               }, 2000)
             }}
