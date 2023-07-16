@@ -1,5 +1,6 @@
 import FadeAnimation from '@components/animations/FadeAnimation'
 import FadeAnimationHidden from '@components/animations/FadeAnimationHidden'
+import { ReactComponent as MoonIcon } from '@components/icons/Moon.svg'
 import Radio from '@feature/Radio'
 import SceneSelector from '@feature/SceneSelector'
 import SoundPlayerCollection from '@feature/SoundPlayerCollection'
@@ -11,8 +12,7 @@ import IconButton from '@root/components/IconButton'
 import OpaqueContainer from '@root/components/OpaqueContainer'
 import ScaleAnimation from '@root/components/animations/ScaleAnimation'
 import { DONATION_URL } from '@root/constants/links'
-import BottomIconBar from '@root/feature/BottomIconBar'
-import TopIconBar from '@root/feature/TopIconBar'
+import IconBar from '@root/feature/IconBar'
 import { useRootStore } from '@store/rootStore'
 import { observer } from 'mobx-react'
 import { ReactComponent as CoffeeIcon } from 'pixelarticons/svg/coffee.svg'
@@ -38,6 +38,7 @@ function App() {
     setTheme,
     isBackgroundImageLoaded,
     setIsBackgroundImageLoaded,
+    toggleIsBackgroundDim,
   } = uiStore
 
   useEffect(() => {
@@ -71,11 +72,19 @@ function App() {
           </div>
 
           <div className="flex items-start justify-end tablet:hidden gap-4">
-            <TopIconBar className="pt-3 pb-3" />
+            <OpaqueContainer className="pt-3 pb-3">
+              <div className="flex gap-4">
+                <IconButton
+                  icon={<MoonIcon />}
+                  onClick={toggleIsBackgroundDim}
+                  isEnabled={!isBackgroundDim}
+                />
+              </div>
+            </OpaqueContainer>
           </div>
 
           <div className="flex flex-col-reverse items-start gap-4 tablet:items-center">
-            <BottomIconBar className="pt-3 pb-3" />
+            <IconBar className="pt-3 pb-3" />
 
             <FadeAnimationHidden
               isVisible={isSoundPlayerCollectionOpen}

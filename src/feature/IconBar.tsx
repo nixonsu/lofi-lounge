@@ -14,7 +14,7 @@ interface Props {
   className?: string
 }
 
-const BottomIconBar = ({ className }: Props) => {
+const IconBar = ({ className }: Props) => {
   const { uiStore } = useRootStore()
 
   const {
@@ -57,4 +57,4 @@ const BottomIconBar = ({ className }: Props) => {
   )
 }
 
-export default observer(BottomIconBar)
+export default observer(IconBar)
