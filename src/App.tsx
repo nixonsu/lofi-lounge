@@ -36,7 +36,6 @@ function App() {
     isBackgroundDim,
     theme,
     setTheme,
-    isFullscreen,
     isBackgroundImageLoaded,
     setIsBackgroundImageLoaded,
   } = uiStore
@@ -44,12 +43,6 @@ function App() {
   useEffect(() => {
     document.body.className = `theme-${theme}`
   }, [theme])
-
-  useEffect(() => {
-    !isFullscreen
-      ? document.exitFullscreen()
-      : document.body.requestFullscreen()
-  }, [isFullscreen])
 
   return sceneStore.scenes.length > 0 ? (
     <>

@@ -3,7 +3,6 @@ import { ReactComponent as MoonIcon } from '@components/icons/Moon.svg'
 import OpaqueContainer from '@root/components/OpaqueContainer'
 import { useRootStore } from '@store/rootStore'
 import { observer } from 'mobx-react'
-import { ReactComponent as FullscreenIcon } from 'pixelarticons/svg/scale.svg'
 
 interface Props {
   className?: string
@@ -12,7 +11,7 @@ interface Props {
 const TopIconBar = ({ className }: Props) => {
   const { uiStore } = useRootStore()
 
-  const { toggleIsBackgroundDim, isBackgroundDim, toggleFullscreen } = uiStore
+  const { toggleIsBackgroundDim, isBackgroundDim } = uiStore
 
   return (
     <OpaqueContainer className={className}>
@@ -22,7 +21,6 @@ const TopIconBar = ({ className }: Props) => {
           onClick={toggleIsBackgroundDim}
           isEnabled={!isBackgroundDim}
         />
-        <IconButton icon={<FullscreenIcon />} onClick={toggleFullscreen} />
       </div>
     </OpaqueContainer>
   )

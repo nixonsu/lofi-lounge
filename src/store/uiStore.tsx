@@ -17,7 +17,6 @@ export class UIStore {
     localStorage.getItem(LOCAL_STORAGE_KEYS.isBackgroundDim),
     false
   )
-  isFullscreen = false
   isBackgroundImageLoaded = false
   theme: Color = resolveInvalidColor(
     localStorage.getItem(LOCAL_STORAGE_KEYS.theme),
@@ -92,11 +91,6 @@ export class UIStore {
   // Background Dimming
   toggleIsBackgroundDim = () => {
     this.isBackgroundDim = !this.isBackgroundDim
-  }
-
-  // Fullscreen
-  toggleFullscreen = () => {
-    this.isFullscreen = !this.isFullscreen
   }
 
   // Background image
