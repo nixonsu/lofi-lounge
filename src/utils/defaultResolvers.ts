@@ -6,6 +6,10 @@ export const resolveInvalidNumber = (
   inclusiveMin = 0,
   inclusiveMax: number
 ): number => {
+  if (value === null || value === undefined) {
+    return fallback
+  }
+
   const number = Number(value)
 
   const isValidNumber =
@@ -18,9 +22,11 @@ export const resolveInvalidColor = (
   value: string | null | undefined,
   fallback: Color
 ): Color => {
-  if (!(value as Color)) return fallback
+  if (value === null || value === undefined) {
+    return fallback
+  }
 
-  return value ? (value as Color) : fallback
+  return isColor(value) ? (value as Color) : fallback
 }
 
 export const resolveInvalidBoolean = (
@@ -36,4 +42,23 @@ export const resolveInvalidBoolean = (
   }
 
   return fallback
+}
+
+// Since TypeScript works at compile time,
+// Following logic checks if string provided is a valid color at runtime
+// https://bobbyhadz.com/blog/typescript-check-if-string-is-in-union-type
+const ALL_COLORS = [
+  'green',
+  'red',
+  'gray',
+  'yellow',
+  'blue',
+  'purple',
+  'pink',
+  'white',
+  'black',
+] as const
+
+function isColor(value: string): value is Color {
+  return ALL_COLORS.includes(value as Color)
 }
