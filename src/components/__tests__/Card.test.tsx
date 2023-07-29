@@ -24,13 +24,14 @@ describe('Card', () => {
     expect(displayedImage).toBeInTheDocument()
   })
 
-  test('should trigger handle click function when clicked', () => {
+  test('when clicked, should trigger handle click function', () => {
     const mock = vi.fn()
     const testText = 'Test text'
+    const src = '/fake-image.png'
     render(
       <Card
         id="1"
-        src="1"
+        src={src}
         text={testText}
         handleClick={mock}
         isSelected={false}
