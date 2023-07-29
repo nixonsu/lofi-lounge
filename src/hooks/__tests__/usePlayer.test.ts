@@ -1,13 +1,36 @@
-import { usePlayer } from '../usePlayer'
-import { renderHook } from '@testing-library/react-hooks'
-import { describe, expect, it } from 'vitest'
+import {
+  DEFAULT_LOADING,
+  DEFAULT_PLAYING,
+  DEFAULT_VOLUME,
+  usePlayer,
+} from '../usePlayer'
+import { renderHook, waitFor } from '@testing-library/react'
+import { act } from 'react-dom/test-utils'
+import { describe, expect, test } from 'vitest'
 
 describe('usePlayer', () => {
-  it('should initialize with default values', () => {
+  test('should initialize with default values', () => {
+    // Given
     const { result } = renderHook(() => usePlayer())
 
-    expect(result.current.volume).toBe(0.5)
-    expect(result.current.isPlaying).toBe(false)
-    expect(result.current.isLoading).toBe(false)
+    // When, Then
+    expect(result.current.volume).toBe(DEFAULT_VOLUME)
+    expect(result.current.isPlaying).toBe(DEFAULT_PLAYING)
+    expect(result.current.isLoading).toBe(DEFAULT_LOADING)
+  })
+
+  test('when togglPlay, should toggle playing state', async () => {
+    // Given
+    const { result } = renderHook(() => usePlayer())
+
+    // When
+    act(() => {
+      result.current.togglePlay()
+    })
+
+    // Then
+    await waitFor(() => {
+      expect(result.current.isPlaying).toBe(!DEFAULT_PLAYING)
+    })
   })
 })
