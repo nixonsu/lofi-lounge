@@ -9,7 +9,7 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky install && husky set .husky/pre-commit \"yarn lint-staged --allow-empty\"",
-    "test": "vitest",
+    "test": "vitest --reporter=verbose",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,scss,css,html,yml}\""
   },
   "dependencies": {
