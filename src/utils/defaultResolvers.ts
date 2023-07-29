@@ -1,4 +1,4 @@
-import { Color } from '@root/models/color'
+import { Color, isColor } from '@root/models/color'
 
 export const resolveInvalidNumber = (
   value: string | null | undefined,
@@ -42,23 +42,4 @@ export const resolveInvalidBoolean = (
   }
 
   return fallback
-}
-
-// Since TypeScript works at compile time,
-// Following logic checks if string provided is a valid color at runtime
-// https://bobbyhadz.com/blog/typescript-check-if-string-is-in-union-type
-const ALL_COLORS = [
-  'green',
-  'red',
-  'gray',
-  'yellow',
-  'blue',
-  'purple',
-  'pink',
-  'white',
-  'black',
-] as const
-
-function isColor(value: string): value is Color {
-  return ALL_COLORS.includes(value as Color)
 }
