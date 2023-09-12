@@ -37,7 +37,7 @@ function App() {
     theme,
     setTheme,
     isBackgroundImageLoaded,
-    setIsBackgroundImageLoaded,
+    setIsBackgroundImageInitiallyLoaded,
     toggleIsBackgroundDim,
   } = uiStore
 
@@ -139,7 +139,7 @@ function App() {
             draggable={false}
             onLoad={() => {
               setTimeout(() => {
-                setIsBackgroundImageLoaded(true)
+                setIsBackgroundImageInitiallyLoaded(true)
               }, 2000)
             }}
           />

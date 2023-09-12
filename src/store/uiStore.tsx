@@ -94,7 +94,7 @@ export class UIStore {
   }
 
   // Background image
-  setIsBackgroundImageLoaded = (value: boolean) => {
+  setIsBackgroundImageInitiallyLoaded = (value: boolean) => {
     this.isBackgroundImageLoaded = value
   }
 
